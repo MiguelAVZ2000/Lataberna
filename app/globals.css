@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+
+/* D&D Beyond Theme - Refined Official Version */
+
+:root {
+  /* Tailwind v4 mapea automáticamente variables con prefijos específicos */
+  
+  /* Backgrounds & Main Colors */
+  --color-background: oklch(1 0 0); /* Blanco puro */
+  --color-foreground: oklch(0.25 0 0); /* #333333 Texto Gris Oscuro */
+
+  /* Cards */
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.25 0 0);
+  
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.25 0 0);
+  
+  /* Official D&D Colors */
+  --color-primary: oklch(0.55 0.22 25); /* #E40712 Red */
+  --color-primary-foreground: oklch(1 0 0);
+  
+  --color-accent-gold: oklch(0.68 0.16 65); /* #EE8600 Gold/Orange */
+  
+  /* Neutral Grays */
+  --color-secondary: oklch(0.92 0 0); /* #EBEBEB */
+  --color-secondary-foreground: oklch(0.25 0 0);
+  
+  --color-muted: oklch(0.92 0 0);
+  --color-muted-foreground: oklch(0.45 0 0);
+  
+  --color-accent: oklch(0.95 0 0);
+  --color-accent-foreground: oklch(0.25 0 0);
+  
+  --color-destructive: oklch(0.55 0.22 25);
+  --color-destructive-foreground: oklch(1 0 0);
+  
+  /* Borders & UI */
+  --color-border: oklch(0.82 0.01 65); /* #D0CAC5 Warm Gray/Sand */
+  --color-input: oklch(0.82 0.01 65);
+  --color-ring: oklch(0.55 0.22 25);
+  
+  --radius: 0.125rem;
+  
+  /* Typography */
+  --font-sans: 'Roboto', system-ui, sans-serif;
+  --font-heading: 'Roboto Condensed', sans-serif;
+
+  /* Custom Sections */
+  --color-dark-section: #242527;
+  --color-dark-section-foreground: #FFFFFF;
+}
+
+.dark {
+  --color-background: oklch(0.12 0 0);
+  --color-foreground: oklch(0.95 0 0);
+  
+  --color-card: oklch(0.17 0 0);
+  --color-card-foreground: oklch(0.95 0 0);
+  
+  --color-primary: oklch(0.55 0.22 25);
+  --color-primary-foreground: oklch(1 0 0);
+  
+  --color-border: oklch(0.25 0 0);
+  --color-ring: oklch(0.55 0.22 25);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    /* Removida la textura de pergamino pesada por fondo blanco */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+/* Custom Utilities */
+.parchment-bg {
+  background-color: var(--color-background);
+}
+
+.dark-bg {
+  background-color: var(--color-dark-section);
+  color: var(--color-dark-section-foreground);
+}
+
+.section-divider {
+  height: 0.25rem;
+  width: 100%;
+  background-color: var(--color-accent-gold);
+  border: none;
+}
+
+.gold-border {
+  border-bottom: 3px solid var(--color-accent-gold);
+}
+
+.high-contrast-card {
+  border: 2px solid var(--color-border);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: white;
+}
+
+.high-contrast-card:hover {
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Premium Micro-interactions */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(238, 134, 0, 0.4);
+}
+
+.pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(238, 134, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(238, 134, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(238, 134, 0, 0);
+  }
+}
+
+

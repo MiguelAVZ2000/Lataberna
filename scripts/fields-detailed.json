@@ -1,0 +1,5486 @@
+[
+  {
+    "index": 0,
+    "name": "Level",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 1,
+    "name": "Experience Points",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 2,
+    "name": "AC",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 3,
+    "name": "Current HP",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 4,
+    "name": "Temp HP",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 5,
+    "name": "Max HP",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 6,
+    "name": "Spent HD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 7,
+    "name": "MAX HD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 8,
+    "name": "Prof Bonus",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 9,
+    "name": "Text Field39",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 10,
+    "name": "Text Field40",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 11,
+    "name": "Text Field43",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 12,
+    "name": "Text Field44",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 13,
+    "name": "Text Field47",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 14,
+    "name": "Text Field48",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 15,
+    "name": "Text Field49",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 16,
+    "name": "Text Field51",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 17,
+    "name": "Text Field52",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 18,
+    "name": "Text Field53",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 19,
+    "name": "Text Field55",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 20,
+    "name": "Text Field56",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 21,
+    "name": "Text Field57",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 22,
+    "name": "Text Field59",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 23,
+    "name": "Text Field60",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 24,
+    "name": "Text Field61",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 25,
+    "name": "STR SAVE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 26,
+    "name": "DEX MOD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 27,
+    "name": "DEX SCORE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 28,
+    "name": "DEX SAVE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 29,
+    "name": "INIT",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 30,
+    "name": "CON MOD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 31,
+    "name": "CON SCORE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 32,
+    "name": "CON SAVE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 33,
+    "name": "EXHAUSTION",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 34,
+    "name": "SPEED",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 35,
+    "name": "INT MOD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 36,
+    "name": "ARCANA",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 37,
+    "name": "HISTORY",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 38,
+    "name": "INVESTIGATION",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 39,
+    "name": "NATURE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 40,
+    "name": "RELIGION",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 41,
+    "name": "WIS SCORE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 42,
+    "name": "CHA MOD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 43,
+    "name": "CHA SCORE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 44,
+    "name": "CHA SAVE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 45,
+    "name": "CLASS FEATURES 1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 46,
+    "name": "CLASS FEATURES 2",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 47,
+    "name": "FEATS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 48,
+    "name": "TRAITS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 49,
+    "name": "TOOLS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 50,
+    "name": "LANGUAGES",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 51,
+    "name": "Name",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 52,
+    "name": "Check Box740",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 53,
+    "name": "Check Box921",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 54,
+    "name": "Check Box722",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 55,
+    "name": "Check Box733",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 56,
+    "name": "Check Box754",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 57,
+    "name": "Check Box765",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 58,
+    "name": "Check Box776",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 59,
+    "name": "Check Box787",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 60,
+    "name": "Check Box798",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 61,
+    "name": "Check Box809",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 62,
+    "name": "Check Box8110",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 63,
+    "name": "Check Box8211",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 64,
+    "name": "Check Box8312",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 65,
+    "name": "Check Box8413",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 66,
+    "name": "Check Box8514",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 67,
+    "name": "Check Box8615",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 68,
+    "name": "Check Box8716",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 69,
+    "name": "Check Box8817",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 70,
+    "name": "Check Box8918",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 71,
+    "name": "Check Box9119",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 72,
+    "name": "Check Box9320",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 73,
+    "name": "Check Box021",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 74,
+    "name": "SPELLCASTING ABILITY22",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 75,
+    "name": "SPELL ATTK BONUS23",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 76,
+    "name": "SPELLCASTING MOD24",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 77,
+    "name": "SPELL SAVE DC25",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 78,
+    "name": "Spellcasting Focus",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 79,
+    "name": "Text Field0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 80,
+    "name": "Text Field7",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 81,
+    "name": "Text Field8",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 82,
+    "name": "Text Field11",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 83,
+    "name": "Text Field16",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 84,
+    "name": "Text Field19",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 85,
+    "name": "Text Field24",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 86,
+    "name": "Text Field27",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 87,
+    "name": "Text Field32",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 88,
+    "name": "Text Field35",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 89,
+    "name": "Text Field3826",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 90,
+    "name": "Text Field3927",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 91,
+    "name": "Text Field4028",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 92,
+    "name": "Text Field4129",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 93,
+    "name": "Text Field4230",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 94,
+    "name": "Text Field4331",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 95,
+    "name": "Text Field4432",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 96,
+    "name": "Text Field4533",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 97,
+    "name": "Text Field4634",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 98,
+    "name": "Text Field4735",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 99,
+    "name": "Text Field4836",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 100,
+    "name": "Text Field4937",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 101,
+    "name": "Text Field5038",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 102,
+    "name": "Text Field5139",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 103,
+    "name": "Text Field5240",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 104,
+    "name": "Text Field5341",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 105,
+    "name": "Text Field5442",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 106,
+    "name": "Text Field5543",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 107,
+    "name": "Text Field5644",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 108,
+    "name": "Text Field5745",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 109,
+    "name": "Text Field5846",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 110,
+    "name": "Text Field5947",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 111,
+    "name": "Text Field6048",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 112,
+    "name": "Text Field6149",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 113,
+    "name": "Text Field65",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 114,
+    "name": "Text Field68",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 115,
+    "name": "Text Field73",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 116,
+    "name": "Text Field80",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 117,
+    "name": "Text Field8250",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 118,
+    "name": "Text Field8351",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 119,
+    "name": "Text Field8452",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 120,
+    "name": "Text Field8553",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 121,
+    "name": "Text Field8654",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 122,
+    "name": "Text Field8755",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 123,
+    "name": "Text Field8856",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 124,
+    "name": "Text Field8957",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 125,
+    "name": "Text Field9058",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 126,
+    "name": "Text Field9159",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 127,
+    "name": "Text Field9260",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 128,
+    "name": "Text Field9361",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 129,
+    "name": "Text Field9462",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 130,
+    "name": "Text Field9563",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 131,
+    "name": "Text Field9664",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 132,
+    "name": "Text Field9765",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 133,
+    "name": "Text Field9866",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 134,
+    "name": "Text Field9967",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 135,
+    "name": "Text Field10068",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 136,
+    "name": "Text Field10169",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 137,
+    "name": "Text Field10270",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 138,
+    "name": "Text Field10371",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 139,
+    "name": "Text Field10472",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 140,
+    "name": "Text Field10573",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 141,
+    "name": "Text Field10674",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 142,
+    "name": "Text Field10775",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 143,
+    "name": "Text Field10876",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 144,
+    "name": "Text Field10977",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 145,
+    "name": "Text Field11078",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 146,
+    "name": "Text Field11179",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 147,
+    "name": "Text Field11280",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 148,
+    "name": "Text Field11381",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 149,
+    "name": "Text Field11482",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 150,
+    "name": "Text Field11583",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 151,
+    "name": "Text Field11684",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 152,
+    "name": "Text Field11785",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 153,
+    "name": "Text Field11886",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 154,
+    "name": "Text Field11987",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 155,
+    "name": "Text Field12088",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 156,
+    "name": "Text Field12189",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 157,
+    "name": "Text Field12290",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 158,
+    "name": "Text Field12391",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 159,
+    "name": "Text Field12492",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 160,
+    "name": "Text Field12593",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 161,
+    "name": "Text Field12694",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 162,
+    "name": "Text Field12795",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 163,
+    "name": "Text Field12896",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 164,
+    "name": "Text Field12997",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 165,
+    "name": "Text Field13098",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 166,
+    "name": "Text Field13199",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 167,
+    "name": "Text Field132100",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 168,
+    "name": "Text Field133101",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 169,
+    "name": "Text Field134102",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 170,
+    "name": "Text Field135103",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 171,
+    "name": "Text Field136104",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 172,
+    "name": "Text Field137105",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 173,
+    "name": "Text Field138106",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 174,
+    "name": "Text Field139107",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 175,
+    "name": "Text Field140108",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 176,
+    "name": "Text Field141109",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 177,
+    "name": "Text Field142110",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 178,
+    "name": "Text Field143111",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 179,
+    "name": "Text Field144112",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 180,
+    "name": "Text Field145113",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 181,
+    "name": "Text Field146114",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 182,
+    "name": "Text Field147115",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 183,
+    "name": "Text Field148116",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 184,
+    "name": "Text Field149117",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 185,
+    "name": "Text Field150118",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 186,
+    "name": "Text Field151119",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 187,
+    "name": "Text Field152120",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 188,
+    "name": "Text Field153121",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 189,
+    "name": "Text Field154122",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 190,
+    "name": "Text Field155123",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 191,
+    "name": "Text Field156124",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 192,
+    "name": "Text Field157125",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 193,
+    "name": "Text Field158126",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 194,
+    "name": "Text Field159127",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 195,
+    "name": "Text Field160128",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 196,
+    "name": "Text Field161129",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 197,
+    "name": "Text Field162130",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 198,
+    "name": "Text Field163131",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 199,
+    "name": "Text Field164132",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 200,
+    "name": "Text Field165133",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 201,
+    "name": "Text Field166134",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 202,
+    "name": "Text Field167135",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 203,
+    "name": "Text Field168136",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 204,
+    "name": "Text Field169137",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 205,
+    "name": "Text Field170138",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 206,
+    "name": "Text Field171139",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 207,
+    "name": "Text Field172140",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 208,
+    "name": "Text Field173141",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 209,
+    "name": "Text Field174142",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 210,
+    "name": "Text Field175143",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 211,
+    "name": "Text Field176144",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 212,
+    "name": "Text Field177145",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 213,
+    "name": "Text Field178146",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 214,
+    "name": "Text Field179147",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 215,
+    "name": "Text Field180148",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 216,
+    "name": "Text Field181149",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 217,
+    "name": "Text Field185",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 218,
+    "name": "Text Field188",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 219,
+    "name": "Text Field193",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 220,
+    "name": "Text Field196",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 221,
+    "name": "Text Field201",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 222,
+    "name": "Text Field208",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 223,
+    "name": "Text Field209",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 224,
+    "name": "Text Field212",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 225,
+    "name": "Text Field217",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 226,
+    "name": "Text Field220",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 227,
+    "name": "Text Field225",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 228,
+    "name": "Text Field228",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 229,
+    "name": "Text Field233",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 230,
+    "name": "Text Field240",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 231,
+    "name": "Check Box1150",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 232,
+    "name": "Check Box2151",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 233,
+    "name": "Check Box3152",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 234,
+    "name": "Check Box4153",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 235,
+    "name": "Check Box5154",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 236,
+    "name": "Check Box6155",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 237,
+    "name": "Check Box7156",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 238,
+    "name": "Check Box8157",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 239,
+    "name": "Check Box9158",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 240,
+    "name": "Check Box10159",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 241,
+    "name": "Check Box11160",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 242,
+    "name": "Check Box12161",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 243,
+    "name": "Check Box13162",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 244,
+    "name": "Check Box14163",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 245,
+    "name": "Check Box15164",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 246,
+    "name": "Check Box16165",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 247,
+    "name": "Check Box17166",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 248,
+    "name": "Check Box18167",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 249,
+    "name": "Check Box19168",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 250,
+    "name": "Check Box20169",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 251,
+    "name": "Check Box21170",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 252,
+    "name": "Check Box22171",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 253,
+    "name": "Check Box23172",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 254,
+    "name": "Check Box24173",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 255,
+    "name": "Check Box25174",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 256,
+    "name": "Check Box26175",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 257,
+    "name": "Check Box27176",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 258,
+    "name": "Check Box28177",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 259,
+    "name": "Check Box29178",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 260,
+    "name": "Check Box30179",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 261,
+    "name": "Check Box31180",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 262,
+    "name": "Check Box32181",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 263,
+    "name": "Check Box33182",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 264,
+    "name": "Check Box34183",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 265,
+    "name": "Check Box35184",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 266,
+    "name": "Check Box36185",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 267,
+    "name": "Check Box37186",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 268,
+    "name": "Check Box38187",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 269,
+    "name": "Check Box39188",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 270,
+    "name": "Check Box40189",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 271,
+    "name": "Check Box41190",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 272,
+    "name": "Check Box42191",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 273,
+    "name": "Check Box43192",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 274,
+    "name": "Check Box44193",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 275,
+    "name": "Check Box45194",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 276,
+    "name": "Check Box46195",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 277,
+    "name": "Check Box47196",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 278,
+    "name": "Check Box48197",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 279,
+    "name": "Check Box49198",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 280,
+    "name": "Check Box50199",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 281,
+    "name": "Check Box51200",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 282,
+    "name": "Check Box52201",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 283,
+    "name": "Check Box53202",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 284,
+    "name": "Check Box54203",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 285,
+    "name": "Check Box55204",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 286,
+    "name": "Check Box56205",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 287,
+    "name": "Check Box57206",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 288,
+    "name": "Check Box58207",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 289,
+    "name": "Check Box59208",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 290,
+    "name": "Check Box60209",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 291,
+    "name": "Check Box61210",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 292,
+    "name": "Check Box62211",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 293,
+    "name": "Check Box63212",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 294,
+    "name": "Check Box64213",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 295,
+    "name": "Check Box65214",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 296,
+    "name": "Check Box66215",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 297,
+    "name": "Check Box67216",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 298,
+    "name": "Check Box68217",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 299,
+    "name": "Check Box69218",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 300,
+    "name": "Check Box70219",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 301,
+    "name": "Check Box71220",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 302,
+    "name": "Check Box90221",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 303,
+    "name": "Check Box94222",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 304,
+    "name": "Check Box95223",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 305,
+    "name": "Check Box96224",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 306,
+    "name": "Check Box97225",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 307,
+    "name": "Check Box98226",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 308,
+    "name": "Check Box99227",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 309,
+    "name": "Check Box100228",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 310,
+    "name": "Check Box101229",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 311,
+    "name": "Check Box102230",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 312,
+    "name": "Check Box103231",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 313,
+    "name": "Check Box104232",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 314,
+    "name": "Check Box105233",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 315,
+    "name": "Check Box106234",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 316,
+    "name": "Check Box107235",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 317,
+    "name": "Check Box108236",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 318,
+    "name": "Check Box109237",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 319,
+    "name": "Check Box110238",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 320,
+    "name": "Check Box111239",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 321,
+    "name": "Check Box112240",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 322,
+    "name": "Check Box113241",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 323,
+    "name": "Check Box114242",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 324,
+    "name": "Check Box115243",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 325,
+    "name": "Check Box116244",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 326,
+    "name": "Check Box117245",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 327,
+    "name": "Check Box118246",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 328,
+    "name": "Check Box119247",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 329,
+    "name": "Check Box120248",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 330,
+    "name": "Check Box121249",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 331,
+    "name": "Check Box122250",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 332,
+    "name": "Check Box123251",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 333,
+    "name": "Check Box124252",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 334,
+    "name": "Check Box125253",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 335,
+    "name": "Check Box126254",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 336,
+    "name": "Check Box127255",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 337,
+    "name": "Check Box128256",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 338,
+    "name": "Check Box129257",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 339,
+    "name": "Check Box130258",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 340,
+    "name": "Check Box131259",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 341,
+    "name": "Check Box132260",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 342,
+    "name": "Check Box133261",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 343,
+    "name": "Check Box134262",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 344,
+    "name": "Check Box135263",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 345,
+    "name": "Check Box136264",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 346,
+    "name": "Check Box137265",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 347,
+    "name": "Check Box138266",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 348,
+    "name": "Check Box139267",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 349,
+    "name": "Check Box140268",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 350,
+    "name": "Check Box141269",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 351,
+    "name": "Check Box142270",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 352,
+    "name": "Check Box143271",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 353,
+    "name": "Check Box144272",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 354,
+    "name": "Check Box145273",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 355,
+    "name": "Check Box146274",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 356,
+    "name": "Check Box147275",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 357,
+    "name": "Check Box148276",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 358,
+    "name": "Check Box149277",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 359,
+    "name": "Check Box150278",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 360,
+    "name": "Check Box151279",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 361,
+    "name": "Check Box152280",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 362,
+    "name": "Check Box153281",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 363,
+    "name": "Check Box154282",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 364,
+    "name": "Check Box155283",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 365,
+    "name": "Check Box156284",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 366,
+    "name": "Check Box157285",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 367,
+    "name": "Check Box158286",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 368,
+    "name": "Check Box159287",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 369,
+    "name": "Check Box160288",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 370,
+    "name": "Check Box161289",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 371,
+    "name": "Check Box162290",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 372,
+    "name": "Check Box163291",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 373,
+    "name": "Check Box164292",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 374,
+    "name": "Check Box165293",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 375,
+    "name": "Check Box166294",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 376,
+    "name": "Check Box167295",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 377,
+    "name": "Check Box168296",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 378,
+    "name": "Check Box169297",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 379,
+    "name": "Check Box170298",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 380,
+    "name": "Check Box171299",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 381,
+    "name": "Text Field117",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 382,
+    "name": "Text Field108",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 383,
+    "name": "Text Field116",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 384,
+    "name": "Text Field118",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 385,
+    "name": "Text Field119",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 386,
+    "name": "SRT MOD1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 387,
+    "name": "STR SORE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 388,
+    "name": "INT MOD1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 389,
+    "name": "INTR SCORE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 390,
+    "name": "WIS MOD1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 391,
+    "name": "WIS SCORE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 392,
+    "name": "DEX MOD1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 393,
+    "name": "DEX SCORE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 394,
+    "name": "CON MOD1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 395,
+    "name": "CON SCORE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 396,
+    "name": "CHA MOD1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 397,
+    "name": "CHA SCORE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 398,
+    "name": "Text Field126",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 399,
+    "name": "Text Field127",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 400,
+    "name": "Text Field128",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 401,
+    "name": "Text Field129",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 402,
+    "name": "Text Field130",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 403,
+    "name": "Text Field131",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 404,
+    "name": "Text Field132",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 405,
+    "name": "Text Field133",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 406,
+    "name": "Text Field134",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 407,
+    "name": "Text Field135",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 408,
+    "name": "Text Field136",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 409,
+    "name": "Text Field137",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 410,
+    "name": "Text Field138",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 411,
+    "name": "Text Field139",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 412,
+    "name": "Text Field140",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 413,
+    "name": "Text Field141",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 414,
+    "name": "Text Field151",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 415,
+    "name": "Text Field152",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 416,
+    "name": "WIS MOD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 417,
+    "name": "Conditions and Effects",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 418,
+    "name": "Size",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 419,
+    "name": "Darkvision",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 420,
+    "name": "Image Field0",
+    "type": "PDFButton",
+    "page": -1
+  },
+  {
+    "index": 421,
+    "name": "Text Field106",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 422,
+    "name": "Text Field107",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 423,
+    "name": "Text Field114",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 424,
+    "name": "Text Field1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 425,
+    "name": "Text Field6",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 426,
+    "name": "Text Field2",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 427,
+    "name": "Text Field3",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 428,
+    "name": "Text Field4",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 429,
+    "name": "Text Field5",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 430,
+    "name": "Text Field239",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 431,
+    "name": "Text Field9",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 432,
+    "name": "Text Field10",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 433,
+    "name": "Text Field12",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 434,
+    "name": "Text Field13",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 435,
+    "name": "Text Field14",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 436,
+    "name": "Text Field15",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 437,
+    "name": "Text Field17",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 438,
+    "name": "Text Field18",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 439,
+    "name": "Text Field20",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 440,
+    "name": "Text Field21",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 441,
+    "name": "Text Field22",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 442,
+    "name": "Text Field23",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 443,
+    "name": "Text Field25",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 444,
+    "name": "Text Field26",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 445,
+    "name": "Text Field28",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 446,
+    "name": "Text Field29",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 447,
+    "name": "Text Field30",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 448,
+    "name": "Text Field31",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 449,
+    "name": "Text Field33",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 450,
+    "name": "Text Field34",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 451,
+    "name": "Text Field36",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 452,
+    "name": "Text Field37",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 453,
+    "name": "Text Field62",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 454,
+    "name": "Text Field63",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 455,
+    "name": "Text Field64",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 456,
+    "name": "Text Field66",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 457,
+    "name": "Text Field67",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 458,
+    "name": "Text Field69",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 459,
+    "name": "Text Field70",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 460,
+    "name": "Text Field71",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 461,
+    "name": "Text Field72",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 462,
+    "name": "Text Field74",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 463,
+    "name": "Text Field75",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 464,
+    "name": "Text Field76",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 465,
+    "name": "Text Field77",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 466,
+    "name": "Text Field78",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 467,
+    "name": "Text Field79",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 468,
+    "name": "Text Field81",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 469,
+    "name": "Text Field182",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 470,
+    "name": "Text Field183",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 471,
+    "name": "Text Field184",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 472,
+    "name": "Text Field186",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 473,
+    "name": "Text Field187",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 474,
+    "name": "Text Field189",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 475,
+    "name": "Text Field190",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 476,
+    "name": "Text Field191",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 477,
+    "name": "Text Field192",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 478,
+    "name": "Text Field194",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 479,
+    "name": "Text Field195",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 480,
+    "name": "Text Field197",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 481,
+    "name": "Text Field198",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 482,
+    "name": "Text Field199",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 483,
+    "name": "Text Field200",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 484,
+    "name": "Text Field202",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 485,
+    "name": "Text Field203",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 486,
+    "name": "Text Field204",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 487,
+    "name": "Text Field205",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 488,
+    "name": "Text Field206",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 489,
+    "name": "Text Field207",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 490,
+    "name": "Text Field210",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 491,
+    "name": "Text Field211",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 492,
+    "name": "Text Field213",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 493,
+    "name": "Text Field214",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 494,
+    "name": "Text Field215",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 495,
+    "name": "Text Field216",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 496,
+    "name": "Text Field218",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 497,
+    "name": "Text Field219",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 498,
+    "name": "Text Field221",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 499,
+    "name": "Text Field222",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 500,
+    "name": "Text Field223",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 501,
+    "name": "Text Field224",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 502,
+    "name": "Text Field226",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 503,
+    "name": "Text Field227",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 504,
+    "name": "Text Field229",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 505,
+    "name": "Text Field230",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 506,
+    "name": "Text Field231",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 507,
+    "name": "Text Field232",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 508,
+    "name": "Text Field234",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 509,
+    "name": "Text Field235",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 510,
+    "name": "Text Field236",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 511,
+    "name": "Text Field237",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 512,
+    "name": "Text Field238",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 513,
+    "name": "Text Field142",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 514,
+    "name": "Text Field150",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 515,
+    "name": "Text Field143",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 516,
+    "name": "Text Field144",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 517,
+    "name": "Text Field145",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 518,
+    "name": "Text Field146",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 519,
+    "name": "Text Field147",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 520,
+    "name": "Text Field148",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 521,
+    "name": "Text Field149",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 522,
+    "name": "CB-Shield",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 523,
+    "name": "CB-death1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 524,
+    "name": "CB-death2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 525,
+    "name": "CB-death3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 526,
+    "name": "CB-death4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 527,
+    "name": "CB-death5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 528,
+    "name": "CB-death6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 529,
+    "name": "CB-Insp",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 530,
+    "name": "CB-ARMORL",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 531,
+    "name": "CB-ARMORM",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 532,
+    "name": "CB-ARMORH",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 533,
+    "name": "CB-ARMORS",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 534,
+    "name": "CB-WEAPONSIMPLE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 535,
+    "name": "CB-WEAPONMARTIAL",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 536,
+    "name": "CB-WEAPONIMPROVISED",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 537,
+    "name": "CB-ATTUNE6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 538,
+    "name": "CB-ATTUNE7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 539,
+    "name": "CB-ATTUNE8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 540,
+    "name": "CB-ATTUNE9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 541,
+    "name": "CB-ATTUNE10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 542,
+    "name": "WEAPON NAME 1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 543,
+    "name": "WEAPON NAME 2",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 544,
+    "name": "WEAPON NAME 3",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 545,
+    "name": "WEAPON NAME 4",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 546,
+    "name": "WEAPON NAME 5",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 547,
+    "name": "WEAPON NAME 6",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 548,
+    "name": "Armor Worn2",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 549,
+    "name": "COIN1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 550,
+    "name": "COIN2",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 551,
+    "name": "COIN3",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 552,
+    "name": "COIN4",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 553,
+    "name": "COIN5",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 554,
+    "name": "WEALTH1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 555,
+    "name": "MAGIC ITEM6",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 556,
+    "name": "MAGIC ITEM7",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 557,
+    "name": "MAGIC ITEM8",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 558,
+    "name": "MAGIC ITEM9",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 559,
+    "name": "MAGIC ITEM10",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 560,
+    "name": "CB-death11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 561,
+    "name": "CB-death10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 562,
+    "name": "CB-death9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 563,
+    "name": "CB-death8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 564,
+    "name": "CB-death12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 565,
+    "name": "CB-death7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 566,
+    "name": "CB-INSP2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 567,
+    "name": "PUSH/PULL/DRAG",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 568,
+    "name": "CARRY CAP",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 569,
+    "name": "INT SAVE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 570,
+    "name": "STR SAVE1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 571,
+    "name": "Text Field100",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 572,
+    "name": "Text Field98",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 573,
+    "name": "CB-ARMORS2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 574,
+    "name": "CB-WEPMARTIAL",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 575,
+    "name": "CB-WEPSIMPLE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 576,
+    "name": "CB-ARMORH2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 577,
+    "name": "CB-ARMORM2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 578,
+    "name": "CB-WEPIMP",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 579,
+    "name": "CB-ARMORL2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 580,
+    "name": "CB-SHIELD2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 581,
+    "name": "CB-STRSAVE2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 582,
+    "name": "CB-CONSAVE2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 583,
+    "name": "CB-SKILLEXP18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 584,
+    "name": "CB-SKILLPROF18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 585,
+    "name": "CB-SKILLEXP17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 586,
+    "name": "CB-SKILLPROF17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 587,
+    "name": "CB-SKILLEXP16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 588,
+    "name": "CB-SKILLPROF16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 589,
+    "name": "CB-SKILLPROF11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 590,
+    "name": "CB-SKILLEXP10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 591,
+    "name": "CB-WISSAVE2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 592,
+    "name": "CB-CHASAVE2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 593,
+    "name": "CB-DEXSAVE2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 594,
+    "name": "CB-SKILLEXP4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 595,
+    "name": "CB-SKILLEXP3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 596,
+    "name": "CB-SKILLPROF3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 597,
+    "name": "CB-SKILLEXP2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 598,
+    "name": "CB-SKILLPROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 599,
+    "name": "CB-SKILLEXP1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 600,
+    "name": "CB-SKILLPROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 601,
+    "name": "CB-SKILLEXP15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 602,
+    "name": "CB-SKILLPROF15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 603,
+    "name": "CB-SKILLEXP14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 604,
+    "name": "CB-SKILLPROF14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 605,
+    "name": "CB-SKILLEXP13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 606,
+    "name": "CB-SKILLPROF13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 607,
+    "name": "CB-SKILLEXP12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 608,
+    "name": "CB-SKILLEXP11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 609,
+    "name": "CB-SKILLPROF12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 610,
+    "name": "CB-SKILLEXP9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 611,
+    "name": "CB-SKILLPROF9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 612,
+    "name": "CB-SKILLEXP8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 613,
+    "name": "CB-SKILLPROF8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 614,
+    "name": "CB-SKILLEXP7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 615,
+    "name": "CB-SKILLPROF7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 616,
+    "name": "CB-SKILLEXP6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 617,
+    "name": "CB-SKILLPROF6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 618,
+    "name": "CB-SKILLEXP5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 619,
+    "name": "CB-SKILLPROF5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 620,
+    "name": "CB-SKILLPROF4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 621,
+    "name": "CB-INTSAVE2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 622,
+    "name": "EXHAUSTION0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 623,
+    "name": "LANGUAGES0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 624,
+    "name": "TOOLS0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 625,
+    "name": "FEATS0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 626,
+    "name": "TRAITS0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 627,
+    "name": "CLASS FEATURES 3",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 628,
+    "name": "CLASS FEATURES 0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 629,
+    "name": "Text Field105",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 630,
+    "name": "Text Field104",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 631,
+    "name": "Text Field103",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 632,
+    "name": "Text Field102",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 633,
+    "name": "Text Field101",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 634,
+    "name": "Text Field99",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 635,
+    "name": "Text Field97",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 636,
+    "name": "Text Field96",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 637,
+    "name": "Text Field95",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 638,
+    "name": "Text Field94",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 639,
+    "name": "Text Field93",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 640,
+    "name": "Text Field92",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 641,
+    "name": "Text Field91",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 642,
+    "name": "Text Field90",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 643,
+    "name": "Text Field89",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 644,
+    "name": "Text Field88",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 645,
+    "name": "Text Field87",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 646,
+    "name": "Text Field86",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 647,
+    "name": "Text Field85",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 648,
+    "name": "Text Field84",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 649,
+    "name": "Text Field83",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 650,
+    "name": "Text Field82",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 651,
+    "name": "SPEED0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 652,
+    "name": "PERSUASION0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 653,
+    "name": "PERFORMANCE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 654,
+    "name": "INTIMIDATION0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 655,
+    "name": "DECEPTION0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 656,
+    "name": "CHA SAVE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 657,
+    "name": "CHA SCORE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 658,
+    "name": "CHA MOD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 659,
+    "name": "SURVIVAL0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 660,
+    "name": "PERCEPTION0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 661,
+    "name": "MEDICINE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 662,
+    "name": "INSIGHT0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 663,
+    "name": "ANIMAL HANDLING0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 664,
+    "name": "WIS SAVE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 665,
+    "name": "WIS SCORE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 666,
+    "name": "WIS MOD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 667,
+    "name": "RELIGION0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 668,
+    "name": "NATURE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 669,
+    "name": "INVESTIGATION0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 670,
+    "name": "HISTORY0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 671,
+    "name": "ARCANA0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 672,
+    "name": "INTR SCORE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 673,
+    "name": "INT MOD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 674,
+    "name": "CON SAVE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 675,
+    "name": "CON SCORE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 676,
+    "name": "CON MOD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 677,
+    "name": "STEALTH0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 678,
+    "name": "SLEIGHT OF HAND0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 679,
+    "name": "ACROBATICS0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 680,
+    "name": "INIT0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 681,
+    "name": "DEX SAVE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 682,
+    "name": "DEX SCORE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 683,
+    "name": "DEX MOD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 684,
+    "name": "ATHLETICS0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 685,
+    "name": "STR SORE0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 686,
+    "name": "SRT MOD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 687,
+    "name": "Prof Bonus0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 688,
+    "name": "MAX HD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 689,
+    "name": "Spent HD0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 690,
+    "name": "Max HP0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 691,
+    "name": "Temp HP0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 692,
+    "name": "Current HP0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 693,
+    "name": "AC0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 694,
+    "name": "Experience Points0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 695,
+    "name": "Level0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 696,
+    "name": "Subclass0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 697,
+    "name": "Species0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 698,
+    "name": "Class0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 699,
+    "name": "Background0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 700,
+    "name": "Name0",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 701,
+    "name": "COIN9",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 702,
+    "name": "COIN10",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 703,
+    "name": "COIN8",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 704,
+    "name": "COIN7",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 705,
+    "name": "WEALTH",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 706,
+    "name": "COIN6",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 707,
+    "name": "CB-ATTUNE3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 708,
+    "name": "CB-ATTUNE1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 709,
+    "name": "CB-ATTUNE4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 710,
+    "name": "CB-ATTUNE2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 711,
+    "name": "CB-ATTUNE5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 712,
+    "name": "CB-SPELLV20",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 713,
+    "name": "CB-SPELLS20",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 714,
+    "name": "CB-SPELLR20",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 715,
+    "name": "CB-SPELLM20",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 716,
+    "name": "CB-SPELLC20",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 717,
+    "name": "CB-SPELLV19",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 718,
+    "name": "CB-SPELLS19",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 719,
+    "name": "CB-SPELLR19",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 720,
+    "name": "CB-SPELLM19",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 721,
+    "name": "CB-SPELLC19",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 722,
+    "name": "CB-SPELLV18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 723,
+    "name": "CB-SPELLS18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 724,
+    "name": "CB-SPELLR18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 725,
+    "name": "CB-SPELLM18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 726,
+    "name": "CB-SPELLC18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 727,
+    "name": "CB-SPELLV17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 728,
+    "name": "CB-SPELLS17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 729,
+    "name": "CB-SPELLR17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 730,
+    "name": "CB-SPELLM17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 731,
+    "name": "CB-SPELLC17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 732,
+    "name": "CB-SPELLV16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 733,
+    "name": "CB-SPELLS16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 734,
+    "name": "CB-SPELLR16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 735,
+    "name": "CB-SPELLM16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 736,
+    "name": "CB-SPELLC16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 737,
+    "name": "CB-SPELLV15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 738,
+    "name": "CB-SPELLS15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 739,
+    "name": "CB-SPELLR15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 740,
+    "name": "CB-SPELLM15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 741,
+    "name": "CB-SPELLC15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 742,
+    "name": "CB-SPELL14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 743,
+    "name": "CB-SPELLS14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 744,
+    "name": "CB-SPELLR14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 745,
+    "name": "CB-SPELLM14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 746,
+    "name": "CB-SPELLC14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 747,
+    "name": "CB-SPELLV13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 748,
+    "name": "CB-SPELLS13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 749,
+    "name": "CB-SPELLR13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 750,
+    "name": "CB-SPELLM13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 751,
+    "name": "CB-SPELLC13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 752,
+    "name": "CB-SPELLV12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 753,
+    "name": "CB-SPELLS12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 754,
+    "name": "CB-SPELLR12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 755,
+    "name": "CB-SPELLM12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 756,
+    "name": "CB-SPELLC12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 757,
+    "name": "CB-SPELLV11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 758,
+    "name": "CB-SPELLS11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 759,
+    "name": "CB-SPELLR11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 760,
+    "name": "CB-SPELLM11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 761,
+    "name": "CB-SPELLC11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 762,
+    "name": "CB-SPELLV10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 763,
+    "name": "CB-SPELLS10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 764,
+    "name": "CB-SPELLR10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 765,
+    "name": "CB-SPELLM10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 766,
+    "name": "CB-SPELLC10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 767,
+    "name": "CB-SPELLV9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 768,
+    "name": "CB-SPELLS9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 769,
+    "name": "CB-SPELLR9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 770,
+    "name": "CB-SPELLM9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 771,
+    "name": "CB-SPELLC9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 772,
+    "name": "CB-SPELLV8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 773,
+    "name": "CB-SPELLS8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 774,
+    "name": "CB-SPELLR8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 775,
+    "name": "CB-SPELLM8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 776,
+    "name": "CB-SPELLC8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 777,
+    "name": "CB-SPELLV7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 778,
+    "name": "CB-SPELLS7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 779,
+    "name": "CB-SPELLR7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 780,
+    "name": "CB-SPELLM7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 781,
+    "name": "CB-SPELLC7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 782,
+    "name": "CB-SPELLV6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 783,
+    "name": "CB-SPELLS6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 784,
+    "name": "CB-SPELLR6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 785,
+    "name": "CB-SPELLM6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 786,
+    "name": "CB-SPELLC6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 787,
+    "name": "CB-SPELLV5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 788,
+    "name": "CB-SPELLS5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 789,
+    "name": "CB-SPELLR5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 790,
+    "name": "CB-SPELLM5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 791,
+    "name": "CB-SPELLC5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 792,
+    "name": "CB-SPELLV4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 793,
+    "name": "CB-SPELLS4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 794,
+    "name": "CB-SPELLR4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 795,
+    "name": "CB-SPELLM4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 796,
+    "name": "CB-SPELLC4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 797,
+    "name": "CB-SPELLV3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 798,
+    "name": "CB-SPELLS3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 799,
+    "name": "CB-SPELLR3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 800,
+    "name": "CB-SPELLM3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 801,
+    "name": "CB-SPELLC3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 802,
+    "name": "CB-SPELLV2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 803,
+    "name": "CB-SPELLS2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 804,
+    "name": "CB-SPELLR2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 805,
+    "name": "CB-SPELLM2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 806,
+    "name": "CB-SPELLC2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 807,
+    "name": "CB-SPELLM1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 808,
+    "name": "CB-SPELLV1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 809,
+    "name": "CB-SPELLS1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 810,
+    "name": "CB-SPELLR1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 811,
+    "name": "CB-SPELLC1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 812,
+    "name": "CB-SS20",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 813,
+    "name": "CB-SS21",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 814,
+    "name": "CB-SS19",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 815,
+    "name": "CB-SS17",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 816,
+    "name": "CB-SS18",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 817,
+    "name": "CB-SS14",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 818,
+    "name": "CB-SS15",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 819,
+    "name": "CB-SS16",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 820,
+    "name": "CB-SS11",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 821,
+    "name": "CB-SS12",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 822,
+    "name": "CB-SS13",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 823,
+    "name": "CB-SS9",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 824,
+    "name": "CB-SS10",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 825,
+    "name": "CB-SS7",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 826,
+    "name": "CB-SS6",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 827,
+    "name": "CB-SS4",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 828,
+    "name": "CB-SS3",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 829,
+    "name": "CB-SS2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 830,
+    "name": "CB-SS5",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 831,
+    "name": "CB-SS8",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 832,
+    "name": "CB-SS22",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 833,
+    "name": "CB-SS1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 834,
+    "name": "MAGIC ITEM3",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 835,
+    "name": "MAGIC ITEM4",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 836,
+    "name": "MAGIC ITEM2",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 837,
+    "name": "MAGIC ITEM5",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 838,
+    "name": "MAGIC ITEM1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 839,
+    "name": "EQUIPMENT1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 840,
+    "name": "WEAPONS1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 841,
+    "name": "Armor Worn1",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 842,
+    "name": "Image Field",
+    "type": "PDFButton",
+    "page": -1
+  },
+  {
+    "index": 843,
+    "name": "Alineamiento",
+    "type": "PDFDropdown",
+    "page": -1
+  },
+  {
+    "index": 844,
+    "name": "Species",
+    "type": "PDFDropdown",
+    "page": -1
+  },
+  {
+    "index": 845,
+    "name": "Clase",
+    "type": "PDFDropdown",
+    "page": -1
+  },
+  {
+    "index": 846,
+    "name": "Subclase",
+    "type": "PDFDropdown",
+    "page": -1
+  },
+  {
+    "index": 847,
+    "name": "Background",
+    "type": "PDFDropdown",
+    "page": -1
+  },
+  {
+    "index": 848,
+    "name": "INT SCORE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 849,
+    "name": "STR SCORE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 850,
+    "name": "CON_SAVE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 851,
+    "name": "CHA_SAVE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 852,
+    "name": "DEX_SAVE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 853,
+    "name": "WIS_SAVE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 854,
+    "name": "STR_SAVE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 855,
+    "name": "INT_SAVE",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 856,
+    "name": "INIT_PROF",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 857,
+    "name": "WIS SAVE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 858,
+    "name": "INT SAVE",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 859,
+    "name": "STR MOD",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 860,
+    "name": "ARC_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 861,
+    "name": "ARC_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 862,
+    "name": "ARC_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 863,
+    "name": "HIS_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 864,
+    "name": "HIS_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 865,
+    "name": "HIS_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 866,
+    "name": "ATH_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 867,
+    "name": "ATH_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 868,
+    "name": "ATH_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 869,
+    "name": "INV_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 870,
+    "name": "NAT_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 871,
+    "name": "REL_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 872,
+    "name": "INV_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 873,
+    "name": "INV_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 874,
+    "name": "NAT_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 875,
+    "name": "NAT_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 876,
+    "name": "REL_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 877,
+    "name": "REL_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 878,
+    "name": "ANI_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 879,
+    "name": "INS_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 880,
+    "name": "MED_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 881,
+    "name": "PER_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 882,
+    "name": "SUR_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 883,
+    "name": "ANI_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 884,
+    "name": "ANI_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 885,
+    "name": "INS_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 886,
+    "name": "INS_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 887,
+    "name": "MED_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 888,
+    "name": "MED_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 889,
+    "name": "PER_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 890,
+    "name": "PER_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 891,
+    "name": "SUR_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 892,
+    "name": "SUR_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 893,
+    "name": "DEC_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 894,
+    "name": "INTI_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 895,
+    "name": "PERF_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 896,
+    "name": "PERSU_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 897,
+    "name": "DEC_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 898,
+    "name": "DEC_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 899,
+    "name": "INTI_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 900,
+    "name": "INTI_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 901,
+    "name": "PERF_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 902,
+    "name": "PERF_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 903,
+    "name": "PERSU_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 904,
+    "name": "PERSU_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 905,
+    "name": "STE_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 906,
+    "name": "SLE_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  },
+  {
+    "index": 907,
+    "name": "ACR_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 908,
+    "name": "ACR_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 909,
+    "name": "SLE_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 910,
+    "name": "SLE_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 911,
+    "name": "STE_PROF1",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 912,
+    "name": "STE_PROF2",
+    "type": "PDFCheckBox",
+    "page": -1
+  },
+  {
+    "index": 913,
+    "name": "ACR_BONUS",
+    "type": "PDFTextField",
+    "page": -1
+  }
+]
