@@ -39,16 +39,33 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Protección de Rutas: Si no hay usuario y trata de entrar a /perfil o /mis-personajes
-  if (
-    !user &&
-    (request.nextUrl.pathname.startsWith('/perfil') || 
-     request.nextUrl.pathname.startsWith('/mis-personajes'))
-  ) {
+  const pathname = request.nextUrl.pathname;
+
+  // Rutas protegidas que requieren autenticación
+  const protectedRoutes = ['/perfil', '/mis-personajes', '/personaje'];
+  const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route));
+
+  // Protección de Rutas: Si no hay usuario y trata de entrar a rutas protegidas
+  if (!user && isProtectedRoute) {
+    // Log de intento de acceso no autorizado
+    if (process.env.NODE_ENV === 'production') {
+      const ip = request.headers.get('x-forwarded-for') || 'unknown';
+      console.log(JSON.stringify({
+        timestamp: new Date().toISOString(),
+        event: 'UNAUTHORIZED_ACCESS',
+        ip,
+        path: pathname,
+        severity: 'medium',
+      }));
+    }
+
     const url = request.nextUrl.clone()
     url.pathname = '/login'
+    // Preservar la URL original para redirección después del login
+    url.searchParams.set('redirect', pathname)
     return NextResponse.redirect(url)
   }
 
   return supabaseResponse
 }
+
