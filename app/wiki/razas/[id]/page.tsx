@@ -50,11 +50,11 @@ export default async function RazaDetailPage({ params }: PageProps) {
         {/* Left: Content */}
         <div className="lg:col-span-8 space-y-12">
           <div className="space-y-6">
-            <h1 className="font-heading text-6xl lg:text-8xl font-black uppercase tracking-tighter text-black leading-none">
+            <h1 className="font-heading text-6xl lg:text-8xl font-black uppercase tracking-tighter text-foreground leading-none">
               {raza.name}
             </h1>
             <div className="h-2 w-32 bg-[#EE8600]" />
-            <p className="text-xl text-black font-sans font-bold leading-relaxed italic border-l-8 border-black pl-6 py-2">
+            <p className="text-xl text-foreground font-sans font-bold leading-relaxed italic border-l-8 border-foreground pl-6 py-2">
               «{raza.description}»
             </p>
           </div>
@@ -62,19 +62,19 @@ export default async function RazaDetailPage({ params }: PageProps) {
           {/* Traits Section - Brutalist Table style */}
           <section className="space-y-8 pt-6">
             <div className="flex items-center gap-4">
-               <h2 className="font-heading text-4xl font-black uppercase tracking-tighter text-black">
+               <h2 className="font-heading text-4xl font-black uppercase tracking-tighter text-foreground">
                  Rasgos de {raza.name}
                </h2>
-               <div className="h-1 flex-1 bg-black" />
+               <div className="h-1 flex-1 bg-foreground" />
             </div>
 
             <div className="space-y-6">
               {raza.traits.map((trait) => (
-                <div key={trait.name} className="border-l-4 border-black hover:border-[#EE8600] pl-8 py-4 transition-colors group bg-white hover:bg-black/5">
-                  <h3 className="font-heading font-black text-2xl text-black group-hover:text-[#EE8600] uppercase tracking-tighter mb-2 transition-colors">
+                <div key={trait.name} className="border-l-4 border-foreground hover:border-[#EE8600] pl-8 py-4 transition-colors group bg-card hover:bg-foreground/5">
+                  <h3 className="font-heading font-black text-2xl text-foreground group-hover:text-[#EE8600] uppercase tracking-tighter mb-2 transition-colors">
                     {trait.name}
                   </h3>
-                  <p className="text-black/70 leading-relaxed font-sans font-medium">
+                  <p className="text-foreground/70 leading-relaxed font-sans font-medium">
                     {trait.description}
                   </p>
                 </div>
@@ -90,14 +90,14 @@ export default async function RazaDetailPage({ params }: PageProps) {
               { title: "Tamaño", content: raza.sizeDescription, icon: Target },
               { title: "Idiomas", content: raza.languages.join(", "), icon: Book },
             ].map((item) => (
-              <div key={item.title} className="p-8 border-2 border-black bg-white rounded-none space-y-4 shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(36,37,40,1)] transition-shadow">
+              <div key={item.title} className="p-8 border-2 border-border bg-card rounded-none space-y-4 shadow-sm hover:shadow-[4px_4px_0px_0px_rgba(36,37,40,1)] transition-shadow">
                 <div className="flex items-center gap-3 text-[#EE8600]">
                   <div className="p-2 bg-black text-white">
                     <item.icon className="h-4 w-4" />
                   </div>
-                  <h4 className="font-heading font-black uppercase tracking-[0.1em] text-black text-sm">{item.title}</h4>
+                  <h4 className="font-heading font-black uppercase tracking-[0.1em] text-foreground text-sm">{item.title}</h4>
                 </div>
-                <p className="text-sm text-black/70 leading-relaxed font-sans font-bold">
+                <p className="text-sm text-foreground/70 leading-relaxed font-sans font-bold">
                   {item.content}
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default async function RazaDetailPage({ params }: PageProps) {
         {/* Right: Sidebar / Stats */}
         <div className="lg:col-span-4 space-y-8 sticky top-8 animate-in fade-in slide-in-from-right-8 duration-700">
           {/* Main Visual */}
-          <div className="relative aspect-[3/4] w-full bg-[#f9f9f9] border-2 border-black overflow-hidden group">
+          <div className="relative aspect-[3/4] w-full bg-[#f9f9f9] border-2 border-border overflow-hidden group">
             <Image
               src={raza.image}
               alt={raza.name}
@@ -116,11 +116,11 @@ export default async function RazaDetailPage({ params }: PageProps) {
               priority={true}
               className="object-contain object-top pt-8 transition-transform duration-1000 group-hover:scale-105"
             />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/40 to-transparent" />
           </div>
 
           {/* Stats Box */}
-          <div className="border-2 border-black bg-white overflow-hidden shadow-[4px_4px_0px_0px_rgba(36,37,40,1)]">
+          <div className="border-2 border-border bg-card overflow-hidden shadow-[4px_4px_0px_0px_rgba(36,37,40,1)]">
             <div className="bg-black p-5">
               <h3 className="text-white font-heading font-black uppercase tracking-[0.25em] text-center text-[10px]">
                 BONOS DE ATRIBUTO
@@ -128,9 +128,9 @@ export default async function RazaDetailPage({ params }: PageProps) {
             </div>
             <div className="p-8 space-y-4">
               {Object.entries(raza.abilityBonuses).map(([ability, bonus]) => (
-                <div key={ability} className="flex items-center justify-between border-b border-black/10 pb-4 last:border-none last:pb-0 group">
-                  <span className="uppercase font-black text-[10px] tracking-[0.2em] text-black/40 group-hover:text-[#EE8600] transition-colors">{ability}</span>
-                  <span className="text-3xl font-heading font-black text-black">+{bonus}</span>
+                <div key={ability} className="flex items-center justify-between border-b border-foreground/10 pb-4 last:border-none last:pb-0 group">
+                  <span className="uppercase font-black text-[10px] tracking-[0.2em] text-foreground/40 group-hover:text-[#EE8600] transition-colors">{ability}</span>
+                  <span className="text-3xl font-heading font-black text-foreground">+{bonus}</span>
                 </div>
               ))}
             </div>

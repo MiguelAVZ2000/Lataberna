@@ -20,7 +20,7 @@ export function OrdersView({ sales }: { sales: any[] }) {
         <div className="flex justify-between items-end border-b-2 border-black pb-4">
             <h2 className="text-3xl font-heading font-black uppercase tracking-tight">Historial de Compras</h2>
             <Link href="/tienda">
-                <Button variant="outline" className="border-2 border-black rounded-none font-black uppercase tracking-widest text-[10px] h-12 px-6 hover:bg-black hover:text-[#EE8600] transition-all">
+                <Button variant="outline" className="border-2 border-black rounded font-black uppercase tracking-widest text-[10px] h-12 px-6 hover:bg-black hover:text-[#EE8600] transition-all">
                     <ShoppingBag className="mr-2 h-4 w-4" /> Ir a la Tienda
                 </Button>
             </Link>
@@ -35,11 +35,11 @@ export function OrdersView({ sales }: { sales: any[] }) {
         ) : (
             <div className="grid grid-cols-1 gap-8">
                 {sales.map((sale) => (
-                    <Card key={sale.id} className="border-2 border-black rounded-none shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+                    <Card key={sale.id} className="border-2 border-black rounded shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
                         <CardHeader className="bg-[#F9F9F9] border-b-2 border-black p-6">
                             <div className="flex justify-between items-center">
                                 <div className="flex items-center gap-4">
-                                    <div className="h-12 w-12 rounded-none bg-black flex items-center justify-center text-[#EE8600]">
+                                    <div className="h-12 w-12 rounded bg-black flex items-center justify-center text-[#EE8600]">
                                         <ShoppingBag className="h-6 w-6" />
                                     </div>
                                     <div>
@@ -52,7 +52,7 @@ export function OrdersView({ sales }: { sales: any[] }) {
                                 </div>
                                 <div className="text-right">
                                     <div className="font-black text-2xl text-[#EE8600] tabular-nums">{formatPrice(sale.total)}</div>
-                                    <Badge className={`rounded-none font-black uppercase tracking-widest text-[9px] ${
+                                    <Badge className={`rounded font-black uppercase tracking-widest text-[9px] ${
                                         sale.estado === 'completado' ? 'bg-green-500 text-white' : 'bg-[#EE8600] text-white'
                                     }`}>
                                         {sale.estado.toUpperCase()}
@@ -75,7 +75,7 @@ export function OrdersView({ sales }: { sales: any[] }) {
                             </div>
 
                             {sale.direccion_envio && (
-                                <div className="p-4 bg-gray-50 border-2 border-black rounded-none space-y-2 mt-4">
+                                <div className="p-4 bg-gray-50 border-2 border-black rounded space-y-2 mt-4">
                                     <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#EE8600]">
                                         <Truck className="h-3 w-3" /> Información de Envío
                                     </div>

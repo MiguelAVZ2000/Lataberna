@@ -2,6 +2,7 @@
 
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Scroll, Swords, Sparkles, Shield, BookOpen, Map, Backpack, ScrollText } from "lucide-react"
 
 interface WizardStepsProps {
   steps: { id: number; title: string }[]
@@ -9,62 +10,74 @@ interface WizardStepsProps {
   onStepClick?: (step: number) => void
 }
 
+// Iconos temáticos por paso - cada uno representa una fase de la creación del héroe
+const stepIcons = [Scroll, Swords, Sparkles, Shield, BookOpen, Map, Backpack, ScrollText]
+
 export function WizardSteps({ steps, currentStep, onStepClick }: WizardStepsProps) {
   return (
-    <nav aria-label="Progreso" className="mb-12">
-      <ol className="flex items-center justify-between">
-        {steps.map((step, index) => (
-          <li key={step.id} className="relative flex-1">
-            {/* Connector Line */}
-            {index < steps.length - 1 && (
-              <div
-                className={cn(
-                  "absolute top-6 left-[calc(50%+24px)] right-[calc(-50%+24px)] h-1",
-                  currentStep > step.id ? "bg-[#EE8600]" : "bg-[#E1E1E1]"
-                )}
-                aria-hidden="true"
-              />
-            )}
+    <nav aria-label="Progreso del héroe" className="mb-16">
+      <ol className="flex items-center justify-center gap-1 sm:gap-2">
+        {steps.map((step, index) => {
+          const StepIcon = stepIcons[index % stepIcons.length]
+          const isCompleted = currentStep > step.id
+          const isCurrent = currentStep === step.id
+          const isAccessible = step.id <= currentStep
 
-            <button
-              type="button"
-              onClick={() => onStepClick?.(step.id)}
-              disabled={step.id > currentStep}
-              className={cn(
-                "group relative flex flex-col items-center",
-                step.id <= currentStep ? "cursor-pointer" : "cursor-not-allowed"
+          return (
+            <li key={step.id} className="relative flex items-center">
+              {/* Connector Line */}
+              {index > 0 && (
+                <div className={cn(
+                  "hidden sm:block w-6 lg:w-10 h-[2px] mx-1",
+                  isCompleted ? "bg-[var(--color-accent-gold)]" : "bg-[var(--color-border)]"
+                )} />
               )}
-            >
-              {/* Step Circle */}
-              <span
-                className={cn(
-                  "flex h-12 w-12 items-center justify-center rounded-none border-2 transition-all duration-300 shadow-sm",
-                  currentStep > step.id
-                    ? "border-[#242528] bg-[#242528] text-white scale-100"
-                    : currentStep === step.id
-                    ? "border-[#EE8600] bg-white text-[#EE8600] ring-4 ring-[#EE8600]/10 scale-110 z-10"
-                    : "border-[#E1E1E1] bg-[#F9F9F9] text-[#242528]/20"
-                )}
-              >
-                {currentStep > step.id ? (
-                  <Check className="h-5 w-5 stroke-[4] text-[#EE8600]" />
-                ) : (
-                  <span className="text-sm font-bold">{step.id + 1}</span>
-                )}
-              </span>
 
-              {/* Step Title */}
-              <span
+              <button
+                type="button"
+                onClick={() => onStepClick?.(step.id)}
+                disabled={!isAccessible}
                 className={cn(
-                  "mt-4 text-[9px] font-bold uppercase tracking-widest text-center max-w-[80px] transition-colors",
-                  currentStep === step.id ? "text-[#EE8600]" : currentStep > step.id ? "text-[#242528]" : "text-[#242528]/20"
+                  "group relative flex flex-col items-center gap-2 transition-all duration-300",
+                  isAccessible ? "cursor-pointer" : "cursor-not-allowed opacity-40"
                 )}
               >
-                {step.title}
-              </span>
-            </button>
-          </li>
-        ))}
+                {/* Step Icon Circle */}
+                <div className={cn(
+                  "relative flex h-12 w-12 items-center justify-center border-2 transition-all duration-300",
+                  isCompleted
+                    ? "border-[var(--color-accent-gold)] bg-[var(--color-accent-gold)] text-white shadow-md shadow-[var(--color-accent-gold)]/20"
+                    : isCurrent
+                    ? "border-[var(--color-accent-gold)] bg-white text-[var(--color-accent-gold)] ring-4 ring-[var(--color-accent-gold)]/15 scale-110 z-10 shadow-lg"
+                    : "border-[var(--color-border)] bg-[var(--color-muted)] text-[var(--color-dark-section)]/20"
+                )}>
+                  {isCompleted ? (
+                    <Check className="h-5 w-5 stroke-[3]" />
+                  ) : (
+                    <StepIcon className="h-5 w-5" />
+                  )}
+
+                  {/* Glow effect for current step */}
+                  {isCurrent && (
+                    <div className="absolute inset-0 bg-[var(--color-accent-gold)]/5 animate-pulse" />
+                  )}
+                </div>
+
+                {/* Step Title */}
+                <span className={cn(
+                  "hidden sm:block text-[9px] font-bold uppercase tracking-widest text-center max-w-[70px] transition-colors leading-tight",
+                  isCurrent 
+                    ? "text-[var(--color-accent-gold)]" 
+                    : isCompleted 
+                    ? "text-[var(--color-dark-section)]" 
+                    : "text-[var(--color-dark-section)]/25"
+                )}>
+                  {step.title}
+                </span>
+              </button>
+            </li>
+          )
+        })}
       </ol>
     </nav>
   )

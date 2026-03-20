@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Clock, BookOpen, ArrowRight } from "lucide-react"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Clock, ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 export interface Guide {
@@ -26,8 +25,11 @@ const difficultyColors = {
 
 export function GuideCard({ guide }: GuideCardProps) {
   return (
-    <Link href={`/guias/${guide.slug}`}>
-      <Card className="group h-full overflow-hidden border border-gray-200 bg-white hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-all duration-300 rounded-sm">
+    <Link href={`/guias/${guide.slug}`} className="group">
+      <div className="relative h-full border-2 border-[#242528] bg-white overflow-hidden hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col">
+        {/* Top gold accent */}
+        <div className="h-1 w-0 bg-[#EE8600] group-hover:w-full transition-all duration-700" />
+
         {/* Image */}
         <div className="relative aspect-video overflow-hidden bg-gray-100">
           <Image
@@ -36,31 +38,35 @@ export function GuideCard({ guide }: GuideCardProps) {
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <Badge className="absolute top-2 left-2 bg-black/70 text-white font-bold uppercase text-[10px] tracking-widest border-none rounded-sm">
-             {guide.category}
-          </Badge>
+          <div className="absolute top-2 left-2 bg-[#242528] text-white font-black uppercase text-[10px] tracking-widest px-2 py-1">
+            {guide.category}
+          </div>
         </div>
 
         {/* Content */}
-        <CardContent className="p-5">
-           <h3 className="font-heading font-bold text-xl text-gray-900 group-hover:text-primary transition-colors mb-2">
-             {guide.title}
-           </h3>
-          <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+        <div className="p-6 flex flex-col flex-1">
+          <h3 className="font-heading font-black text-xl text-[#242528] group-hover:text-[#EE8600] transition-colors mb-3 uppercase tracking-tight leading-tight">
+            {guide.title}
+          </h3>
+          <p className="text-sm text-gray-500 line-clamp-3 leading-relaxed font-sans flex-1">
             {guide.excerpt}
           </p>
-        </CardContent>
 
-        {/* Footer */}
-        <CardFooter className="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-100 mt-auto pt-4">
-           <Badge variant="outline" className={`font-bold uppercase text-[10px] tracking-wider border-none px-2 py-1 rounded-sm ${difficultyColors[guide.difficulty]}`}>
-              {guide.difficulty}
-           </Badge>
-           <span className="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
-             Leer <ArrowRight className="h-3 w-3" />
-           </span>
-        </CardFooter>
-      </Card>
+          <div className="mt-5 pt-4 border-t border-[#242528]/10 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Badge variant="outline" className={`font-black uppercase text-[9px] tracking-wider border-none px-2 py-1 rounded ${difficultyColors[guide.difficulty]}`}>
+                {guide.difficulty}
+              </Badge>
+              <span className="text-[10px] text-gray-400 font-bold flex items-center gap-1">
+                <Clock className="h-3 w-3" /> {guide.readTime} min
+              </span>
+            </div>
+            <span className="text-[11px] font-black text-[#242528]/40 group-hover:text-[#242528] uppercase tracking-widest flex items-center gap-1 transition-colors">
+              Leer <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </div>
+        </div>
+      </div>
     </Link>
   )
 }

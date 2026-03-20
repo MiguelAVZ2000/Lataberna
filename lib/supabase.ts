@@ -13,7 +13,11 @@ const isPlaceholder = !supabaseUrl || supabaseUrl.includes('placeholder')
 // Mostrar un aviso crítico en la consola si las variables faltan
 if (isPlaceholder) {
   if (typeof window !== 'undefined') {
-    console.error('ERROR DE CONFIGURACION:', 'color: white; background: red; font-weight: bold; padding: 4px;', 'Faltan las variables de entorno de Supabase.')
+    console.error(
+      '%cERROR DE CONFIGURACION: %cFaltan las variables de entorno de Supabase.',
+      'color: white; background: red; font-weight: bold; padding: 4px;',
+      'color: red; font-weight: bold;'
+    )
     console.warn('Para solucionar esto:\n1. Ve a Vercel > Settings > Environment Variables\n2. Añade NEXT_PUBLIC_SUPABASE_URL\n3. Añade NEXT_PUBLIC_SUPABASE_ANON_KEY\n4. Haz un "Redeploy"')
   }
 }

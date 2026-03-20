@@ -1,11 +1,12 @@
 "use client"
 
 import { useCharacter } from "../character-context"
+import { useAuth } from "@/components/auth/auth-context"
 import { abilities, calculateModifier, formatModifier } from "@/lib/character-data"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Download, FileText, Save, Loader2, Shield, Heart, Zap, User, Star } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { supabase } from "@/lib/supabase"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
@@ -14,15 +15,9 @@ import { characterSchema } from "@/lib/schemas"
 
 export function SummaryStep() {
   const { character, resetCharacter } = useCharacter()
+  const { user } = useAuth()
   const [isSaving, setIsSaving] = useState(false)
-  const [user, setUser] = useState<any>(null)
   const router = useRouter()
-
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user)
-    })
-  }, [])
 
   const racialBonuses = character.race?.abilityBonuses || {}
   const conModifier = calculateModifier(character.abilities.con + (racialBonuses.con || 0))
@@ -91,10 +86,16 @@ export function SummaryStep() {
   return (
     <div className="space-y-10 pb-10">
       <div className="space-y-4">
-        <h2 className="font-heading text-4xl font-bold text-[#242528] uppercase tracking-tight">6. Resumen de tu Héroe</h2>
-        <div className="h-[3px] w-32 bg-[#EE8600]" />
-        <p className="text-lg text-[#242528]/60 font-sans italic">
-          «Tu leyenda comienza aquí. Revisa tu hoja y prepárate para la aventura.»
+        <div className="inline-flex items-center gap-2 px-3 py-1 border border-[var(--color-accent-gold)]/30 bg-[var(--color-accent-gold)]/5 text-[var(--color-accent-gold)] text-[10px] font-black uppercase tracking-[0.2em]">
+          Epílogo
+        </div>
+        <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[var(--color-dark-section)] uppercase tracking-tight leading-tight">
+          La Hoja de tu Héroe
+        </h2>
+        <div className="h-[3px] w-24 bg-[var(--color-accent-gold)]" />
+        <p className="text-lg text-[var(--color-dark-section)]/50 font-sans italic max-w-2xl">
+          «Tu leyenda está escrita. Revisa tu ficha, descarga tu hoja oficial y 
+          prepárate para descender a las profundidades de la aventura.»
         </p>
       </div>
 
@@ -185,7 +186,7 @@ export function SummaryStep() {
                       <span className="text-[9px] font-bold uppercase text-[#EE8600]">Hechizos Preparados</span>
                       <div className="flex flex-wrap gap-2">
                         {character.spells.map(spell => (
-                          <Badge key={spell} variant="outline" className="border-[#242528] text-[#242528] text-[9px] font-bold uppercase px-2 py-0 rounded-none bg-white">
+                          <Badge key={spell} variant="outline" className="border-[#242528] text-[#242528] text-[9px] font-bold uppercase px-2 py-0 rounded bg-white">
                             {spell}
                           </Badge>
                         ))}
@@ -199,10 +200,10 @@ export function SummaryStep() {
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 pt-6">
-        <Button onClick={() => generatePDF(false)} className="flex-1 bg-[#242528] hover:bg-black text-white h-16 rounded-none font-bold uppercase tracking-widest text-[11px] shadow-lg">
+        <Button onClick={() => generatePDF(false)} className="flex-1 bg-[#242528] hover:bg-black text-white h-16 rounded font-bold uppercase tracking-widest text-[11px] shadow-lg">
           <Download className="mr-3 h-5 w-5" /> Exportar Ficha PDF
         </Button>
-        <Button onClick={handleSaveToDatabase} disabled={isSaving} className="flex-1 bg-[#EE8600] hover:bg-[#D47600] text-white h-16 rounded-none font-bold uppercase tracking-widest text-[11px] shadow-lg">
+        <Button onClick={handleSaveToDatabase} disabled={isSaving} className="flex-1 bg-[#EE8600] hover:bg-[#D47600] text-white h-16 rounded font-bold uppercase tracking-widest text-[11px] shadow-lg">
           {isSaving ? <Loader2 className="mr-3 h-5 w-5 animate-spin" /> : <Save className="mr-3 h-5 w-5" />} Guardar en la Taberna
         </Button>
       </div>

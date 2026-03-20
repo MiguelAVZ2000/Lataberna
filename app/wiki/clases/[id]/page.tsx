@@ -45,11 +45,11 @@ export default async function ClaseDetailPage({ params }: PageProps) {
         {/* Left Content */}
         <div className="lg:col-span-8 space-y-12">
           <div className="space-y-6">
-            <h1 className="font-heading text-6xl lg:text-8xl font-black uppercase tracking-tighter text-black leading-none">
+            <h1 className="font-heading text-6xl lg:text-8xl font-black uppercase tracking-tighter text-foreground leading-none">
               {clase.name}
             </h1>
             <div className="h-2 w-32 bg-[#EE8600]" />
-            <p className="text-xl text-black font-sans font-bold leading-relaxed italic border-l-8 border-black pl-6 py-2">
+            <p className="text-xl text-foreground font-sans font-bold leading-relaxed italic border-l-8 border-foreground pl-6 py-2">
               «{clase.description}»
             </p>
           </div>
@@ -57,13 +57,13 @@ export default async function ClaseDetailPage({ params }: PageProps) {
           {/* Progression Table - THE CORE FEATURE */}
           <section className="space-y-8 pt-6">
             <div className="flex items-center gap-4">
-               <h2 className="font-heading text-4xl font-black uppercase tracking-tighter text-black">
+               <h2 className="font-heading text-4xl font-black uppercase tracking-tighter text-foreground">
                  Progreso de Clase
                </h2>
-               <div className="h-1 flex-1 bg-black" />
+               <div className="h-1 flex-1 bg-foreground" />
             </div>
 
-            <div className="overflow-x-auto border-2 border-black">
+            <div className="overflow-x-auto border-2 border-border">
               <table className="w-full border-collapse font-sans text-sm">
                 <thead>
                   <tr className="bg-black text-white uppercase text-[10px] font-black tracking-widest">
@@ -75,20 +75,20 @@ export default async function ClaseDetailPage({ params }: PageProps) {
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-black/10">
+                <tbody className="divide-y divide-foreground/10">
                   {clase.progression?.map((prog) => (
                     <tr key={prog.level} className="hover:bg-[#EE8600]/5 transition-colors">
-                      <td className="py-3 px-4 font-black border-r border-black/10">{prog.level}º</td>
-                      <td className="py-3 px-4 font-bold text-black/60 border-r border-black/10">+{prog.pb}</td>
-                      <td className="py-3 px-4 border-r border-black/10">
+                      <td className="py-3 px-4 font-black border-r border-foreground/10">{prog.level}º</td>
+                      <td className="py-3 px-4 font-bold text-foreground/60 border-r border-foreground/10">+{prog.pb}</td>
+                      <td className="py-3 px-4 border-r border-foreground/10">
                         <div className="flex flex-wrap gap-1">
                           {prog.features.map(f => (
-                            <span key={f} className="text-[11px] font-bold text-black hover:text-[#EE8600] cursor-default transition-colors">{f}{prog.features.indexOf(f) < prog.features.length - 1 ? "," : ""}</span>
+                            <span key={f} className="text-[11px] font-bold text-foreground hover:text-[#EE8600] cursor-default transition-colors">{f}{prog.features.indexOf(f) < prog.features.length - 1 ? "," : ""}</span>
                           ))}
                         </div>
                       </td>
                       {clase.tableColumns?.map(col => (
-                        <td key={col.key} className="py-3 px-4 font-medium border-r border-black/10">
+                        <td key={col.key} className="py-3 px-4 font-medium border-r border-foreground/10">
                           {prog.specifics[col.key] || "-"}
                         </td>
                       ))}
@@ -102,24 +102,24 @@ export default async function ClaseDetailPage({ params }: PageProps) {
           {/* Feature Details */}
           <section className="space-y-8">
             <div className="flex items-center gap-4">
-               <h2 className="font-heading text-4xl font-black uppercase tracking-tighter text-black">
+               <h2 className="font-heading text-4xl font-black uppercase tracking-tighter text-foreground">
                  Rasgos de Clase
                </h2>
-               <div className="h-1 flex-1 bg-black" />
+               <div className="h-1 flex-1 bg-foreground" />
             </div>
 
             <div className="space-y-10">
               {clase.features.map((feature, idx) => (
-                <div key={idx} className="group border-b-2 border-black/5 pb-10 last:border-0">
+                <div key={idx} className="group border-b-2 border-foreground/5 pb-10 last:border-0">
                   <div className="flex items-baseline gap-4 mb-4">
-                    <span className="font-heading text-4xl font-black text-black/10 group-hover:text-[#EE8600] transition-colors leading-none">
+                    <span className="font-heading text-4xl font-black text-foreground/10 group-hover:text-[#EE8600] transition-colors leading-none">
                       {feature.level < 10 ? `0${feature.level}` : feature.level}
                     </span>
-                    <h3 className="font-heading text-3xl font-black uppercase text-black tracking-tighter">
+                    <h3 className="font-heading text-3xl font-black uppercase text-foreground tracking-tighter">
                       {feature.name}
                     </h3>
                   </div>
-                  <p className="text-black/80 leading-relaxed font-sans font-medium text-base">
+                  <p className="text-foreground/80 leading-relaxed font-sans font-medium text-base">
                     {feature.description}
                   </p>
                 </div>
@@ -131,7 +131,7 @@ export default async function ClaseDetailPage({ params }: PageProps) {
         {/* Right Sidebar */}
         <div className="lg:col-span-4 space-y-8 sticky top-8 animate-in fade-in slide-in-from-right-8 duration-700">
           {/* Main Visual */}
-          <div className="relative aspect-[3/4] w-full bg-[#f9f9f9] border-2 border-black overflow-hidden group">
+          <div className="relative aspect-[3/4] w-full bg-[#f9f9f9] border-2 border-border overflow-hidden group">
             <Image
               src={clase.image}
               alt={clase.name}
@@ -139,11 +139,11 @@ export default async function ClaseDetailPage({ params }: PageProps) {
               priority={true}
               className="object-contain object-top pt-8 transition-transform duration-1000 group-hover:scale-105"
             />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/40 to-transparent" />
           </div>
 
           {/* Hit Points Box */}
-          <div className="border-2 border-black bg-white overflow-hidden shadow-[4px_4px_0px_0px_rgba(36,37,40,1)]">
+          <div className="border-2 border-border bg-card overflow-hidden shadow-[4px_4px_0px_0px_rgba(36,37,40,1)]">
             <div className="bg-black p-5">
               <h3 className="text-white font-heading font-black uppercase tracking-[0.25em] text-center text-[10px]">
                 ESTADÍSTICAS DE VITALIDAD
@@ -164,35 +164,35 @@ export default async function ClaseDetailPage({ params }: PageProps) {
           </div>
 
           {/* Proficiencies Sidebar */}
-          <div className="space-y-6 p-8 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(238,134,0,1)]">
-             <h4 className="font-heading text-xl font-black uppercase tracking-tight text-black flex items-center gap-2">
+          <div className="space-y-6 p-8 border-2 border-border bg-card shadow-[4px_4px_0px_0px_rgba(238,134,0,1)]">
+             <h4 className="font-heading text-xl font-black uppercase tracking-tight text-foreground flex items-center gap-2">
                <Shield className="h-5 w-5 text-[#EE8600]" /> COMPETENCIAS
              </h4>
              
              <div className="space-y-6">
                 <div className="space-y-2">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-black/40">Armaduras</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-foreground/40">Armaduras</span>
                   <div className="flex flex-wrap gap-2">
                     {clase.proficiencies.armor.map(item => (
-                      <Badge key={item} variant="outline" className="bg-white border-black text-black text-[10px] font-black uppercase rounded-none px-3 py-1">{item}</Badge>
+                      <Badge key={item} variant="outline" className="bg-card border-border text-foreground text-[10px] font-black uppercase rounded-none px-3 py-1">{item}</Badge>
                     ))}
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <span className="text-[9px] font-black uppercase tracking-widest text-black/40">Armas</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-foreground/40">Armas</span>
                   <div className="flex flex-wrap gap-2">
                     {clase.proficiencies.weapons.map(item => (
-                      <Badge key={item} variant="outline" className="bg-white border-black text-black text-[10px] font-black uppercase rounded-none px-3 py-1">{item}</Badge>
+                      <Badge key={item} variant="outline" className="bg-card border-border text-foreground text-[10px] font-black uppercase rounded-none px-3 py-1">{item}</Badge>
                     ))}
                   </div>
                 </div>
 
-                <div className="space-y-3 pt-6 border-t-2 border-black">
-                   <span className="text-[9px] font-black uppercase tracking-widest text-black/40">Tiradas de Salvación</span>
+                <div className="space-y-3 pt-6 border-t-2 border-border">
+                   <span className="text-[9px] font-black uppercase tracking-widest text-foreground/40">Tiradas de Salvación</span>
                    <div className="grid grid-cols-2 gap-3">
                       {clase.savingThrows.map(save => (
-                        <div key={save} className="flex items-center gap-3 bg-black text-white px-4 py-3 rounded-none border border-black hover:bg-white hover:text-black transition-colors group/save">
+                        <div key={save} className="flex items-center gap-3 bg-black text-white px-4 py-3 rounded-none border border-border hover:bg-background hover:text-foreground transition-colors group/save">
                            <Zap className="h-4 w-4 text-[#EE8600] group-hover/save:scale-110 transition-transform" />
                            <span className="text-[11px] font-black uppercase tracking-widest">{save}</span>
                         </div>

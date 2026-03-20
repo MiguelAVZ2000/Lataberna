@@ -1,19 +1,19 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Roboto, Roboto_Condensed } from 'next/font/google'
+import { Lora, Cinzel } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const roboto = Roboto({ 
+const lora = Lora({
   subsets: ["latin"],
-  weight: ['400', '500', '700'],
-  variable: '--font-roboto'
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-lora'
 })
 
-const robotoCondensed = Roboto_Condensed({ 
+const cinzel = Cinzel({
   subsets: ["latin"],
-  weight: ['400', '700'],
-  variable: '--font-roboto-condensed'
+  weight: ['400', '700', '900'],
+  variable: '--font-cinzel'
 })
 
 export const metadata: Metadata = {
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#121212',
+  themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
 }
 
 import { CartProvider } from "@/components/tienda/cart-context"
 import { CartSidebar } from "@/components/tienda/cart-sidebar"
-
-// ... imports anteriores ...
+import { AuthProvider } from "@/components/auth/auth-context"
+import { Toaster } from "@/components/ui/sonner"
 
 export default function RootLayout({
   children,
@@ -44,12 +44,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body className={`${roboto.variable} ${robotoCondensed.variable} font-sans antialiased bg-background text-foreground`}>
-        <CartProvider>
+    <html lang="es" className="light">
+      <body className={`${lora.variable} ${cinzel.variable} font-sans antialiased bg-background text-foreground`}>
+        <AuthProvider>
+          <CartProvider>
             {children}
             <CartSidebar />
-        </CartProvider>
+          </CartProvider>
+        </AuthProvider>
+        <Toaster richColors position="bottom-right" />
         <Analytics />
       </body>
     </html>

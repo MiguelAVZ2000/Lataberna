@@ -16,6 +16,14 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
   // Ajuste para imagen placeholder si no hay URL
   const imageUrl = product.Imagen_url || "/placeholder.svg"
 
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('es-CL', {
+        style: 'currency',
+        currency: 'CLP',
+        minimumFractionDigits: 0
+    }).format(price)
+  }
+
   return (
     <Card className="group overflow-hidden border-[#E1E1E1] bg-white transition-all duration-300 hover:border-[#EE8600]/50 hover:shadow-lg hover:shadow-[#EE8600]/5">
       {/* Image Container */}
@@ -24,6 +32,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           src={imageUrl}
           alt={product.Nombre}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         
@@ -73,7 +82,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
       <CardFooter className="p-4 pt-0">
         <div className="flex items-baseline gap-2">
           <span className="font-heading text-xl font-bold text-[#EE8600]">
-            ${product.Precio.toLocaleString('es-CL')}
+            {formatPrice(product.Precio)}
           </span>
         </div>
       </CardFooter>

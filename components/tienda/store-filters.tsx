@@ -27,7 +27,7 @@ export function StoreFilters({ selectedCategory, onCategoryChange }: StoreFilter
           size="sm"
           onClick={() => onCategoryChange(category.id)}
           className={cn(
-            "font-bold uppercase tracking-wider text-xs rounded-none transition-all border",
+            "font-bold uppercase tracking-wider text-xs rounded transition-all border",
             selectedCategory === category.id
               ? "bg-[#242528] text-white border-[#242528]"
               : "bg-white text-[#242528] border-[#E1E1E1] hover:border-[#EE8600] hover:text-[#EE8600]"

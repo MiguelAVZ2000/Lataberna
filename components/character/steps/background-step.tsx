@@ -61,7 +61,7 @@ export function BackgroundStep() {
                     <span className="text-[9px] font-bold uppercase tracking-widest text-[#242528]/40">Competencias</span>
                     <div className="flex flex-wrap gap-1">
                       {bg.skillProficiencies.map(skill => (
-                        <Badge key={skill} variant="outline" className="border-[#242528] text-[#242528] text-[9px] font-bold uppercase px-2 py-0 rounded-none bg-[#F9F9F9]">
+                        <Badge key={skill} variant="outline" className="border-[#242528] text-[#242528] text-[9px] font-bold uppercase px-2 py-0 rounded bg-[#F9F9F9]">
                           {skill}
                         </Badge>
                       ))}

@@ -167,7 +167,7 @@ export default function HechizosWikiPage() {
               placeholder="Buscar por nombre..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 border-[#E1E1E1] focus-visible:ring-[#EE8600] rounded-none h-12 text-sm font-medium"
+              className="pl-10 border-[#E1E1E1] focus-visible:ring-[#EE8600] rounded h-12 text-sm font-medium"
             />
           </div>
 
@@ -236,7 +236,7 @@ export default function HechizosWikiPage() {
                         </div>
                     </TableCell>
                     <TableCell className="py-4 align-top">
-                        <Badge variant="outline" className="border-[#E1E1E1] text-[#242528] text-[9px] font-bold uppercase rounded-none px-2 whitespace-nowrap">
+                        <Badge variant="outline" className="border-[#E1E1E1] text-[#242528] text-[9px] font-bold uppercase rounded px-2 whitespace-nowrap">
                         {spell.nivel === "0" ? "Truco" : `Lvl ${spell.nivel}`}
                         </Badge>
                     </TableCell>

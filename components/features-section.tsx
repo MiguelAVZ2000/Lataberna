@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { ShoppingCart, BookOpen, Users, Dices, Sparkles, Shield } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const features = [
   {
@@ -53,7 +52,7 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-20">
-          <div className="text-primary font-black uppercase tracking-[0.3em] text-[10px] mb-4">Recursos de Aventurero</div>
+          <div className="text-[#242528] font-black uppercase tracking-[0.3em] text-[10px] mb-4">Recursos de Aventurero</div>
           <h2 className="font-heading font-black text-4xl sm:text-5xl tracking-tight text-foreground uppercase">
             TODO LO QUE NECESITAS
           </h2>
@@ -64,25 +63,23 @@ export function FeaturesSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <Link key={feature.title} href={feature.href} className="group">
-              <Card className="h-full border border-border bg-white transition-all duration-500 hover:border-accent-gold/50 shadow-sm hover:shadow-2xl hover:-translate-y-1 rounded-sm overflow-hidden">
-                <CardHeader className="p-8 pb-4">
-                  <div className="h-12 w-12 bg-muted rounded-sm flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors border border-border">
-                    <feature.icon className={`h-6 w-6 ${feature.accent === 'primary' ? 'text-primary' : 'text-muted-foreground'} group-hover:scale-110 transition-transform`} />
+              <div className="h-full border border-border bg-white transition-all duration-300 hover:border-[#EE8600]/60 shadow-sm hover:shadow-lg hover:-translate-y-1 rounded-xl overflow-hidden flex flex-col p-5 gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="h-9 w-9 bg-gray-50 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#EE8600]/10 transition-colors border border-gray-200">
+                    <feature.icon className="h-4 w-4 text-[#242528] group-hover:scale-110 transition-transform" />
                   </div>
-                  <CardTitle className="font-heading font-black text-2xl text-foreground group-hover:text-primary transition-colors uppercase tracking-tight">
+                  <h3 className="font-heading font-bold text-base text-[#242528] group-hover:text-[#EE8600] transition-colors uppercase tracking-tight leading-tight">
                     {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-8 pt-0">
-                  <CardDescription className="text-muted-foreground text-sm leading-relaxed font-sans font-normal italic mb-6">
-                    {feature.description}
-                  </CardDescription>
-                  <div className="h-px w-full bg-border group-hover:bg-accent-gold/30 transition-colors" />
-                </CardContent>
-              </Card>
+                  </h3>
+                </div>
+                <p className="text-muted-foreground text-xs leading-relaxed font-sans italic">
+                  {feature.description}
+                </p>
+                <div className="h-px w-full bg-border group-hover:bg-[#EE8600]/30 transition-colors mt-auto" />
+              </div>
             </Link>
           ))}
         </div>

@@ -59,7 +59,7 @@ export function EquipmentStep() {
                       <Checkbox 
                         id={item} 
                         checked={isSelected}
-                        className="rounded-none border-[#E1E1E1] data-[state=checked]:bg-[#EE8600] data-[state=checked]:border-[#EE8600]"
+                        className="rounded border-[#E1E1E1] data-[state=checked]:bg-[#EE8600] data-[state=checked]:border-[#EE8600]"
                       />
                       <label
                         htmlFor={item}
@@ -67,7 +67,7 @@ export function EquipmentStep() {
                       >
                         {item}
                       </label>
-                      {isSelected && <Badge className="bg-[#EE8600] text-white text-[10px] rounded-none border-none">Añadido</Badge>}
+                      {isSelected && <Badge className="bg-[#EE8600] text-white text-[10px] rounded border-none">Añadido</Badge>}
                     </div>
                   )
                 })}
@@ -84,7 +84,7 @@ export function EquipmentStep() {
             <p className="text-sm text-[#242528]/40 italic">No has seleccionado ningún objeto aún...</p>
           ) : (
             character.items?.map((item) => (
-              <Badge key={item} variant="outline" className="rounded-none border-[#E1E1E1] bg-white text-[#242528] px-3 py-1">
+              <Badge key={item} variant="outline" className="rounded border-[#E1E1E1] bg-white text-[#242528] px-3 py-1">
                 {item}
               </Badge>
             ))

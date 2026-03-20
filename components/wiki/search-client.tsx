@@ -71,7 +71,7 @@ function SearchResultsContent({ results, query }: { results: SearchResultItem[],
                   <h3 className="font-heading text-2xl font-bold uppercase tracking-tight text-[#242528] group-hover:text-[#EE8600] transition-colors">
                     {result.name}
                   </h3>
-                  <Badge variant="outline" className="border-[#E1E1E1] text-[#242528]/40 text-[9px] font-bold uppercase tracking-widest rounded-none">
+                  <Badge variant="outline" className="border-[#E1E1E1] text-[#242528]/40 text-[9px] font-bold uppercase tracking-widest rounded">
                     {result.type}
                   </Badge>
                 </div>

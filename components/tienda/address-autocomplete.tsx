@@ -104,7 +104,7 @@ export function AddressAutocomplete({ value, onChange, onAddressSelect }: Addres
                 if(!open && e.target.value.length > 3) setOpen(true)
             }}
             placeholder="Dirección y número (ej: Av. Providencia 1234)" 
-            className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white pr-10"
+            className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white pr-10"
         />
         <div className="absolute right-3 top-1/2 -translate-y-1/2">
             {loading ? (

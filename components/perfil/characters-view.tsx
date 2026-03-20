@@ -54,7 +54,7 @@ export function CharactersView({ user, characters }: { user: any, characters: an
         <div className="flex justify-between items-end border-b-2 border-black pb-4">
             <h2 className="text-3xl font-heading font-black uppercase tracking-tight">Mis Personajes</h2>
             <Link href="/personaje">
-                <Button className="bg-[#EE8600] hover:bg-black text-white hover:text-[#EE8600] rounded-none font-black uppercase tracking-widest text-[10px] h-12 px-6 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none">
+                <Button className="bg-[#EE8600] hover:bg-black text-white hover:text-[#EE8600] rounded font-black uppercase tracking-widest text-[10px] h-12 px-6 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none">
                     <Plus className="mr-2 h-4 w-4" /> Nuevo Personaje
                 </Button>
             </Link>
@@ -66,7 +66,7 @@ export function CharactersView({ user, characters }: { user: any, characters: an
                 <h3 className="text-xl font-black uppercase">Sin personajes</h3>
                 <p className="text-gray-500 mb-8 font-sans">No tienes ningún personaje guardado todavía.</p>
                 <Link href="/personaje">
-                    <Button variant="outline" className="border-2 border-black rounded-none font-black uppercase tracking-widest text-[10px]">Crear Primero</Button>
+                    <Button variant="outline" className="border-2 border-black rounded font-black uppercase tracking-widest text-[10px]">Crear Primero</Button>
                 </Link>
             </div>
         ) : (
@@ -76,7 +76,7 @@ export function CharactersView({ user, characters }: { user: any, characters: an
                     const className = classes.find(c => c.id === char.clase_id)?.name || char.clase_id
                     
                     return (
-                        <Card key={char.id} className="border-2 border-black rounded-none shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all overflow-hidden group">
+                        <Card key={char.id} className="border-2 border-black rounded shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all overflow-hidden group">
                             <CardHeader className="bg-black text-white p-6">
                                 <div className="flex justify-between items-start">
                                     <div className="space-y-1">
@@ -85,7 +85,7 @@ export function CharactersView({ user, characters }: { user: any, characters: an
                                             {raceName} {className} • Nivel {char.nivel}
                                         </CardDescription>
                                     </div>
-                                    <Badge variant="outline" className="text-[9px] border-[#EE8600] text-[#EE8600] font-black uppercase rounded-none">
+                                    <Badge variant="outline" className="text-[9px] border-[#EE8600] text-[#EE8600] font-black uppercase rounded">
                                         {formatDistanceToNow(new Date(char.actualizado_el), { addSuffix: true, locale: es })}
                                     </Badge>
                                 </div>
@@ -98,7 +98,7 @@ export function CharactersView({ user, characters }: { user: any, characters: an
                             <CardFooter className="p-0 border-t-2 border-black">
                                 <Button 
                                     variant="ghost" 
-                                    className="w-full h-12 rounded-none font-black uppercase tracking-widest text-[10px] hover:bg-gray-100 flex items-center justify-center gap-2"
+                                    className="w-full h-12 rounded font-black uppercase tracking-widest text-[10px] hover:bg-gray-100 flex items-center justify-center gap-2"
                                     onClick={() => handleDownloadPDF(char)}
                                 >
                                     <ExternalLink className="h-4 w-4 text-[#EE8600]" /> Descargar Ficha PDF

@@ -107,7 +107,7 @@ export function PersonajesList({ initialPersonajes }: PersonajesListProps) {
             <h3 className="text-2xl font-heading text-[#242528] font-bold uppercase tracking-tight">Tu Sala de Héroes está vacía</h3>
             <p className="text-[#242528]/40 font-sans italic max-w-sm mx-auto uppercase text-[10px] tracking-widest">Aún no has forjado ninguna leyenda en esta cuenta.</p>
           </div>
-          <Button asChild variant="outline" className="border-[#242528] text-[#242528] rounded-none hover:bg-[#242528] hover:text-white font-bold uppercase tracking-widest h-12 px-8">
+          <Button asChild variant="outline" className="border-[#242528] text-[#242528] rounded hover:bg-[#242528] hover:text-white font-bold uppercase tracking-widest h-12 px-8">
              <Link href="/personaje">Empezar Creación</Link>
           </Button>
       </div>
@@ -136,7 +136,7 @@ export function PersonajesList({ initialPersonajes }: PersonajesListProps) {
                 <TableRow key={personaje.id} className="group hover:bg-[#F9F9F9] transition-colors border-[#E1E1E1]">
                   <TableCell className="py-6 pl-8">
                     <div className="flex items-center gap-4">
-                      <div className="h-10 w-10 bg-[#EE8600]/10 border border-[#EE8600]/30 rounded-none flex items-center justify-center shrink-0">
+                      <div className="h-10 w-10 bg-[#EE8600]/10 border border-[#EE8600]/30 rounded flex items-center justify-center shrink-0">
                         <User className="h-5 w-5 text-[#EE8600]" />
                       </div>
                       <div className="space-y-0.5">
@@ -149,8 +149,8 @@ export function PersonajesList({ initialPersonajes }: PersonajesListProps) {
                   </TableCell>
                   <TableCell className="py-6">
                     <div className="flex gap-2">
-                      <Badge variant="outline" className="border-[#242528] text-[#242528] text-[9px] font-bold uppercase px-2 py-0 rounded-none bg-white">{raceName}</Badge>
-                      <Badge variant="outline" className="border-[#EE8600] text-[#EE8600] text-[9px] font-bold uppercase px-2 py-0 rounded-none bg-white">{className}</Badge>
+                      <Badge variant="outline" className="border-[#242528] text-[#242528] text-[9px] font-bold uppercase px-2 py-0 rounded bg-white">{raceName}</Badge>
+                      <Badge variant="outline" className="border-[#EE8600] text-[#EE8600] text-[9px] font-bold uppercase px-2 py-0 rounded bg-white">{className}</Badge>
                     </div>
                   </TableCell>
                   <TableCell className="py-6">
@@ -166,7 +166,7 @@ export function PersonajesList({ initialPersonajes }: PersonajesListProps) {
                     <div className="flex justify-end items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <Button 
                         variant="ghost" 
-                        className="h-10 w-10 p-0 text-[#242528] hover:bg-[#242528] hover:text-white rounded-none"
+                        className="h-10 w-10 p-0 text-[#242528] hover:bg-[#242528] hover:text-white rounded"
                         onClick={() => handleDownloadPDF(personaje)}
                         title="Descargar PDF"
                       >
@@ -174,7 +174,7 @@ export function PersonajesList({ initialPersonajes }: PersonajesListProps) {
                       </Button>
                       <Button 
                         variant="ghost" 
-                        className="h-10 w-10 p-0 text-red-500 hover:bg-red-500 hover:text-white rounded-none"
+                        className="h-10 w-10 p-0 text-red-500 hover:bg-red-500 hover:text-white rounded"
                         onClick={() => handleDelete(personaje.id, personaje.nombre)}
                         title="Eliminar"
                       >
@@ -182,7 +182,7 @@ export function PersonajesList({ initialPersonajes }: PersonajesListProps) {
                       </Button>
                       <Button 
                         variant="ghost" 
-                        className="h-10 px-4 text-[#EE8600] hover:bg-[#EE8600] hover:text-white rounded-none font-bold uppercase text-[10px] tracking-widest"
+                        className="h-10 px-4 text-[#EE8600] hover:bg-[#EE8600] hover:text-white rounded font-bold uppercase text-[10px] tracking-widest"
                         onClick={() => handleDownloadPDF(personaje)}
                       >
                         Ver Ficha <ChevronRight className="ml-2 h-3 w-3" />
@@ -220,7 +220,7 @@ export function PersonajesList({ initialPersonajes }: PersonajesListProps) {
             <h3 className="font-heading text-2xl font-bold uppercase tracking-tight text-[#242528]">¿Listo para más?</h3>
             <p className="text-sm text-[#242528]/60 font-sans leading-relaxed italic">«Cada nuevo héroe es una puerta a un mundo de posibilidades infinitas.»</p>
           </div>
-          <Button asChild className="w-fit h-12 px-8 bg-[#242528] hover:bg-[#EE8600] text-white rounded-none font-bold uppercase tracking-widest transition-colors relative z-10">
+          <Button asChild className="w-fit h-12 px-8 bg-[#242528] hover:bg-[#EE8600] text-white rounded font-bold uppercase tracking-widest transition-colors relative z-10">
             <Link href="/personaje">Forjar Nuevo Héroe</Link>
           </Button>
         </div>

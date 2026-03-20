@@ -54,7 +54,7 @@ export function TiendaClient({ initialProducts, user }: TiendaClientProps) {
                 </div>
                 
                 {user && (
-                    <Button variant="outline" className="border-[#E1E1E1] text-[#242528] hover:bg-[#F9F9F9] hover:text-[#EE8600] rounded-none font-bold uppercase text-[10px] tracking-[0.2em] px-6 h-12 transition-all" onClick={() => window.location.href = '/perfil'}>
+                    <Button variant="outline" className="border-[#E1E1E1] text-[#242528] hover:bg-[#F9F9F9] hover:text-[#EE8600] rounded font-bold uppercase text-[10px] tracking-[0.2em] px-6 h-12 transition-all" onClick={() => window.location.href = '/perfil'}>
                         <User className="h-4 w-4 mr-2" />
                         Mi Cuenta
                     </Button>
@@ -69,7 +69,7 @@ export function TiendaClient({ initialProducts, user }: TiendaClientProps) {
                         placeholder="Buscar artefactos..." 
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="pl-12 h-14 bg-white border border-[#E1E1E1] focus:border-[#EE8600] text-lg font-sans rounded-none placeholder:text-[#242528]/30 text-[#242528] transition-all"
+                        className="pl-12 h-14 bg-white border border-[#E1E1E1] focus:border-[#EE8600] text-lg font-sans rounded placeholder:text-[#242528]/30 text-[#242528] transition-all"
                     />
                 </div>
                 <div className="w-full md:w-auto overflow-x-auto pb-2 md:pb-0">

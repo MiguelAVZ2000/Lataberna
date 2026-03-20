@@ -84,8 +84,8 @@ export function SpellsStep() {
         </p>
       </div>
 
-      {/* Spells Grid - Clean Table-like cards */}
-      <div className="grid gap-6 sm:grid-cols-2">
+      {/* Spells Grid */}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {spells.map((spell) => {
           const isSelected = selectedSpells.includes(spell.name)
           return (
@@ -93,42 +93,34 @@ export function SpellsStep() {
               key={spell.name}
               onClick={() => toggleSpell(spell.name)}
               className={cn(
-                "group relative bg-white border transition-all duration-300 cursor-pointer overflow-hidden p-8 flex flex-col gap-4",
+                "group relative bg-white border transition-all duration-200 cursor-pointer overflow-hidden p-4 flex flex-col gap-2",
                 isSelected
-                  ? "border-[#EE8600] shadow-xl ring-1 ring-[#EE8600]"
+                  ? "border-[#EE8600] shadow-md ring-1 ring-[#EE8600]"
                   : "border-[#E1E1E1] hover:border-[#EE8600] shadow-sm"
               )}
             >
               <div className={cn(
-                "absolute top-0 left-0 w-full h-1 transition-colors",
-                isSelected ? "bg-[#EE8600]" : "bg-[#242528] group-hover:bg-[#EE8600]"
+                "absolute top-0 left-0 w-full h-0.5 transition-colors",
+                isSelected ? "bg-[#EE8600]" : "bg-transparent group-hover:bg-[#EE8600]"
               )} />
 
-              <div className="flex justify-between items-start">
-                 <div className="space-y-2">
-                    <h3 className="font-heading text-2xl font-bold uppercase text-[#242528] tracking-tight group-hover:text-[#EE8600] transition-colors line-clamp-1">
-                      {spell.name}
-                    </h3>
-                    <Badge variant="outline" className="border-[#242528] text-[#242528] text-[9px] font-bold uppercase py-0 rounded-none bg-[#F9F9F9]">
-                      {spell.level === 0 ? "Truco" : `Nivel ${spell.level}`}
-                    </Badge>
-                 </div>
-                 {isSelected && <Sparkles className="h-5 w-5 text-[#EE8600] animate-pulse shrink-0" />}
+              <div className="flex justify-between items-center gap-2">
+                <h3 className="font-heading text-sm font-bold uppercase text-[#242528] tracking-tight group-hover:text-[#EE8600] transition-colors line-clamp-1 flex-1">
+                  {spell.name}
+                </h3>
+                {isSelected
+                  ? <Sparkles className="h-3.5 w-3.5 text-[#EE8600] animate-pulse shrink-0" />
+                  : <ChevronRight className="h-3.5 w-3.5 text-[#242528]/30 group-hover:text-[#EE8600] transition-colors shrink-0" />
+                }
               </div>
 
-              <p className="text-sm text-[#242528]/70 font-sans leading-relaxed italic border-l-2 border-[#E1E1E1] pl-4">
+              <Badge variant="outline" className="border-[#242528]/20 text-[#242528]/60 text-[8px] font-bold uppercase py-0 px-1.5 rounded bg-[#F9F9F9] w-fit">
+                {spell.level === 0 ? "Truco" : `Nivel ${spell.level}`}
+              </Badge>
+
+              <p className="text-xs text-[#242528]/60 font-sans italic leading-snug border-l-2 border-[#E1E1E1] pl-2 mt-1">
                 «{spell.desc}»
               </p>
-
-              <div className="pt-4 mt-auto">
-                 <div className={cn(
-                   "flex items-center justify-between py-3 border-t border-[#E1E1E1] transition-colors",
-                   isSelected ? "text-[#EE8600]" : "text-[#242528] group-hover:text-[#EE8600]"
-                 )}>
-                   <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{isSelected ? "Seleccionado" : "Elegir Hechizo"}</span>
-                   <ChevronRight className="h-4 w-4" />
-                 </div>
-              </div>
             </div>
           )
         })}
@@ -141,7 +133,7 @@ export function SpellsStep() {
             <div className="flex gap-2">
                {[1, 2, 3, 4].map(idx => (
                  <div key={idx} className={cn(
-                   "h-3 w-3 rounded-none border border-white/20 transition-colors",
+                   "h-3 w-3 rounded border border-white/20 transition-colors",
                    selectedSpells.length >= idx ? "bg-[#EE8600]" : "bg-transparent"
                  )} />
                ))}

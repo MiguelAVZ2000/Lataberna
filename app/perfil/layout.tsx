@@ -25,7 +25,7 @@ export default async function PerfilLayout({
             {/* Sidebar */}
             <aside className="w-full lg:w-72 space-y-8">
               <div className="flex items-center gap-4 mb-4">
-                <div className="h-16 w-16 bg-black border-4 border-[#EE8600] rounded-none flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className="h-16 w-16 bg-black border-4 border-[#EE8600] rounded flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   <span className="text-2xl font-black text-[#EE8600]">
                     {user.email?.[0].toUpperCase()}
                   </span>

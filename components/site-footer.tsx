@@ -23,18 +23,18 @@ const footerLinks = {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[var(--color-dark-section)] text-gray-400 py-20 border-t-4 border-[var(--color-accent-gold)] shadow-2xl">
+    <footer className="bg-[var(--color-dark-section)] text-white/50 py-20 border-t border-[var(--color-accent-gold)]/30">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-6 mb-20">
           
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-8">
             <Link href="/" className="flex items-center gap-3">
-               <div className="h-12 w-12 bg-[var(--color-primary)] rounded-sm flex items-center justify-center shadow-lg shadow-black/20">
+               <div className="h-12 w-12 bg-[#EE8600] rounded-sm flex items-center justify-center shadow-lg shadow-black/20">
                  <Beer className="h-7 w-7 text-white" />
                </div>
                <span className="font-heading font-black text-3xl tracking-tighter text-white uppercase leading-none">
-                LA<span className="text-[var(--color-primary)]">TABERNA</span>
+                LA<span className="text-[#EE8600]">TABERNA</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-sm font-sans text-gray-400">
@@ -43,7 +43,7 @@ export function SiteFooter() {
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="h-10 w-10 rounded-sm bg-white/5 flex items-center justify-center hover:bg-[var(--color-primary)] hover:text-white transition-all border border-white/5 shadow-sm">
+                <a key={i} href="#" className="h-10 w-10 rounded-sm bg-white/5 flex items-center justify-center hover:bg-[#EE8600] hover:text-white transition-all border border-white/5 shadow-sm">
                   <Icon className="h-5 w-5" />
                 </a>
               ))}

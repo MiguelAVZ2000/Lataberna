@@ -23,7 +23,7 @@ export function SearchSuggestions({
   if (suggestions.length === 0) return null
 
   return (
-    <div className={`absolute top-full mt-2 left-0 right-0 bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-[100] rounded-none overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top ${className}`}>
+    <div className={`absolute top-full mt-2 left-0 right-0 bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-[100] rounded overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top ${className}`}>
       <div className="p-3 bg-black text-white font-heading font-black text-[10px] uppercase tracking-widest flex justify-between items-center">
         <span>Sugerencias Encontradas</span>
         {isSearching && <div className="h-3 w-3 border-2 border-white border-t-transparent animate-spin rounded-full" />}
@@ -40,7 +40,7 @@ export function SearchSuggestions({
           >
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="bg-[#242528] text-white text-[8px] font-black px-2 py-0.5 uppercase tracking-tighter rounded-none">
+                <span className="bg-[#242528] text-white text-[8px] font-black px-2 py-0.5 uppercase tracking-tighter rounded">
                   {result.type}
                 </span>
                 <span className="font-heading font-black text-sm uppercase text-black group-hover:text-[#EE8600]">

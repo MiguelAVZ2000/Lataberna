@@ -28,7 +28,10 @@ const authSchema = z.object({
   confirmPassword: z.string().optional(),
   honeypot: z.string().max(0).optional(), // Si se llena, es un bot
 }).refine((data) => {
-    // Solo validar confirmación en modo registro (esto se maneja en el componente)
+    // Solo validar confirmación si se proporcionó confirmPassword (modo registro)
+    if (data.confirmPassword !== undefined && data.confirmPassword !== "") {
+      return data.password === data.confirmPassword
+    }
     return true
 }, {
     message: "Las contraseñas no coinciden",
@@ -135,7 +138,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
               autoComplete="email"
               autoCorrect="off"
               disabled={isLoading}
-              className="rounded-none border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
+              className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
               {...form.register("email")}
             />
             {form.formState.errors.email && (
@@ -155,7 +158,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
                     placeholder="Aragorn64"
                     type="text"
                     disabled={isLoading}
-                    className="rounded-none border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
+                    className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
                     {...form.register("username")}
                 />
                 {form.formState.errors.username && (
@@ -178,7 +181,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
                 autoCapitalize="none"
                 autoComplete={mode === "login" ? "current-password" : "new-password"}
                 disabled={isLoading}
-                className="rounded-none border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12 pr-10"
+                className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12 pr-10"
                 {...form.register("password")}
                 />
                 <button
@@ -208,7 +211,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
                     autoCapitalize="none"
                     autoComplete="new-password"
                     disabled={isLoading}
-                    className="rounded-none border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
+                    className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
                     {...form.register("confirmPassword")}
                 />
                 {form.formState.errors.confirmPassword && (
@@ -219,7 +222,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
             </div>
           )}
 
-          <Button disabled={isLoading} className="h-14 bg-[#242528] hover:bg-black text-white rounded-none font-bold uppercase tracking-widest shadow-lg transition-colors">
+          <Button disabled={isLoading} className="h-14 bg-[#242528] hover:bg-black text-white rounded font-bold uppercase tracking-widest shadow-lg transition-colors">
             {isLoading && (
               <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
             )}
@@ -243,7 +246,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
         variant="outline"
         type="button"
         disabled={isLoading}
-        className="h-14 border-[#242528] border-2 bg-white text-[#242528] hover:bg-[#F9F9F9] rounded-none font-bold uppercase tracking-widest transition-all"
+        className="h-14 border-[#242528] border-2 bg-white text-[#242528] hover:bg-[#F9F9F9] rounded font-bold uppercase tracking-widest transition-all"
         onClick={async () => {
           setIsLoading(true)
           try {

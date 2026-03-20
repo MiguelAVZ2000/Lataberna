@@ -196,17 +196,17 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
       </div>
 
       <Tabs defaultValue="personajes" className="w-full">
-        <TabsList className="bg-[#242528] p-1 h-14 rounded-none mb-10 overflow-x-auto flex flex-nowrap justify-start sm:inline-flex">
-          <TabsTrigger value="personajes" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded-none transition-all flex-1 sm:flex-none">Mis Personajes</TabsTrigger>
-          <TabsTrigger value="pedidos" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded-none transition-all flex-1 sm:flex-none">Historial de Compras</TabsTrigger>
-          <TabsTrigger value="editar" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded-none transition-all flex-1 sm:flex-none">Editar Perfil</TabsTrigger>
+        <TabsList className="bg-[#242528] p-1 h-14 rounded mb-10 overflow-x-auto flex flex-nowrap justify-start sm:inline-flex">
+          <TabsTrigger value="personajes" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Mis Personajes</TabsTrigger>
+          <TabsTrigger value="pedidos" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Historial de Compras</TabsTrigger>
+          <TabsTrigger value="editar" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Editar Perfil</TabsTrigger>
         </TabsList>
 
         <TabsContent value="personajes" className="space-y-4 outline-none">
             <div className="flex justify-between items-end mb-8 border-b-2 border-black pb-4">
                 <h2 className="text-3xl font-heading font-black uppercase tracking-tight">Mis Personajes</h2>
                 <Link href="/personaje">
-                    <Button className="bg-[#EE8600] hover:bg-[#EE8600]/90 text-white rounded-none font-black uppercase tracking-widest text-[10px]">
+                    <Button className="bg-[#EE8600] hover:bg-[#EE8600]/90 text-white rounded font-black uppercase tracking-widest text-[10px]">
                         <Plus className="mr-2 h-4 w-4" /> Nuevo Personaje
                     </Button>
                 </Link>
@@ -218,7 +218,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                     <h3 className="text-xl font-black uppercase">Sin personajes</h3>
                     <p className="text-gray-500 mb-8 font-sans">No has guardado ningún personaje todavía.</p>
                     <Link href="/personaje">
-                        <Button variant="outline" className="border-2 border-black rounded-none font-black uppercase tracking-widest text-[10px]">Crear Primero</Button>
+                        <Button variant="outline" className="border-2 border-black rounded font-black uppercase tracking-widest text-[10px]">Crear Primero</Button>
                     </Link>
                 </div>
             ) : (
@@ -228,7 +228,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                         const className = classes.find(c => c.id === char.clase_id)?.name || char.clase_id
                         
                         return (
-                            <Card key={char.id} className="border-2 border-black rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all overflow-hidden group">
+                            <Card key={char.id} className="border-2 border-black rounded shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all overflow-hidden group">
                                 <CardHeader className="bg-black text-white p-6">
                                     <div className="flex justify-between items-start">
                                         <div className="space-y-1">
@@ -237,7 +237,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                                                 {raceName} {className} • Nivel {char.nivel}
                                             </CardDescription>
                                         </div>
-                                        <Badge variant="outline" className="text-[9px] border-[#EE8600] text-[#EE8600] font-black uppercase rounded-none">
+                                        <Badge variant="outline" className="text-[9px] border-[#EE8600] text-[#EE8600] font-black uppercase rounded">
                                             {formatDistanceToNow(new Date(char.actualizado_el), { addSuffix: true, locale: es })}
                                         </Badge>
                                     </div>
@@ -250,7 +250,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                                 <CardFooter className="p-0 border-t-2 border-black">
                                     <Button 
                                         variant="ghost" 
-                                        className="w-full h-12 rounded-none font-black uppercase tracking-widest text-[10px] hover:bg-gray-100 flex items-center justify-center gap-2"
+                                        className="w-full h-12 rounded font-black uppercase tracking-widest text-[10px] hover:bg-gray-100 flex items-center justify-center gap-2"
                                         onClick={() => handleDownloadPDF(char)}
                                     >
                                         <ExternalLink className="h-4 w-4 text-[#EE8600]" /> Descargar Ficha PDF
@@ -267,7 +267,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
               <div className="flex justify-between items-end mb-8 border-b-2 border-black pb-4">
                 <h2 className="text-3xl font-heading font-black uppercase tracking-tight">Historial de Compras</h2>
                 <Link href="/tienda">
-                    <Button variant="outline" className="border-2 border-black rounded-none font-black uppercase tracking-widest text-[10px]">
+                    <Button variant="outline" className="border-2 border-black rounded font-black uppercase tracking-widest text-[10px]">
                         <ShoppingBag className="mr-2 h-4 w-4" /> Ir a la Tienda
                     </Button>
                 </Link>
@@ -282,11 +282,11 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {sales.map((sale) => (
-                        <Card key={sale.id} className="border-2 border-black rounded-none shadow-[8px_8px_0px_0px_rgba(36,37,40,1)] overflow-hidden">
+                        <Card key={sale.id} className="border-2 border-black rounded shadow-[8px_8px_0px_0px_rgba(36,37,40,1)] overflow-hidden">
                             <CardHeader className="bg-[#F9F9F9] border-b-2 border-black p-6">
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-4">
-                                        <div className="h-12 w-12 rounded-none bg-black flex items-center justify-center text-[#EE8600]">
+                                        <div className="h-12 w-12 rounded bg-black flex items-center justify-center text-[#EE8600]">
                                             <ShoppingBag className="h-6 w-6" />
                                         </div>
                                         <div>
@@ -299,7 +299,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                                     </div>
                                     <div className="text-right">
                                         <div className="font-black text-2xl text-[#EE8600] tabular-nums">{formatPrice(sale.total)}</div>
-                                        <Badge className={`rounded-none font-black uppercase tracking-widest text-[9px] ${
+                                        <Badge className={`rounded font-black uppercase tracking-widest text-[9px] ${
                                             sale.estado === 'completado' ? 'bg-green-500 text-white' : 'bg-[#EE8600] text-white'
                                         }`}>
                                             {sale.estado.toUpperCase()}
@@ -359,7 +359,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                                 id="username"
                                 value={profile.username}
                                 onChange={(e) => setProfile({...profile, username: e.target.value})}
-                                className="rounded-none border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
                                 placeholder="Tu nombre público..."
                             />
                         </div>
@@ -371,25 +371,25 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                                     placeholder="Calle y Número"
                                     value={profile.calle}
                                     onChange={(e) => setProfile({...profile, calle: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-[#EE8600] col-span-2"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600] col-span-2"
                                 />
                                 <Input 
                                     placeholder="Ciudad"
                                     value={profile.ciudad}
                                     onChange={(e) => setProfile({...profile, ciudad: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
                                 />
                                 <Input 
                                     placeholder="Región"
                                     value={profile.region}
                                     onChange={(e) => setProfile({...profile, region: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
                                 />
                                 <Input 
                                     placeholder="Teléfono"
                                     value={profile.telefono}
                                     onChange={(e) => setProfile({...profile, telefono: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-[#EE8600] col-span-2"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600] col-span-2"
                                 />
                             </div>
                         </div>
@@ -397,7 +397,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                         <Button 
                             type="submit" 
                             disabled={isUpdating}
-                            className="w-full h-14 bg-black hover:bg-[#EE8600] text-white rounded-none font-black uppercase tracking-widest transition-colors shadow-[6px_6px_0px_0px_rgba(238,134,0,1)] hover:shadow-none"
+                            className="w-full h-14 bg-black hover:bg-[#EE8600] text-white rounded font-black uppercase tracking-widest transition-colors shadow-[6px_6px_0px_0px_rgba(238,134,0,1)] hover:shadow-none"
                         >
                             {isUpdating ? "Grabando Crónicas..." : "Actualizar mis Datos"}
                         </Button>
@@ -422,7 +422,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                                     type="password"
                                     value={passwords.newPassword}
                                     onChange={(e) => setPasswords({...passwords, newPassword: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
                                 />
                             </div>
 
@@ -433,7 +433,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                                     type="password"
                                     value={passwords.confirmPassword}
                                     onChange={(e) => setPasswords({...passwords, confirmPassword: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
                                 />
                             </div>
                         </div>
@@ -442,7 +442,7 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                             type="submit" 
                             disabled={isUpdating}
                             variant="outline"
-                            className="w-full h-14 border-2 border-black hover:bg-black hover:text-white rounded-none font-black uppercase tracking-widest transition-all"
+                            className="w-full h-14 border-2 border-black hover:bg-black hover:text-white rounded font-black uppercase tracking-widest transition-all"
                         >
                             <Edit className="mr-2 h-4 w-4" /> Cambiar mi Llave
                         </Button>

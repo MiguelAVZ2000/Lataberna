@@ -29,7 +29,7 @@ export default async function MisPersonajesPage() {
                   «Debes iniciar sesión para acceder a tu colección personal de héroes y aventureros.»
               </p>
             </div>
-            <Button asChild className="h-14 px-10 rounded-none bg-[#242528] hover:bg-[#EE8600] text-white font-bold uppercase tracking-widest transition-colors shadow-lg">
+            <Button asChild className="h-14 px-10 rounded bg-[#242528] hover:bg-[#EE8600] text-white font-bold uppercase tracking-widest transition-colors shadow-lg">
               <Link href="/login">Entrar a la Taberna</Link>
             </Button>
         </main>
@@ -59,7 +59,7 @@ export default async function MisPersonajesPage() {
                  «Gestiona tus leyendas y prepárate para tu próxima gran aventura.»
                </p>
              </div>
-             <Button asChild className="h-14 px-8 bg-[#242528] hover:bg-[#EE8600] text-white rounded-none font-bold uppercase tracking-widest shadow-lg transition-colors">
+             <Button asChild className="h-14 px-8 bg-[#242528] hover:bg-[#EE8600] text-white rounded font-bold uppercase tracking-widest shadow-lg transition-colors">
                 <Link href="/personaje">
                   <Plus className="mr-3 h-5 w-5" /> Crear Héroe
                 </Link>

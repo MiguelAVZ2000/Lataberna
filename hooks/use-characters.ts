@@ -1,29 +1,46 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
+import { useAuth } from '@/components/auth/auth-context'
+import type { DBCharacter } from '@/lib/types'
 
+interface SaveCharacterInput {
+  nombre: string
+  raza_id: string
+  clase_id: string
+  nivel: number
+  estadisticas: Record<string, unknown>
+  biografia: Record<string, unknown>
+}
+
+/**
+ * Hook para CRUD de personajes.
+ * Usa useAuth() para obtener el usuario autenticado,
+ * eliminando llamadas duplicadas a supabase.auth.getUser().
+ */
 export function useCharacters() {
-  const [characters, setCharacters] = useState<any[]>([])
+  const { user } = useAuth()
+  const [characters, setCharacters] = useState<DBCharacter[]>([])
   const [loading, setLoading] = useState(true)
 
-  const fetchCharacters = async () => {
-    setLoading(true)
-    const { data: { user } } = await supabase.auth.getUser()
-    
-    if (user) {
-      const { data, error } = await supabase
-        .from('personajes')
-        .select('*')
-        .eq('usuario_id', user.id)
-        .order('creado_en', { ascending: false })
-
-      if (!error) setCharacters(data || [])
+  const fetchCharacters = useCallback(async () => {
+    if (!user) {
+      setCharacters([])
+      setLoading(false)
+      return
     }
-    setLoading(false)
-  }
 
-  const saveCharacter = async (characterData: any) => {
-    const { data: { user } } = await supabase.auth.getUser()
-    
+    setLoading(true)
+    const { data, error } = await supabase
+      .from('personajes')
+      .select('*')
+      .eq('usuario_id', user.id)
+      .order('creado_en', { ascending: false })
+
+    if (!error) setCharacters((data as DBCharacter[]) || [])
+    setLoading(false)
+  }, [user])
+
+  const saveCharacter = async (characterData: SaveCharacterInput) => {
     if (!user) return { error: 'No hay usuario autenticado' }
 
     const { data, error } = await supabase
@@ -46,7 +63,7 @@ export function useCharacters() {
 
   useEffect(() => {
     fetchCharacters()
-  }, [])
+  }, [fetchCharacters])
 
   return { characters, loading, saveCharacter, refresh: fetchCharacters }
 }

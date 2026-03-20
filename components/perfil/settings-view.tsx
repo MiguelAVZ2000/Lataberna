@@ -111,7 +111,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                             <Input 
                                 value={profile.username}
                                 onChange={(e) => setProfile({...profile, username: e.target.value})}
-                                className="rounded-none border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
                                 placeholder="Tu apodo público..."
                             />
                         </div>
@@ -122,7 +122,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                                 placeholder="+56 9 1234 5678"
                                 value={profile.telefono}
                                 onChange={(e) => setProfile({...profile, telefono: e.target.value})}
-                                className="rounded-none border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
                             />
                         </div>
                     </div>
@@ -134,7 +134,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                                 placeholder="Av. Siempre Viva 742"
                                 value={profile.calle}
                                 onChange={(e) => setProfile({...profile, calle: e.target.value})}
-                                className="rounded-none border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
                             />
                         </div>
 
@@ -145,10 +145,10 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                                   value={profile.region} 
                                   onValueChange={(val) => setProfile({...profile, region: val, comuna: ""})}
                                 >
-                                    <SelectTrigger className="rounded-none border-2 border-black h-12">
+                                    <SelectTrigger className="rounded border-2 border-black h-12">
                                         <SelectValue placeholder="Región" />
                                     </SelectTrigger>
-                                    <SelectContent className="rounded-none border-2 border-black max-h-60">
+                                    <SelectContent className="rounded border-2 border-black max-h-60">
                                         {regiones.map(r => (
                                             <SelectItem key={r.id} value={r.nombre}>{r.nombre}</SelectItem>
                                         ))}
@@ -162,10 +162,10 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                                   onValueChange={(val) => setProfile({...profile, comuna: val})}
                                   disabled={!profile.region}
                                 >
-                                    <SelectTrigger className="rounded-none border-2 border-black h-12">
+                                    <SelectTrigger className="rounded border-2 border-black h-12">
                                         <SelectValue placeholder="Comuna" />
                                     </SelectTrigger>
-                                    <SelectContent className="rounded-none border-2 border-black max-h-60">
+                                    <SelectContent className="rounded border-2 border-black max-h-60">
                                         {filteredComunas.map(c => (
                                             <SelectItem key={c} value={c}>{c}</SelectItem>
                                         ))}
@@ -179,7 +179,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                         <Button 
                             type="submit" 
                             disabled={isUpdating}
-                            className="w-full h-14 bg-black hover:bg-[#EE8600] text-white rounded-none font-black uppercase tracking-widest transition-all shadow-[6px_6px_0px_0px_rgba(238,134,0,1)] hover:shadow-none"
+                            className="w-full h-14 bg-black hover:bg-[#EE8600] text-white rounded font-black uppercase tracking-widest transition-all shadow-[6px_6px_0px_0px_rgba(238,134,0,1)] hover:shadow-none"
                         >
                             {isUpdating ? "Guardando Cambios..." : "Guardar Información"}
                         </Button>
@@ -196,7 +196,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {!hasPassword && (
-                        <div className="p-6 bg-red-50 border-2 border-red-200 border-dashed rounded-none flex items-start gap-4">
+                        <div className="p-6 bg-red-50 border-2 border-red-200 border-dashed rounded flex items-start gap-4">
                             <AlertCircle className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
                             <div>
                                 <h4 className="text-xs font-black uppercase text-red-700">Cuenta sin contraseña</h4>
@@ -215,7 +215,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                                     type="password"
                                     value={passwords.newPassword}
                                     onChange={(e) => setPasswords({...passwords, newPassword: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
                                 />
                             </div>
 
@@ -225,7 +225,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                                     type="password"
                                     value={passwords.confirmPassword}
                                     onChange={(e) => setPasswords({...passwords, confirmPassword: e.target.value})}
-                                    className="rounded-none border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                    className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
                                 />
                             </div>
                         </div>
@@ -234,7 +234,7 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                             type="submit" 
                             disabled={isUpdating}
                             variant="outline"
-                            className="w-full h-14 border-2 border-black hover:bg-black hover:text-white rounded-none font-black uppercase tracking-widest transition-all"
+                            className="w-full h-14 border-2 border-black hover:bg-black hover:text-white rounded font-black uppercase tracking-widest transition-all"
                         >
                             <ShieldCheck className="mr-2 h-4 w-4" /> Asignar Contraseña
                         </Button>

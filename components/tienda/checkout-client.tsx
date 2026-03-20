@@ -48,28 +48,56 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { cn } from "@/lib/utils"
+import { User } from "@supabase/supabase-js"
+import { sanitizeString, limitStringLength } from "@/lib/security"
+
+/**
+ * Valida formato RUT chileno (con o sin puntos y guion).
+ * Ejemplos válidos: 12345678-9, 12.345.678-9
+ */
+function isValidRUT(rut: string): boolean {
+  const clean = rut.replace(/\./g, '').replace(/-/g, '')
+  if (clean.length < 2) return false
+  
+  const body = clean.slice(0, -1)
+  const dv = clean.slice(-1).toLowerCase()
+  
+  if (!/^\d+$/.test(body)) return false
+  
+  let sum = 0
+  let multiplier = 2
+  for (let i = body.length - 1; i >= 0; i--) {
+    sum += parseInt(body[i]) * multiplier
+    multiplier = multiplier === 7 ? 2 : multiplier + 1
+  }
+  
+  const remainder = 11 - (sum % 11)
+  const expectedDV = remainder === 11 ? '0' : remainder === 10 ? 'k' : String(remainder)
+  
+  return dv === expectedDV
+}
 
 const checkoutSchema = z.object({
   email: z.string().email("Correo inválido"),
   novedades: z.boolean().default(false),
-  nombre: z.string().min(2, "Nombre requerido"),
-  apellidos: z.string().min(2, "Apellidos requeridos"),
-  calle: z.string().min(5, "Dirección completa requerida"),
-  referencia: z.string().optional(),
+  nombre: z.string().min(2, "Nombre requerido").max(50, "Máximo 50 caracteres"),
+  apellidos: z.string().min(2, "Apellidos requeridos").max(80, "Máximo 80 caracteres"),
+  calle: z.string().min(5, "Dirección completa requerida").max(200, "Máximo 200 caracteres"),
+  referencia: z.string().max(200, "Máximo 200 caracteres").optional(),
   region: z.string().min(1, "Selecciona una región"),
   comuna: z.string().min(1, "Selecciona una comuna"),
-  codigoPostal: z.string().optional(),
-  telefono: z.string().min(8, "Teléfono inválido"),
+  codigoPostal: z.string().max(10, "Máximo 10 caracteres").optional(),
+  telefono: z.string().min(8, "Teléfono inválido").max(15, "Máximo 15 caracteres").regex(/^[\d\s+()-]+$/, "Solo números y símbolos de teléfono"),
   metodoEnvio: z.enum(["domicilio", "retiro"]).default("domicilio"),
   tipoDocumento: z.enum(["boleta", "factura"]).default("boleta"),
-  rut: z.string().min(8, "RUT inválido"),
+  rut: z.string().min(8, "RUT inválido").max(12, "RUT inválido"),
   metodoPago: z.enum(["mercadopago", "tarjeta", "transferencia"]).default("mercadopago"),
   guardarInfo: z.boolean().default(false)
 })
 
 type CheckoutValues = z.infer<typeof checkoutSchema>
 
-export function CheckoutClient({ user }: { user: any }) {
+export function CheckoutClient({ user }: { user: User }) {
     const { cart, total, clearCart } = useCart()
     const router = useRouter()
     const [isProcessing, setIsProcessing] = useState(false)
@@ -124,6 +152,20 @@ export function CheckoutClient({ user }: { user: any }) {
     const onSubmit = async (data: CheckoutValues) => {
         setIsProcessing(true)
         try {
+            // Validar RUT chileno
+            if (!isValidRUT(data.rut)) {
+                form.setError("rut", { message: "RUT inválido. Verifica el dígito verificador." })
+                setIsProcessing(false)
+                return
+            }
+
+            // Sanitizar todos los inputs de texto antes de enviar
+            const sanitizedNombre = sanitizeString(data.nombre)
+            const sanitizedApellidos = sanitizeString(data.apellidos)
+            const sanitizedCalle = limitStringLength(sanitizeString(data.calle), 200)
+            const sanitizedReferencia = data.referencia ? limitStringLength(sanitizeString(data.referencia), 200) : undefined
+            const sanitizedTelefono = data.telefono.replace(/[^\d+\s()-]/g, '')
+
             const { error } = await supabase
                 .from('ventas')
                 .insert({
@@ -132,24 +174,24 @@ export function CheckoutClient({ user }: { user: any }) {
                     estado: 'pendiente',
                     items: cart.map(item => ({
                         producto_id: item.id,
-                        nombre: item.Nombre,
+                        nombre: sanitizeString(item.Nombre),
                         cantidad: item.cantidad,
                         precio: item.Precio
                     })),
                     direccion_envio: {
-                        nombre: `${data.nombre} ${data.apellidos}`,
-                        calle: data.calle,
-                        referencia: data.referencia,
+                        nombre: `${sanitizedNombre} ${sanitizedApellidos}`,
+                        calle: sanitizedCalle,
+                        referencia: sanitizedReferencia,
                         comuna: data.comuna,
                         region: data.region,
-                        telefono: data.telefono,
+                        telefono: sanitizedTelefono,
                         email: data.email,
                         metodo_envio: data.metodoEnvio
                     },
                     metodo_pago: data.metodoPago,
                     datos_facturacion: {
                         tipo: data.tipoDocumento,
-                        rut: data.rut
+                        rut: data.rut.replace(/\./g, '').replace(/-/g, '')
                     }
                 })
 
@@ -160,7 +202,7 @@ export function CheckoutClient({ user }: { user: any }) {
             })
             clearCart()
             router.push("/perfil/pedidos")
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error("Error finalizing order:", error)
             toast.error("Error al procesar la compra")
         } finally {
@@ -179,7 +221,7 @@ export function CheckoutClient({ user }: { user: any }) {
                     <p className="text-gray-500 mt-2">Agrega algunos artículos del tesoro antes de pagar.</p>
                 </div>
                 <Button 
-                  className="bg-black hover:bg-[#EE8600] text-white rounded-none px-12 h-14 font-black uppercase tracking-widest text-[11px] transition-all"
+                  className="bg-black hover:bg-[#EE8600] text-white rounded px-12 h-14 font-black uppercase tracking-widest text-[11px] transition-all"
                   onClick={() => router.push("/tienda")}
                 >
                     Explorar la Tienda
@@ -205,7 +247,7 @@ export function CheckoutClient({ user }: { user: any }) {
                              render={({ field }) => (
                                <FormItem>
                                  <FormControl>
-                                   <Input placeholder="Correo electrónico" className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
+                                   <Input placeholder="Correo electrónico" className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
                                  </FormControl>
                                  <FormMessage className="text-[10px] uppercase font-bold" />
                                </FormItem>
@@ -220,7 +262,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                    <Checkbox 
                                      checked={field.value} 
                                      onCheckedChange={field.onChange} 
-                                     className="rounded-none border-gray-300 data-[state=checked]:bg-black"
+                                     className="rounded border-gray-300 data-[state=checked]:bg-black"
                                    />
                                  </FormControl>
                                  <FormLabel className="text-xs text-gray-600 font-medium">Enviarme novedades y ofertas por correo electrónico</FormLabel>
@@ -240,7 +282,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormControl>
-                                                <Input placeholder="Nombre" className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
+                                                <Input placeholder="Nombre" className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
                                             </FormControl>
                                             <FormMessage className="text-[10px] uppercase font-bold" />
                                         </FormItem>
@@ -252,7 +294,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormControl>
-                                                <Input placeholder="Apellidos" className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
+                                                <Input placeholder="Apellidos" className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
                                             </FormControl>
                                             <FormMessage className="text-[10px] uppercase font-bold" />
                                         </FormItem>
@@ -305,7 +347,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <Input placeholder="Casa, apartamento, depto, etc. (opcional)" className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
+                                            <Input placeholder="Casa, apartamento, depto, etc. (opcional)" className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
                                         </FormControl>
                                     </FormItem>
                                 )}
@@ -322,11 +364,11 @@ export function CheckoutClient({ user }: { user: any }) {
                                                 form.setValue("comuna", "")
                                             }} value={field.value}>
                                                 <FormControl>
-                                                    <SelectTrigger className="h-12 rounded-none border-gray-200 focus:ring-0 bg-white shadow-none">
+                                                    <SelectTrigger className="h-12 rounded border-gray-200 focus:ring-0 bg-white shadow-none">
                                                         <SelectValue placeholder="Región" />
                                                     </SelectTrigger>
                                                 </FormControl>
-                                                <SelectContent className="rounded-none border border-gray-200 bg-white shadow-lg z-[100]">
+                                                <SelectContent className="rounded border border-gray-200 bg-white shadow-lg z-[100]">
                                                     {regiones.map(r => (
                                                         <SelectItem key={r.id} value={r.nombre}>{r.nombre}</SelectItem>
                                                     ))}
@@ -343,11 +385,11 @@ export function CheckoutClient({ user }: { user: any }) {
                                         <FormItem>
                                             <Select onValueChange={field.onChange} value={field.value} disabled={!selectedRegion}>
                                                 <FormControl>
-                                                    <SelectTrigger className="h-12 rounded-none border-gray-200 focus:ring-0 bg-white shadow-none">
+                                                    <SelectTrigger className="h-12 rounded border-gray-200 focus:ring-0 bg-white shadow-none">
                                                         <SelectValue placeholder="Comuna" />
                                                     </SelectTrigger>
                                                 </FormControl>
-                                                <SelectContent className="rounded-none border border-gray-200 max-h-60 bg-white shadow-lg z-[100]">
+                                                <SelectContent className="rounded border border-gray-200 max-h-60 bg-white shadow-lg z-[100]">
                                                     {filteredComunas.map(c => (
                                                         <SelectItem key={c} value={c}>{c}</SelectItem>
                                                     ))}
@@ -363,7 +405,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormControl>
-                                                <Input placeholder="Cód. Postal (opcional)" className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
+                                                <Input placeholder="Cód. Postal (opcional)" className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
                                             </FormControl>
                                         </FormItem>
                                     )}
@@ -377,7 +419,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                     <FormItem>
                                         <FormControl>
                                             <div className="relative">
-                                              <Input placeholder="Teléfono" className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black pl-4 bg-white" {...field} />
+                                              <Input placeholder="Teléfono" className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black pl-4 bg-white" {...field} />
                                               <Info className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-300" />
                                             </div>
                                         </FormControl>
@@ -392,7 +434,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                 render={({ field }) => (
                                     <FormItem className="flex items-center space-x-3 space-y-0">
                                         <FormControl>
-                                            <Checkbox checked={field.value} onCheckedChange={field.onChange} className="rounded-none border-gray-300 data-[state=checked]:bg-black" />
+                                            <Checkbox checked={field.value} onCheckedChange={field.onChange} className="rounded border-gray-300 data-[state=checked]:bg-black" />
                                         </FormControl>
                                         <FormLabel className="text-xs text-gray-600 font-medium">Guardar mi información y consultar más rápidamente la próxima vez</FormLabel>
                                     </FormItem>
@@ -412,7 +454,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                             <RadioGroup
                                                 onValueChange={field.onChange}
                                                 value={field.value}
-                                                className="grid gap-0 border border-gray-200 rounded-none overflow-hidden"
+                                                className="grid gap-0 border border-gray-200 rounded overflow-hidden"
                                             >
                                                 <Label 
                                                   className={cn(
@@ -461,11 +503,11 @@ export function CheckoutClient({ user }: { user: any }) {
                                     <FormItem>
                                         <Select onValueChange={field.onChange} value={field.value}>
                                             <FormControl>
-                                                <SelectTrigger className="h-12 rounded-none border-gray-200 focus:ring-0 bg-white shadow-none">
+                                                <SelectTrigger className="h-12 rounded border-gray-200 focus:ring-0 bg-white shadow-none">
                                                     <SelectValue placeholder="Tipo de documento" />
                                                 </SelectTrigger>
                                             </FormControl>
-                                            <SelectContent className="rounded-none border border-gray-200 bg-white shadow-lg z-[100]">
+                                            <SelectContent className="rounded border border-gray-200 bg-white shadow-lg z-[100]">
                                                 <SelectItem value="boleta">Boleta</SelectItem>
                                                 <SelectItem value="factura">Factura</SelectItem>
                                             </SelectContent>
@@ -481,7 +523,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                     <FormItem>
                                         <FormLabel className="text-[10px] font-black uppercase tracking-widest text-gray-400">RUT del comprador *</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="12.345.678-9" className="h-12 rounded-none border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
+                                            <Input placeholder="12.345.678-9" className="h-12 rounded border-gray-200 focus-visible:ring-0 focus-visible:border-black bg-white" {...field} />
                                         </FormControl>
                                         <FormMessage className="text-[10px] uppercase font-bold" />
                                     </FormItem>
@@ -503,7 +545,7 @@ export function CheckoutClient({ user }: { user: any }) {
                                             <RadioGroup
                                                 onValueChange={field.onChange}
                                                 defaultValue={field.value}
-                                                className="grid gap-0 border border-gray-200 rounded-none overflow-hidden"
+                                                className="grid gap-0 border border-gray-200 rounded overflow-hidden"
                                             >
                                                 <div className={cn(
                                                   "p-0 border-b border-gray-200 transition-all",
@@ -544,7 +586,7 @@ export function CheckoutClient({ user }: { user: any }) {
                         <Button 
                             type="submit" 
                             disabled={isProcessing}
-                            className="w-full h-16 bg-black text-white hover:bg-[#EE8600] rounded-none font-black uppercase tracking-widest text-xs transition-all"
+                            className="w-full h-16 bg-black text-white hover:bg-[#EE8600] rounded font-black uppercase tracking-widest text-xs transition-all"
                         >
                             {isProcessing ? "Procesando..." : "Pagar ahora"}
                         </Button>
@@ -594,11 +636,11 @@ export function CheckoutClient({ user }: { user: any }) {
                                     placeholder="Código de descuento" 
                                     value={couponCode}
                                     onChange={(e) => setCouponCode(e.target.value)}
-                                    className="h-12 rounded-none border-gray-300 focus-visible:ring-0 focus-visible:border-black bg-white" 
+                                    className="h-12 rounded border-gray-300 focus-visible:ring-0 focus-visible:border-black bg-white" 
                                 />
                                 <Button 
                                   variant="outline" 
-                                  className="h-12 rounded-none border-2 border-black font-black uppercase tracking-widest text-[10px] px-6 hover:bg-black hover:text-white transition-all bg-white"
+                                  className="h-12 rounded border-2 border-black font-black uppercase tracking-widest text-[10px] px-6 hover:bg-black hover:text-white transition-all bg-white"
                                   onClick={(e) => {
                                     e.preventDefault()
                                     toast.error("Código inválido", { description: "Prueba con WELCOME10 (Próximamente)" })

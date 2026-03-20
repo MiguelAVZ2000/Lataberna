@@ -1,105 +1,108 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Dices, Scroll, Target, Shield, Zap, Sparkles, BookOpen, Heart, ArrowRight } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Dices, Target, Shield, Heart, Sparkles, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function ReglasBasicasWikiPage() {
   const rules = [
     {
       title: "La Tirada de Dados (D20)",
-      description: "Casi todo en DnD se resuelve lanzando un dado de 20 caras (D20). Lanzas el dado, sumas tus modificadores y comparas el resultado con una Clase de Dificultad (CD).",
+      description: "Casi todo en D&D se resuelve lanzando un dado de 20 caras (D20). Lanzas el dado, sumas tus modificadores y comparas el resultado con una Clase de Dificultad (CD).",
       icon: Dices,
-      accent: "text-primary"
+      tag: "Core",
     },
     {
       title: "Ventaja y Desventaja",
       description: "A veces las circunstancias te favorecen o te perjudican. Con Ventaja, lanzas dos D20 y te quedas con el mayor. Con Desventaja, te quedas con el menor.",
       icon: Target,
-      accent: "text-primary"
+      tag: "Mecánica",
     },
     {
       title: "Clase de Armadura (CA)",
       description: "Representa qué tan difícil es golpearte en combate. Un ataque debe igualar o superar tu CA para hacerte daño.",
       icon: Shield,
-      accent: "text-primary"
+      tag: "Combate",
     },
     {
       title: "Puntos de Golpe (PG)",
       description: "Tu vitalidad. Si llegan a 0, caes inconsciente. Se recuperan descansando o mediante magia curativa.",
       icon: Heart,
-      accent: "text-primary"
-    }
+      tag: "Vital",
+    },
   ]
 
   return (
-    <div className="space-y-12 pb-12">
-      {/* Header Section */}
-      <div className="border-b border-gray-100 pb-8">
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-red-200 bg-red-50 text-primary text-[10px] font-bold uppercase tracking-widest">
-            Fundamentos del Juego
+    <div className="max-w-7xl mx-auto space-y-12 pb-20">
+
+      {/* Page Header */}
+      <div className="space-y-6 pt-8">
+        <h1 className="font-heading font-black text-5xl uppercase tracking-tighter text-[#242528]">
+          Reglas Básicas
+        </h1>
+        <div className="h-2 w-32 bg-[#EE8600]" />
+        <p className="text-xl text-[#242528]/60 font-sans max-w-3xl leading-relaxed italic border-l-4 border-[#242528] pl-6">
+          «Los cimientos sobre los que se construyen todas las historias. Domina estos conceptos y estarás listo para cualquier desafío en la mesa.»
+        </p>
+      </div>
+
+      {/* Manual Section Header */}
+      <div className="flex items-center gap-3 border-b-2 border-[#242528]/20 pb-4">
+        <div className="bg-[#242528] text-white text-[10px] font-black px-2 py-1">PHB</div>
+        <h2 className="font-heading font-black text-2xl uppercase tracking-tight text-[#242528] flex-1">
+          FUNDAMENTOS DEL JUEGO
+        </h2>
+      </div>
+
+      {/* Rules Grid */}
+      <div className="grid gap-6 md:grid-cols-2">
+        {rules.map((rule) => (
+          <div key={rule.title} className="group relative border-2 border-[#242528] bg-white overflow-hidden hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300">
+            {/* Top gold accent */}
+            <div className="h-1 w-0 bg-[#EE8600] group-hover:w-full transition-all duration-700" />
+            <div className="p-8 flex gap-6 items-start">
+              <div className="h-14 w-14 border-2 border-[#242528] flex items-center justify-center bg-white group-hover:bg-[#242528] transition-all duration-300 shrink-0">
+                <rule.icon className="h-7 w-7 text-[#242528] group-hover:text-white transition-colors" />
+              </div>
+              <div className="space-y-3 flex-1">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="font-heading font-black text-xl uppercase text-[#242528] tracking-tight leading-tight">
+                    {rule.title}
+                  </h3>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-[#242528]/40 border border-[#242528]/20 px-2 py-1 shrink-0">
+                    {rule.tag}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-500 leading-relaxed font-sans">
+                  {rule.description}
+                </p>
+              </div>
+            </div>
           </div>
-          <h1 className="font-heading font-black text-5xl lg:text-6xl uppercase tracking-tighter text-[#242528]">
-            Reglas Básicas
-          </h1>
-          <div className="max-w-2xl">
-            <p className="text-xl text-gray-500 leading-relaxed font-sans mt-4">
-              Los cimientos sobre los que se construyen todas las historias. Domina estos conceptos y estarás listo para cualquier desafío en la mesa.
+        ))}
+      </div>
+
+      {/* La Regla de Oro */}
+      <div className="border-2 border-[#242528] bg-[#242528] text-white p-8 shadow-[4px_4px_0px_0px_rgba(238,134,0,1)]">
+        <div className="flex gap-4 items-start">
+          <Sparkles className="h-8 w-8 text-[#EE8600] shrink-0 mt-1" />
+          <div className="space-y-3">
+            <h3 className="font-heading font-black text-2xl uppercase tracking-tighter text-[#EE8600]">
+              La Regla de Oro
+            </h3>
+            <p className="text-white/80 font-sans italic text-lg leading-relaxed max-w-3xl">
+              «Recuerda siempre la regla más importante: el Dungeon Master tiene la última palabra. Las reglas están para servir a la diversión y la narrativa, no al revés. Si una regla entorpece la épica, ¡cámbiala!»
             </p>
           </div>
         </div>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        {rules.map((rule) => (
-          <Card key={rule.title} className="group border-gray-200 bg-white hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-all duration-300 rounded-sm">
-            <CardHeader className="flex flex-row items-center gap-4 space-y-0 p-6">
-              <div className={`p-3 rounded-sm bg-gray-50 border border-gray-100 ${rule.accent} group-hover:bg-primary/10 transition-colors`}>
-                <rule.icon className="h-6 w-6" />
-              </div>
-              <CardTitle className="font-heading text-2xl font-bold uppercase tracking-tighter text-[#242528] group-hover:text-primary transition-colors">
-                {rule.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-6 pb-6 pt-0">
-              <p className="text-gray-500 leading-relaxed text-sm font-sans mb-4">
-                {rule.description}
-              </p>
-               <div className="text-[10px] font-bold text-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-1 group-hover:translate-y-0">
-                  Aprender más
-                </div>
-            </CardContent>
-          </Card>
-        ))}
+      {/* Next Step */}
+      <div className="flex justify-start pt-4">
+        <Link href="/wiki/conceptos/combate"
+          className="group inline-flex items-center gap-3 border-2 border-[#242528] bg-white hover:bg-[#242528] hover:text-white px-8 py-4 font-black uppercase tracking-widest text-xs text-[#242528] transition-all duration-300">
+          Continuar al Combate
+          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
       </div>
 
-      {/* Special Rule Section */}
-      <Card className="border-red-100 bg-red-50 shadow-sm rounded-sm overflow-hidden">
-        <CardContent className="p-8">
-          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-            <div className="p-4 rounded-sm bg-white shadow-sm border border-red-100 shrink-0">
-              <Sparkles className="h-10 w-10 text-primary" />
-            </div>
-            <div className="space-y-4">
-              <h3 className="font-heading text-2xl font-black text-primary uppercase tracking-tighter">La Regla de Oro</h3>
-              <p className="text-red-900/70 max-w-3xl italic font-sans italic text-lg leading-relaxed">
-                «Recuerda siempre la regla más importante: el Dungeon Master tiene la última palabra. Las reglas están para servir a la diversión y la narrativa, no al revés. Si una regla entorpece la épica, ¡cámbiala!»
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Next Steps */}
-      <div className="flex justify-center pt-8">
-         <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wide rounded-sm py-8 px-12 text-lg">
-          <Link href="/wiki/conceptos/combate">
-            Continuar al Combate <ArrowRight className="ml-2 h-6 w-6" />
-          </Link>
-        </Button>
-      </div>
     </div>
   )
 }
-
