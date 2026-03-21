@@ -23,7 +23,7 @@ const footerLinks = {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[var(--color-dark-section)] text-white/50 py-20 border-t border-[var(--color-accent-gold)]/30">
+    <footer className="bg-bg-base text-text-muted py-20 border-t border-[var(--color-accent-gold)]/30">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-6 mb-20">
           
@@ -37,7 +37,7 @@ export function SiteFooter() {
                 LA<span className="text-[#EE8600]">TABERNA</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed max-w-sm font-sans text-gray-400">
+            <p className="text-sm leading-relaxed max-w-sm font-sans text-text-muted">
               La Taberna es el centro de recursos de D&D para la comunidad hispana. 
               Equipa a tus aventureros, consulta el saber arcano y forja tu propia leyenda.
             </p>
@@ -59,7 +59,7 @@ export function SiteFooter() {
               <ul className="space-y-4">
                 {footerLinks.tienda.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-xs font-black uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group decoration-accent-gold">
+                    <Link href={link.href} className="text-xs font-black uppercase tracking-widest hover:text-gold transition-colors flex items-center gap-2 group">
                        {link.name}
                     </Link>
                   </li>
@@ -74,7 +74,7 @@ export function SiteFooter() {
               <ul className="space-y-4">
                 {footerLinks.wiki.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-xs font-black uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group decoration-accent-gold">
+                    <Link href={link.href} className="text-xs font-black uppercase tracking-widest hover:text-gold transition-colors flex items-center gap-2 group">
                        {link.name}
                     </Link>
                   </li>
@@ -89,7 +89,7 @@ export function SiteFooter() {
               <ul className="space-y-4">
                 {footerLinks.comunidad.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-xs font-black uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group decoration-accent-gold">
+                    <Link href={link.href} className="text-xs font-black uppercase tracking-widest hover:text-gold transition-colors flex items-center gap-2 group">
                        {link.name} <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity text-[var(--color-accent-gold)]" />
                     </Link>
                   </li>
@@ -100,7 +100,7 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col lg:flex-row items-center justify-between gap-8 text-[10px] font-black uppercase tracking-widest text-gray-500">
+        <div className="pt-12 border-t border-white/5 flex flex-col lg:flex-row items-center justify-between gap-8 text-[10px] font-black uppercase tracking-widest text-text-muted">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <p>
               &copy; {new Date().getFullYear()} LATABERNA.
@@ -111,7 +111,7 @@ export function SiteFooter() {
                <span className="hover:text-white cursor-pointer transition-colors">Soporte</span>
             </div>
           </div>
-          <p className="text-gray-600 max-w-md text-center lg:text-right leading-relaxed font-sans font-normal lowercase italic first-letter:uppercase">
+          <p className="text-text-muted/70 max-w-md text-center lg:text-right leading-relaxed font-sans font-normal lowercase italic first-letter:uppercase">
             Dungeons & Dragons y D&D son marcas comerciales de Wizards of the Coast LLC en EE.UU. y otros países.
           </p>
         </div>
