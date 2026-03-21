@@ -86,8 +86,16 @@ const defaultCharacter: CharacterData = {
   feats: "",
 }
 
+/**
+ * React context holding the full character wizard state: character data,
+ * current step index, and update/reset methods.
+ */
 const CharacterContext = createContext<CharacterContextType | undefined>(undefined)
 
+/**
+ * Provides character wizard state to the subtree.
+ * Note: state resets to defaults when this component unmounts.
+ */
 export function CharacterProvider({ children }: { children: ReactNode }) {
   const [character, setCharacter] = useState<CharacterData>(defaultCharacter)
   const [currentStep, setCurrentStep] = useState(0)
@@ -116,6 +124,11 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
   )
 }
 
+/**
+ * Hook to access character wizard state and actions.
+ * @returns `{ character, updateCharacter, currentStep, setCurrentStep, resetCharacter }`
+ * @throws Error if called outside `CharacterProvider`
+ */
 export function useCharacter() {
   const context = useContext(CharacterContext)
   if (context === undefined) {

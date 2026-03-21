@@ -11,9 +11,11 @@
 const isBrowser = typeof window !== 'undefined'
 
 /**
- * Sanitiza una cadena de texto eliminando caracteres peligrosos.
- * En el browser: usa DOMPurify para sanitización robusta.
- * En server: usa regex como fallback seguro.
+ * Sanitizes a plain-text string by stripping all HTML and dangerous patterns.
+ * Uses DOMPurify in the browser and a regex fallback on the server.
+ * @param input - User-provided string to sanitize.
+ * @returns Sanitized string safe for storage and display.
+ * @security Use on all user inputs before persisting to DB or rendering as HTML.
  */
 export function sanitizeString(input: string): string {
   if (!input) return ''
@@ -33,11 +35,11 @@ export function sanitizeString(input: string): string {
 }
 
 /**
- * Sanitiza HTML permitiendo solo un subconjunto seguro de tags.
- * Útil para contenido de guías o descripciones que pueden tener formato.
- * 
- * Tags permitidos: b, i, em, strong, p, br, ul, ol, li
- * NO permite: script, iframe, img, a con javascript:, event handlers
+ * Sanitizes HTML, allowing only a safe subset of tags (b, i, em, strong, p, br, ul, ol, li).
+ * Strips script, iframe, event handlers, and all attributes.
+ * @param dirty - User-provided HTML string to sanitize.
+ * @returns Sanitized HTML string safe for storage and rendering.
+ * @security Use on all user inputs before persisting to DB or rendering as HTML.
  */
 export function sanitizeHTML(dirty: string): string {
   if (!dirty) return ''

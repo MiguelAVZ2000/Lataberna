@@ -28,34 +28,46 @@ export interface RateLimitResult {
 }
 
 /**
- * Configuraciones predefinidas para diferentes escenarios
+ * Preset rate-limit configurations for each endpoint type.
+ * - LOGIN: 5 attempts per 15 minutes (brute-force protection)
+ * - REGISTER: 3 attempts per hour (account spam prevention)
+ * - API: 100 requests per minute (general API throttle)
+ * - CHARACTER_CREATION: 10 saves per hour (abuse prevention)
+ * - PDF_GENERATION: 5 exports per 10 minutes (CPU cost protection)
+ * - CHECKOUT: 3 attempts per 5 minutes (payment fraud prevention)
  */
 export const RATE_LIMIT_CONFIGS = {
+  /** Brute-force protection: 5 login attempts per 15-minute window. */
   LOGIN: {
     maxAttempts: 5,
     windowSeconds: 900,
     errorMessage: 'Demasiados intentos de inicio de sesión. Intenta nuevamente en 15 minutos.',
   },
+  /** Spam prevention: 3 registration attempts per hour. */
   REGISTER: {
     maxAttempts: 3,
     windowSeconds: 3600,
     errorMessage: 'Demasiados intentos de registro. Intenta nuevamente en una hora.',
   },
+  /** General API throttle: 100 requests per minute. */
   API: {
     maxAttempts: 100,
     windowSeconds: 60,
     errorMessage: 'Demasiadas solicitudes. Intenta nuevamente en un minuto.',
   },
+  /** Abuse prevention: 10 character saves per hour. */
   CHARACTER_CREATION: {
     maxAttempts: 10,
     windowSeconds: 3600,
     errorMessage: 'Has creado demasiados personajes. Intenta nuevamente en una hora.',
   },
+  /** CPU cost protection: 5 PDF exports per 10 minutes. */
   PDF_GENERATION: {
     maxAttempts: 5,
     windowSeconds: 600,
     errorMessage: 'Demasiadas generaciones de PDF. Intenta nuevamente en 10 minutos.',
   },
+  /** Payment fraud prevention: 3 checkout attempts per 5 minutes. */
   CHECKOUT: {
     maxAttempts: 3,
     windowSeconds: 300,
@@ -135,12 +147,12 @@ function checkRateLimitMemory(
 // --- API Pública ---
 
 /**
- * Verifica si una clave ha excedido el límite de tasa.
- * Usa Upstash Redis en producción, memoria en desarrollo.
- * 
- * @param key - Identificador único (ej: IP, user ID, email)
- * @param configOrName - Configuración de rate limiting o nombre del preset
- * @returns Resultado de la verificación
+ * Checks whether a key has exceeded its rate limit quota.
+ * Uses Upstash Redis in production and an in-memory Map in development.
+ * @param key - Unique identifier (e.g., IP or userId) to track.
+ * @param configOrName - Rate limit config object or a preset name from `RATE_LIMIT_CONFIGS`.
+ * @returns `RateLimitResult` with `success`, `remaining`, and `resetTime`.
+ * @throws Error if the Upstash client fails to connect.
  */
 export async function checkRateLimit(
   key: string,

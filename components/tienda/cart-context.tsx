@@ -15,11 +15,15 @@ interface CartContextType {
     total: number
 }
 
+/**
+ * React context storing cart items, sidebar open state, and all cart methods.
+ * Consumed via {@link useCart} — do not access directly.
+ */
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
 /**
- * Proveedor del contexto del carrito con optimizaciones de rendimiento.
- * Utiliza memoización para evitar re-renders innecesarios de los consumidores.
+ * Wraps the app subtree with cart state, persisting cart to `localStorage`.
+ * Uses memoization to avoid unnecessary re-renders in consumers.
  */
 export function CartProvider({ children }: { children: React.ReactNode }) {
     const [cart, setCart] = useState<CartItem[]>([])
@@ -128,7 +132,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * Hook personalizado para acceder al contexto del carrito.
+ * Hook to access cart state and actions from any component inside `CartProvider`.
+ * @returns `{ cart, isCartOpen, setIsCartOpen, addToCart, removeFromCart, updateQuantity, clearCart, total }`
+ * @throws Error if called outside `CartProvider`
  */
 export function useCart() {
     const context = useContext(CartContext)
