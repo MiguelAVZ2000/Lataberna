@@ -80,7 +80,7 @@ export function SiteHeader() {
               <div className="relative animate-in fade-in slide-in-from-right-4 duration-300 mr-2">
                 <form onSubmit={handleSearchSubmit}>
                   <input autoFocus type="text" placeholder="Buscar en la Wiki..."
-                    className="h-9 w-40 sm:w-64 bg-white border border-white/20 rounded-sm pl-3 pr-8 text-xs text-black placeholder:text-black/60 focus:outline-none focus:border-[#EE8600]"
+                    className="h-9 w-40 sm:w-64 bg-bg-surface border border-border-dark rounded-sm pl-3 pr-8 text-xs text-text-primary placeholder:text-text-muted focus:outline-none focus:border-gold"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onBlur={() => { setTimeout(() => { if (!searchQuery) setShowSearch(false) }, 200) }}
@@ -105,7 +105,7 @@ export function SiteHeader() {
           <button onClick={() => setIsCartOpen(true)} className="flex items-center justify-center h-10 w-10 bg-bg-surface text-text-primary hover:bg-gold hover:text-white relative border border-border-dark rounded-sm transition-colors duration-200 active:scale-95 group/cart">
             <ShoppingCart className="h-5 w-5 transition-transform duration-200 group-hover/cart:scale-110" />
             {cart.length > 0 && (
-              <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#EE8600] border-2 border-[#242528] group-hover/cart:border-white" />
+              <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#EE8600] border-2 border-bg-base group-hover/cart:border-white" />
             )}
           </button>
 
@@ -155,7 +155,7 @@ export function SiteHeader() {
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-[#242528] border-l border-white/5 p-0 shadow-2xl text-white">
+            <SheetContent side="right" className="w-[300px] bg-bg-base border-l border-white/5 p-0 shadow-2xl text-white">
               <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
               <div className="p-6 border-b border-white/5">
                 <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
