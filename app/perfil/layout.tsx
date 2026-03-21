@@ -17,7 +17,7 @@ export default async function PerfilLayout({
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-bg-base">
       <SiteHeader />
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
