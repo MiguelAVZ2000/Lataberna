@@ -7,20 +7,20 @@ import Link from "next/link"
 
 export default function RegisterPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-bg-base" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23EE8600' fill-opacity='0.06'/%3E%3C/svg%3E")` }}>
       <SiteHeader />
       <main className="flex-1 flex items-center justify-center p-8">
-        <div className="mx-auto flex w-full flex-col justify-center space-y-10 sm:w-[450px] bg-white border border-[#242528] p-12 shadow-[12px_12px_0px_0px_rgba(36,37,40,1)]">
+        <div className="mx-auto flex w-full flex-col justify-center space-y-10 sm:w-[450px] bg-bg-surface border border-border-dark p-12 shadow-[12px_12px_0px_0px_rgba(36,37,40,1)]">
           <div className="flex flex-col space-y-4 text-center">
             <div className="flex justify-center mb-2">
                <div className="p-4 bg-[#242528] text-white">
-                  <Sword className="h-10 w-10 text-[#EE8600]" />
+                  <Sword className="h-10 w-10 text-gold" />
                </div>
             </div>
-            <h1 className="text-4xl font-heading font-bold tracking-tight text-[#242528] uppercase">
+            <h1 className="text-4xl font-heading font-bold tracking-tight text-text-primary uppercase">
               FORJAR CUENTA
             </h1>
-            <p className="text-sm text-[#242528]/60 font-sans italic">
+            <p className="text-sm text-text-muted font-sans italic">
               «Todo héroe necesita un nombre y un lugar al que llamar hogar. Empieza tu viaje aquí.»
             </p>
           </div>
