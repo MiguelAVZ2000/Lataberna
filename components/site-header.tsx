@@ -1,14 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback } from "react"
 import { Menu, ShoppingCart, Beer, BookOpen, Users, User, Search, Dice5, Scroll } from "lucide-react"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { useAuth } from "@/components/auth/auth-context"
 import { useCart } from "@/components/tienda/cart-context"
 import { useRouter } from "next/navigation"
-import { useDebounce } from "@/hooks/use-debounce"
-import { SearchResult } from "@/lib/search-utils"
+import { useSearchSuggestions } from "@/hooks/use-search-suggestions"
 import { SearchSuggestions } from "@/components/wiki/search-suggestions"
 
 import {
@@ -36,22 +35,7 @@ export function SiteHeader() {
   // Search State
   const [showSearch, setShowSearch] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
-  const [suggestions, setSuggestions] = useState<SearchResult[]>([])
-  const [isSearching, setIsSearching] = useState(false)
-  const debouncedSearch = useDebounce(searchQuery, 300)
-
-  useEffect(() => {
-    const fetchSuggestions = async () => {
-      if (debouncedSearch.length < 2) { setSuggestions([]); return }
-      setIsSearching(true)
-      try {
-        const response = await fetch(`/api/search/suggestions?query=${encodeURIComponent(debouncedSearch)}`)
-        setSuggestions(await response.json())
-      } catch (e) { console.error(e) }
-      finally { setIsSearching(false) }
-    }
-    fetchSuggestions()
-  }, [debouncedSearch])
+  const { suggestions, isSearching } = useSearchSuggestions(searchQuery)
 
   const handleSearchSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault()
@@ -59,12 +43,11 @@ export function SiteHeader() {
       router.push(`/wiki/search?query=${encodeURIComponent(searchQuery)}`)
       setShowSearch(false)
       setSearchQuery("")
-      setSuggestions([])
     }
   }, [searchQuery, router])
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#242528] text-white border-b-2 border-[#EE8600] shadow-xl">
+    <header className="sticky top-0 z-50 w-full bg-bg-base/95 backdrop-blur-md text-white border-b-2 border-[#EE8600] shadow-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20 max-w-7xl">
         
         {/* Logo */}
@@ -106,20 +89,20 @@ export function SiteHeader() {
                 </form>
                 <SearchSuggestions 
                   suggestions={suggestions} isSearching={isSearching} searchQuery={searchQuery}
-                  onSuggestionClick={(href) => { router.push(href); setShowSearch(false); setSearchQuery(""); setSuggestions([]) }}
+                  onSuggestionClick={(href) => { router.push(href); setShowSearch(false); setSearchQuery("") }}
                   onViewAllClick={() => handleSearchSubmit({ preventDefault: () => {} } as any)}
                   className="min-w-[320px] shadow-xl border border-gray-200"
                 />
               </div>
             ) : (
-              <button onClick={() => setShowSearch(true)} className="hidden sm:flex items-center justify-center h-10 w-10 bg-white text-black hover:bg-[#EE8600] hover:text-white border border-white/5 rounded-sm transition-colors duration-200 active:scale-95">
+              <button onClick={() => setShowSearch(true)} className="hidden sm:flex items-center justify-center h-10 w-10 bg-bg-surface text-text-primary hover:bg-gold hover:text-white border border-border-dark rounded-sm transition-colors duration-200 active:scale-95">
                 <Search className="h-5 w-5 transition-transform duration-200 group-hover:scale-110" />
               </button>
             )}
           </div>
 
           {/* Cart */}
-          <button onClick={() => setIsCartOpen(true)} className="flex items-center justify-center h-10 w-10 bg-white text-black hover:bg-[#EE8600] hover:text-white relative border border-white/5 rounded-sm transition-colors duration-200 active:scale-95 group/cart">
+          <button onClick={() => setIsCartOpen(true)} className="flex items-center justify-center h-10 w-10 bg-bg-surface text-text-primary hover:bg-gold hover:text-white relative border border-border-dark rounded-sm transition-colors duration-200 active:scale-95 group/cart">
             <ShoppingCart className="h-5 w-5 transition-transform duration-200 group-hover/cart:scale-110" />
             {cart.length > 0 && (
               <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#EE8600] border-2 border-[#242528] group-hover/cart:border-white" />
@@ -139,7 +122,7 @@ export function SiteHeader() {
                   {user.user_metadata?.username || user.email?.split('@')[0]}
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56 bg-[#242528] border-white/10 text-white shadow-2xl rounded-sm">
+              <DropdownMenuContent align="end" className="w-56 bg-bg-surface border-white/10 text-white shadow-2xl rounded-sm">
                 <DropdownMenuLabel className="font-heading uppercase text-[10px] tracking-widest text-gray-500">Cuenta de Tabernero</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-white/10" />
                 <DropdownMenuItem asChild className="focus:bg-white/5 focus:text-[#EE8600] cursor-pointer font-black uppercase text-[10px] tracking-widest py-3">
