@@ -3,6 +3,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { HeroSection } from "@/components/hero-section"
 import { FeaturesSection } from "@/components/features-section"
 import { CtaSection } from "@/components/cta-section"
+import { FeaturedProducts } from "@/components/home/featured-products"
+import { SectionDivider } from "@/components/ui/section-divider"
 
 export default function HomePage() {
   return (
@@ -10,7 +12,11 @@ export default function HomePage() {
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
+        <SectionDivider />
         <FeaturesSection />
+        <SectionDivider />
+        <FeaturedProducts />
+        <SectionDivider />
         <CtaSection />
       </main>
       <SiteFooter />
