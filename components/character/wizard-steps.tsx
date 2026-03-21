@@ -29,7 +29,7 @@ export function WizardSteps({ steps, currentStep, onStepClick }: WizardStepsProp
               {index > 0 && (
                 <div className={cn(
                   "hidden sm:block w-6 lg:w-10 h-[2px] mx-1",
-                  isCompleted ? "bg-[var(--color-accent-gold)]" : "bg-[var(--color-border)]"
+                  isCompleted ? "bg-gold" : "bg-border-dark"
                 )} />
               )}
 
@@ -46,10 +46,10 @@ export function WizardSteps({ steps, currentStep, onStepClick }: WizardStepsProp
                 <div className={cn(
                   "relative flex h-12 w-12 items-center justify-center border-2 transition-all duration-300",
                   isCompleted
-                    ? "border-[var(--color-accent-gold)] bg-[var(--color-accent-gold)] text-white shadow-md shadow-[var(--color-accent-gold)]/20"
+                    ? "border-gold bg-gold/30 text-gold shadow-md shadow-gold/20"
                     : isCurrent
-                    ? "border-[var(--color-accent-gold)] bg-white text-[var(--color-accent-gold)] ring-4 ring-[var(--color-accent-gold)]/15 scale-110 z-10 shadow-lg"
-                    : "border-[var(--color-border)] bg-[var(--color-muted)] text-[var(--color-dark-section)]/20"
+                    ? "border-gold bg-gold text-white ring-4 ring-gold/15 scale-110 z-10 shadow-lg"
+                    : "border-border-dark bg-bg-raised text-text-muted"
                 )}>
                   {isCompleted ? (
                     <Check className="h-5 w-5 stroke-[3]" />
@@ -59,18 +59,18 @@ export function WizardSteps({ steps, currentStep, onStepClick }: WizardStepsProp
 
                   {/* Glow effect for current step */}
                   {isCurrent && (
-                    <div className="absolute inset-0 bg-[var(--color-accent-gold)]/5 animate-pulse" />
+                    <div className="absolute inset-0 bg-gold/5 animate-pulse" />
                   )}
                 </div>
 
                 {/* Step Title */}
                 <span className={cn(
                   "hidden sm:block text-[9px] font-bold uppercase tracking-widest text-center max-w-[70px] transition-colors leading-tight",
-                  isCurrent 
-                    ? "text-[var(--color-accent-gold)]" 
-                    : isCompleted 
-                    ? "text-[var(--color-dark-section)]" 
-                    : "text-[var(--color-dark-section)]/25"
+                  isCurrent
+                    ? "text-gold"
+                    : isCompleted
+                    ? "text-text-primary"
+                    : "text-text-muted"
                 )}>
                   {step.title}
                 </span>

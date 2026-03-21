@@ -112,26 +112,26 @@ function WizardContent() {
       <div className="text-center mb-12 relative">
         {/* Background decorative elements */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-[0.03]">
-          <Sword className="h-[300px] w-[300px] text-[var(--color-dark-section)]" />
+          <Sword className="h-[300px] w-[300px] text-text-primary" />
         </div>
 
-        <div className="inline-flex items-center justify-center h-20 w-20 bg-[var(--color-dark-section)] text-white mb-6 border-b-4 border-[var(--color-accent-gold)] shadow-xl shadow-[var(--color-accent-gold)]/10">
+        <div className="inline-flex items-center justify-center h-20 w-20 bg-bg-raised text-gold mb-6 border-b-4 border-gold shadow-xl shadow-gold/10">
           <ScrollText className="h-10 w-10" />
         </div>
-        <h1 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-[var(--color-dark-section)] uppercase leading-none">
+        <h1 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-text-primary uppercase leading-none">
           CREADOR DE HÉROES
         </h1>
-        <p className="mt-4 text-xl text-[var(--color-dark-section)]/50 font-sans italic">
+        <p className="mt-4 text-xl text-text-muted font-sans italic">
           «Forja tu leyenda paso a paso. Cada elección escribe un capítulo de tu historia.»
         </p>
         <div className="mt-8 flex justify-center">
-            <Button 
-                variant="outline" 
-                size="sm" 
-                className="gap-2 border-[var(--color-border)] text-[var(--color-dark-section)]/60 hover:text-[var(--color-accent-gold)] hover:bg-[var(--color-muted)] font-black uppercase tracking-widest text-[10px] h-10 px-6 rounded" 
+            <Button
+                variant="outline"
+                size="sm"
+                className="gap-2 border-border-dark text-text-muted hover:text-gold hover:bg-bg-raised font-black uppercase tracking-widest text-[10px] h-10 px-6 rounded"
                 onClick={() => generateCharacterPDF(character, user?.email, true)}
             >
-                <FileText className="h-4 w-4 text-[var(--color-accent-gold)]" />
+                <FileText className="h-4 w-4 text-gold" />
                 Hoja en Blanco (PDF)
             </Button>
         </div>
@@ -145,7 +145,7 @@ function WizardContent() {
       />
 
       {/* Step Content */}
-      <Card className="border-[var(--color-border)] shadow-lg overflow-hidden">
+      <Card className="border border-border-dark bg-bg-surface shadow-lg overflow-hidden">
         <CardContent className="p-8 lg:p-12">
           <StepComponent />
         </CardContent>
@@ -187,23 +187,23 @@ function WizardContent() {
       )}
 
       {/* Navigation */}
-      <div className="mt-12 flex items-center justify-between border-t-2 border-[var(--color-accent-gold)] pt-8">
+      <div className="mt-12 flex items-center justify-between border-t-2 border-gold pt-8">
         <Button
           variant="outline"
           onClick={handleBack}
           disabled={currentStep === 0 || isSaving}
-          className="border-[var(--color-border)] bg-white text-[var(--color-dark-section)] hover:bg-[var(--color-muted)] font-bold uppercase tracking-widest text-xs h-14 px-10 rounded"
+          className="border-border-dark bg-bg-raised text-text-primary hover:bg-bg-surface font-bold uppercase tracking-widest text-xs h-14 px-10 rounded"
         >
-          <ArrowLeft className="mr-3 h-5 w-5 text-[var(--color-accent-gold)]" />
+          <ArrowLeft className="mr-3 h-5 w-5 text-gold" />
           Anterior
         </Button>
-        <div className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-dark-section)]/30">
+        <div className="text-xs font-bold uppercase tracking-[0.3em] text-text-muted">
           PASO {currentStep + 1} DE {steps.length}
         </div>
         <Button
           onClick={handleNext}
           disabled={!canProceed() || isSaving}
-          className="bg-[var(--color-dark-section)] text-white hover:bg-black min-w-[200px] h-14 rounded font-bold uppercase tracking-widest text-xs shadow-lg"
+          className="bg-gold text-white hover:bg-gold/90 min-w-[200px] h-14 rounded font-bold uppercase tracking-widest text-xs shadow-lg"
         >
           {isSaving ? (
             <>
