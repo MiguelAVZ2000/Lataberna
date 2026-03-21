@@ -594,7 +594,7 @@ export function CheckoutClient({ user }: { user: User }) {
 
                     {/* Right Column: Summary */}
                     <div className="lg:w-[480px]">
-                        <div className="lg:sticky lg:top-28 space-y-8 bg-gray-50 border-2 border-black p-8">
+                        <div className="lg:sticky lg:top-28 space-y-8 bg-white border border-[#e5e0d8] p-8">
                             <h2 className="text-sm font-black uppercase tracking-widest border-b-2 border-black pb-4 flex items-center gap-3">
                                 <ShoppingBag className="h-4 w-4 text-[#EE8600]" /> Resumen de tu pedido
                             </h2>
