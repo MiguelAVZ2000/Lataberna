@@ -92,63 +92,63 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
 
   return (
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20">
-        <div className="border-b-2 border-black pb-4">
-            <h2 className="text-3xl font-heading font-black uppercase tracking-tight">Configuración de Cuenta</h2>
+        <div className="border-b border-border-dark pb-4">
+            <h2 className="text-3xl font-heading font-black uppercase tracking-tight text-text-primary">Configuración de Cuenta</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-12">
             {/* Datos Personales y Dirección */}
             <div className="space-y-8">
                 <div className="flex items-center gap-3">
-                    <User className="h-6 w-6 text-[#EE8600]" />
-                    <h3 className="text-xl font-heading font-black uppercase tracking-tight">Datos Personales y Envío</h3>
+                    <User className="h-6 w-6 text-gold" />
+                    <h3 className="text-xl font-heading font-black uppercase tracking-tight text-text-primary">Datos Personales y Envío</h3>
                 </div>
 
-                <form onSubmit={handleUpdateProfile} className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white border-2 border-black p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <form onSubmit={handleUpdateProfile} className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-bg-surface border border-border-dark p-8">
                     <div className="space-y-6">
                         <div className="grid gap-2">
-                            <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Nombre de Usuario</Label>
-                            <Input 
+                            <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Nombre de Usuario</Label>
+                            <Input
                                 value={profile.username}
                                 onChange={(e) => setProfile({...profile, username: e.target.value})}
-                                className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 placeholder="Tu apodo público..."
                             />
                         </div>
 
                         <div className="grid gap-2">
-                            <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Teléfono</Label>
-                            <Input 
+                            <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Teléfono</Label>
+                            <Input
                                 placeholder="+56 9 1234 5678"
                                 value={profile.telefono}
                                 onChange={(e) => setProfile({...profile, telefono: e.target.value})}
-                                className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                             />
                         </div>
                     </div>
 
                     <div className="space-y-6">
                         <div className="grid gap-2">
-                            <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Dirección (Calle y Número)</Label>
-                            <Input 
+                            <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Dirección (Calle y Número)</Label>
+                            <Input
                                 placeholder="Av. Siempre Viva 742"
                                 value={profile.calle}
                                 onChange={(e) => setProfile({...profile, calle: e.target.value})}
-                                className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                             />
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
                             <div className="grid gap-2">
-                                <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Región</Label>
-                                <Select 
-                                  value={profile.region} 
+                                <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Región</Label>
+                                <Select
+                                  value={profile.region}
                                   onValueChange={(val) => setProfile({...profile, region: val, comuna: ""})}
                                 >
-                                    <SelectTrigger className="rounded border-2 border-black h-12">
+                                    <SelectTrigger className="rounded border border-border-dark bg-bg-raised text-text-primary h-12">
                                         <SelectValue placeholder="Región" />
                                     </SelectTrigger>
-                                    <SelectContent className="rounded border-2 border-black max-h-60">
+                                    <SelectContent className="rounded border border-border-dark bg-bg-raised max-h-60">
                                         {regiones.map(r => (
                                             <SelectItem key={r.id} value={r.nombre}>{r.nombre}</SelectItem>
                                         ))}
@@ -156,16 +156,16 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                                 </Select>
                             </div>
                             <div className="grid gap-2">
-                                <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Comuna</Label>
-                                <Select 
-                                  value={profile.comuna} 
+                                <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Comuna</Label>
+                                <Select
+                                  value={profile.comuna}
                                   onValueChange={(val) => setProfile({...profile, comuna: val})}
                                   disabled={!profile.region}
                                 >
-                                    <SelectTrigger className="rounded border-2 border-black h-12">
+                                    <SelectTrigger className="rounded border border-border-dark bg-bg-raised text-text-primary h-12">
                                         <SelectValue placeholder="Comuna" />
                                     </SelectTrigger>
-                                    <SelectContent className="rounded border-2 border-black max-h-60">
+                                    <SelectContent className="rounded border border-border-dark bg-bg-raised max-h-60">
                                         {filteredComunas.map(c => (
                                             <SelectItem key={c} value={c}>{c}</SelectItem>
                                         ))}
@@ -176,10 +176,10 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
                     </div>
 
                     <div className="md:col-span-2 pt-4">
-                        <Button 
-                            type="submit" 
+                        <Button
+                            type="submit"
                             disabled={isUpdating}
-                            className="w-full h-14 bg-black hover:bg-[#EE8600] text-white rounded font-black uppercase tracking-widest transition-all shadow-[6px_6px_0px_0px_rgba(238,134,0,1)] hover:shadow-none"
+                            className="w-full h-14 bg-gold hover:bg-gold/90 text-white rounded font-black uppercase tracking-widest transition-all"
                         >
                             {isUpdating ? "Guardando Cambios..." : "Guardar Información"}
                         </Button>
@@ -190,51 +190,51 @@ export function SettingsView({ user, initialProfile }: { user: any, initialProfi
             {/* Seguridad / Contraseña */}
             <div className="space-y-8">
                 <div className="flex items-center gap-3">
-                    <Lock className="h-6 w-6 text-[#EE8600]" />
-                    <h3 className="text-xl font-heading font-black uppercase tracking-tight">Seguridad</h3>
+                    <Lock className="h-6 w-6 text-gold" />
+                    <h3 className="text-xl font-heading font-black uppercase tracking-tight text-text-primary">Seguridad</h3>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {!hasPassword && (
-                        <div className="p-6 bg-red-50 border-2 border-red-200 border-dashed rounded flex items-start gap-4">
-                            <AlertCircle className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
+                        <div className="p-6 bg-red-950/30 border-2 border-red-800/50 border-dashed rounded flex items-start gap-4">
+                            <AlertCircle className="h-6 w-6 text-red-400 mt-1 flex-shrink-0" />
                             <div>
-                                <h4 className="text-xs font-black uppercase text-red-700">Cuenta sin contraseña</h4>
-                                <p className="text-xs text-red-600 mt-1 leading-relaxed">
+                                <h4 className="text-xs font-black uppercase text-red-400">Cuenta sin contraseña</h4>
+                                <p className="text-xs text-red-300 mt-1 leading-relaxed">
                                     Parece que has iniciado sesión con Google. Te recomendamos asignar una contraseña para que puedas entrar directamente con tu correo en el futuro.
                                 </p>
                             </div>
                         </div>
                     )}
 
-                    <form onSubmit={handleChangePassword} className="space-y-6 bg-white border-2 border-black p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] lg:col-span-1">
+                    <form onSubmit={handleChangePassword} className="space-y-6 bg-bg-surface border border-border-dark p-8 lg:col-span-1">
                         <div className="grid gap-4">
                             <div className="grid gap-2">
-                                <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Nueva Contraseña</Label>
-                                <Input 
+                                <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Nueva Contraseña</Label>
+                                <Input
                                     type="password"
                                     value={passwords.newPassword}
                                     onChange={(e) => setPasswords({...passwords, newPassword: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 />
                             </div>
 
                             <div className="grid gap-2">
-                                <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Confirmar Contraseña</Label>
-                                <Input 
+                                <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Confirmar Contraseña</Label>
+                                <Input
                                     type="password"
                                     value={passwords.confirmPassword}
                                     onChange={(e) => setPasswords({...passwords, confirmPassword: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-0 focus-visible:border-[#EE8600]"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 />
                             </div>
                         </div>
 
-                        <Button 
-                            type="submit" 
+                        <Button
+                            type="submit"
                             disabled={isUpdating}
                             variant="outline"
-                            className="w-full h-14 border-2 border-black hover:bg-black hover:text-white rounded font-black uppercase tracking-widest transition-all"
+                            className="w-full h-14 border border-border-dark bg-bg-raised text-text-primary hover:bg-bg-surface rounded font-black uppercase tracking-widest transition-all"
                         >
                             <ShieldCheck className="mr-2 h-4 w-4" /> Asignar Contraseña
                         </Button>

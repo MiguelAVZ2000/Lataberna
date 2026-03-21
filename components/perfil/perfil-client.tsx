@@ -186,39 +186,39 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
   return (
     <div className="container mx-auto py-10 max-w-6xl px-4">
       <div className="flex items-center gap-6 mb-12">
-        <div className="h-20 w-20 rounded-full bg-black flex items-center justify-center border-4 border-[#EE8600] shadow-xl">
-            <User className="h-10 w-10 text-[#EE8600]" />
+        <div className="h-20 w-20 rounded-full bg-bg-raised flex items-center justify-center border-4 border-gold shadow-xl">
+            <User className="h-10 w-10 text-gold" />
         </div>
         <div>
-            <h1 className="font-heading text-5xl font-black text-[#242528] tracking-tighter uppercase">Mi Perfil</h1>
-            <p className="text-[#242528]/60 font-sans">Gestiona tu información personal, personajes y pedidos.</p>
+            <h1 className="font-heading text-5xl font-black text-text-primary tracking-tighter uppercase">Mi Perfil</h1>
+            <p className="text-text-muted font-sans">Gestiona tu información personal, personajes y pedidos.</p>
         </div>
       </div>
 
       <Tabs defaultValue="personajes" className="w-full">
-        <TabsList className="bg-[#242528] p-1 h-14 rounded mb-10 overflow-x-auto flex flex-nowrap justify-start sm:inline-flex">
-          <TabsTrigger value="personajes" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Mis Personajes</TabsTrigger>
-          <TabsTrigger value="pedidos" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Historial de Compras</TabsTrigger>
-          <TabsTrigger value="editar" className="px-8 font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#EE8600] data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Editar Perfil</TabsTrigger>
+        <TabsList className="bg-bg-raised p-1 h-14 rounded mb-10 overflow-x-auto flex flex-nowrap justify-start sm:inline-flex">
+          <TabsTrigger value="personajes" className="px-8 font-black uppercase tracking-widest text-[10px] text-text-muted data-[state=active]:bg-gold data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Mis Personajes</TabsTrigger>
+          <TabsTrigger value="pedidos" className="px-8 font-black uppercase tracking-widest text-[10px] text-text-muted data-[state=active]:bg-gold data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Historial de Compras</TabsTrigger>
+          <TabsTrigger value="editar" className="px-8 font-black uppercase tracking-widest text-[10px] text-text-muted data-[state=active]:bg-gold data-[state=active]:text-white rounded transition-all flex-1 sm:flex-none">Editar Perfil</TabsTrigger>
         </TabsList>
 
         <TabsContent value="personajes" className="space-y-4 outline-none">
-            <div className="flex justify-between items-end mb-8 border-b-2 border-black pb-4">
-                <h2 className="text-3xl font-heading font-black uppercase tracking-tight">Mis Personajes</h2>
+            <div className="flex justify-between items-end mb-8 border-b border-border-dark pb-4">
+                <h2 className="text-3xl font-heading font-black uppercase tracking-tight text-text-primary">Mis Personajes</h2>
                 <Link href="/personaje">
-                    <Button className="bg-[#EE8600] hover:bg-[#EE8600]/90 text-white rounded font-black uppercase tracking-widest text-[10px]">
+                    <Button className="bg-gold hover:bg-gold/90 text-white rounded font-black uppercase tracking-widest text-[10px]">
                         <Plus className="mr-2 h-4 w-4" /> Nuevo Personaje
                     </Button>
                 </Link>
             </div>
 
             {characters.length === 0 ? (
-                <div className="text-center py-24 border-4 border-dashed border-gray-200 bg-gray-50/50">
-                    <Skull className="h-16 w-16 mx-auto text-gray-300 mb-6" />
-                    <h3 className="text-xl font-black uppercase">Sin personajes</h3>
-                    <p className="text-gray-500 mb-8 font-sans">No has guardado ningún personaje todavía.</p>
+                <div className="text-center py-24 border-4 border-dashed border-border-dark bg-bg-raised/50">
+                    <Skull className="h-16 w-16 mx-auto text-text-muted mb-6" />
+                    <h3 className="text-xl font-black uppercase text-text-primary">Sin personajes</h3>
+                    <p className="text-text-muted mb-8 font-sans">No has guardado ningún personaje todavía.</p>
                     <Link href="/personaje">
-                        <Button variant="outline" className="border-2 border-black rounded font-black uppercase tracking-widest text-[10px]">Crear Primero</Button>
+                        <Button variant="outline" className="border-2 border-border-dark text-text-primary rounded font-black uppercase tracking-widest text-[10px]">Crear Primero</Button>
                     </Link>
                 </div>
             ) : (
@@ -226,34 +226,34 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
                     {characters.map((char) => {
                         const raceName = races.find(r => r.id === char.raza_id)?.name || char.raza_id
                         const className = classes.find(c => c.id === char.clase_id)?.name || char.clase_id
-                        
+
                         return (
-                            <Card key={char.id} className="border-2 border-black rounded shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all overflow-hidden group">
-                                <CardHeader className="bg-black text-white p-6">
+                            <Card key={char.id} className="border border-border-dark rounded overflow-hidden group bg-bg-surface">
+                                <CardHeader className="bg-bg-raised p-6">
                                     <div className="flex justify-between items-start">
                                         <div className="space-y-1">
-                                            <CardTitle className="font-heading text-2xl font-black uppercase tracking-tight text-[#EE8600]">{char.nombre}</CardTitle>
-                                            <CardDescription className="text-gray-400 font-black uppercase text-[10px] tracking-widest">
+                                            <CardTitle className="font-heading text-2xl font-black uppercase tracking-tight text-gold">{char.nombre}</CardTitle>
+                                            <CardDescription className="text-text-muted font-black uppercase text-[10px] tracking-widest">
                                                 {raceName} {className} • Nivel {char.nivel}
                                             </CardDescription>
                                         </div>
-                                        <Badge variant="outline" className="text-[9px] border-[#EE8600] text-[#EE8600] font-black uppercase rounded">
+                                        <Badge variant="outline" className="text-[9px] border-gold text-gold font-black uppercase rounded">
                                             {formatDistanceToNow(new Date(char.actualizado_el), { addSuffix: true, locale: es })}
                                         </Badge>
                                     </div>
                                 </CardHeader>
-                                <CardContent className="p-6 text-sm text-gray-600 bg-white min-h-[100px]">
+                                <CardContent className="p-6 text-sm text-text-muted bg-bg-surface min-h-[100px]">
                                     <div className="line-clamp-3 italic font-sans leading-relaxed">
                                         «{char.biografia?.personalityTraits || "Un aventurero cuyo destino aún está por escribirse en las crónicas de la Taberna..."}»
                                     </div>
                                 </CardContent>
-                                <CardFooter className="p-0 border-t-2 border-black">
-                                    <Button 
-                                        variant="ghost" 
-                                        className="w-full h-12 rounded font-black uppercase tracking-widest text-[10px] hover:bg-gray-100 flex items-center justify-center gap-2"
+                                <CardFooter className="p-0 border-t border-border-dark">
+                                    <Button
+                                        variant="ghost"
+                                        className="w-full h-12 rounded font-black uppercase tracking-widest text-[10px] text-text-primary hover:bg-bg-raised flex items-center justify-center gap-2"
                                         onClick={() => handleDownloadPDF(char)}
                                     >
-                                        <ExternalLink className="h-4 w-4 text-[#EE8600]" /> Descargar Ficha PDF
+                                        <ExternalLink className="h-4 w-4 text-gold" /> Descargar Ficha PDF
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -264,76 +264,76 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
         </TabsContent>
 
         <TabsContent value="pedidos" className="outline-none">
-              <div className="flex justify-between items-end mb-8 border-b-2 border-black pb-4">
-                <h2 className="text-3xl font-heading font-black uppercase tracking-tight">Historial de Compras</h2>
+              <div className="flex justify-between items-end mb-8 border-b border-border-dark pb-4">
+                <h2 className="text-3xl font-heading font-black uppercase tracking-tight text-text-primary">Historial de Compras</h2>
                 <Link href="/tienda">
-                    <Button variant="outline" className="border-2 border-black rounded font-black uppercase tracking-widest text-[10px]">
+                    <Button variant="outline" className="border border-border-dark text-text-primary rounded font-black uppercase tracking-widest text-[10px]">
                         <ShoppingBag className="mr-2 h-4 w-4" /> Ir a la Tienda
                     </Button>
                 </Link>
             </div>
 
             {sales.length === 0 ? (
-                <div className="text-center py-24 border-4 border-dashed border-gray-200 bg-gray-50/50">
-                    <ShoppingBag className="h-16 w-16 mx-auto text-gray-300 mb-6" />
-                    <h3 className="text-xl font-black uppercase">Sin pedidos</h3>
-                    <p className="text-gray-500 font-sans">No se han encontrado compras en tu historial.</p>
+                <div className="text-center py-24 border-4 border-dashed border-border-dark bg-bg-raised/50">
+                    <ShoppingBag className="h-16 w-16 mx-auto text-text-muted mb-6" />
+                    <h3 className="text-xl font-black uppercase text-text-primary">Sin pedidos</h3>
+                    <p className="text-text-muted font-sans">No se han encontrado compras en tu historial.</p>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {sales.map((sale) => (
-                        <Card key={sale.id} className="border-2 border-black rounded shadow-[8px_8px_0px_0px_rgba(36,37,40,1)] overflow-hidden">
-                            <CardHeader className="bg-[#F9F9F9] border-b-2 border-black p-6">
+                        <Card key={sale.id} className="border border-border-dark rounded overflow-hidden bg-bg-surface">
+                            <CardHeader className="bg-bg-raised border-b border-border-dark p-6">
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center gap-4">
-                                        <div className="h-12 w-12 rounded bg-black flex items-center justify-center text-[#EE8600]">
+                                        <div className="h-12 w-12 rounded bg-bg-base flex items-center justify-center text-gold border border-border-dark">
                                             <ShoppingBag className="h-6 w-6" />
                                         </div>
                                         <div>
-                                            <CardTitle className="font-heading text-lg font-black uppercase tracking-tight">Pedido #{sale.id.slice(0, 8)}</CardTitle>
-                                            <CardDescription className="flex items-center gap-2 text-[10px] font-bold uppercase text-gray-400">
+                                            <CardTitle className="font-heading text-lg font-black uppercase tracking-tight text-text-primary">Pedido #{sale.id.slice(0, 8)}</CardTitle>
+                                            <CardDescription className="flex items-center gap-2 text-[10px] font-bold uppercase text-text-muted">
                                                 <Calendar className="h-3 w-3" />
                                                 {new Date(sale.fecha).toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' })}
                                             </CardDescription>
                                         </div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="font-black text-2xl text-[#EE8600] tabular-nums">{formatPrice(sale.total)}</div>
+                                        <div className="font-black text-2xl text-gold tabular-nums">{formatPrice(sale.total)}</div>
                                         <Badge className={`rounded font-black uppercase tracking-widest text-[9px] ${
-                                            sale.estado === 'completado' ? 'bg-green-500 text-white' : 'bg-[#EE8600] text-white'
+                                            sale.estado === 'completado' ? 'bg-green-500 text-white' : 'bg-gold text-white'
                                         }`}>
                                             {sale.estado.toUpperCase()}
                                         </Badge>
                                     </div>
                                 </div>
                             </CardHeader>
-                            <CardContent className="p-6 space-y-6 bg-white">
+                            <CardContent className="p-6 space-y-6 bg-bg-surface">
                                 <div className="space-y-3">
-                                    <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 border-b pb-1 mb-2">Artículos del Tesoro</h4>
+                                    <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-text-muted border-b border-border-dark pb-1 mb-2">Artículos del Tesoro</h4>
                                     {sale.items.map((item: any, idx: number) => (
-                                        <div key={idx} className="flex justify-between text-sm font-bold border-b border-gray-50 pb-2">
-                                            <span className="text-black uppercase tracking-tight">
-                                                <span className="text-[#EE8600] mr-2">{item.cantidad}X</span>
+                                        <div key={idx} className="flex justify-between text-sm font-bold border-b border-border-dark pb-2">
+                                            <span className="text-text-primary uppercase tracking-tight">
+                                                <span className="text-gold mr-2">{item.cantidad}X</span>
                                                 {item.nombre}
                                             </span>
-                                            <span className="text-gray-400 tabular-nums">{formatPrice(item.precio * item.cantidad)}</span>
+                                            <span className="text-text-muted tabular-nums">{formatPrice(item.precio * item.cantidad)}</span>
                                         </div>
                                     ))}
                                 </div>
 
                                 {sale.direccion_envio && (
-                                    <div className="p-4 bg-gray-50 border border-gray-200 space-y-2 mt-4">
-                                        <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#EE8600]">
+                                    <div className="p-4 bg-bg-raised border border-border-dark space-y-2 mt-4">
+                                        <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gold">
                                             <Truck className="h-3 w-3" /> Datos de Entrega
                                         </div>
-                                        <p className="text-sm font-bold flex items-start gap-2">
-                                            <MapPin className="h-4 w-4 mt-0.5 text-gray-400" />
+                                        <p className="text-sm font-bold flex items-start gap-2 text-text-primary">
+                                            <MapPin className="h-4 w-4 mt-0.5 text-text-muted" />
                                             <span>
                                                 {sale.direccion_envio.calle}, {sale.direccion_envio.ciudad}<br/>
-                                                <span className="text-xs text-gray-500 font-sans italic">{sale.direccion_envio.region}</span>
+                                                <span className="text-xs text-text-muted font-sans italic">{sale.direccion_envio.region}</span>
                                             </span>
                                         </p>
-                                        <p className="text-xs font-bold text-gray-400">TEL: {sale.direccion_envio.telefono}</p>
+                                        <p className="text-xs font-bold text-text-muted">TEL: {sale.direccion_envio.telefono}</p>
                                     </div>
                                 )}
                             </CardContent>
@@ -347,57 +347,57 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Datos de la Cuenta */}
                 <div className="space-y-10">
-                    <div className="border-b-2 border-black pb-4 flex items-center gap-3">
-                        <User className="h-6 w-6 text-[#EE8600]" />
-                        <h2 className="text-2xl font-heading font-black uppercase tracking-tight">Datos Personales</h2>
+                    <div className="border-b border-border-dark pb-4 flex items-center gap-3">
+                        <User className="h-6 w-6 text-gold" />
+                        <h2 className="text-2xl font-heading font-black uppercase tracking-tight text-text-primary">Datos Personales</h2>
                     </div>
 
                     <form onSubmit={handleUpdateProfile} className="space-y-6">
                         <div className="grid gap-2">
-                            <Label htmlFor="username" className="text-[10px] font-black uppercase tracking-widest text-gray-400">Nombre de Usuario</Label>
-                            <Input 
+                            <Label htmlFor="username" className="text-[10px] font-black uppercase tracking-widest text-text-muted">Nombre de Usuario</Label>
+                            <Input
                                 id="username"
                                 value={profile.username}
                                 onChange={(e) => setProfile({...profile, username: e.target.value})}
-                                className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 placeholder="Tu nombre público..."
                             />
                         </div>
 
                         <div className="grid gap-2">
-                            <Label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Dirección de Envío</Label>
+                            <Label className="text-[10px] font-black uppercase tracking-widest text-text-muted">Dirección de Envío</Label>
                             <div className="grid grid-cols-2 gap-4">
-                                <Input 
+                                <Input
                                     placeholder="Calle y Número"
                                     value={profile.calle}
                                     onChange={(e) => setProfile({...profile, calle: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600] col-span-2"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold col-span-2"
                                 />
-                                <Input 
+                                <Input
                                     placeholder="Ciudad"
                                     value={profile.ciudad}
                                     onChange={(e) => setProfile({...profile, ciudad: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 />
-                                <Input 
+                                <Input
                                     placeholder="Región"
                                     value={profile.region}
                                     onChange={(e) => setProfile({...profile, region: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 />
-                                <Input 
+                                <Input
                                     placeholder="Teléfono"
                                     value={profile.telefono}
                                     onChange={(e) => setProfile({...profile, telefono: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600] col-span-2"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold col-span-2"
                                 />
                             </div>
                         </div>
 
-                        <Button 
-                            type="submit" 
+                        <Button
+                            type="submit"
                             disabled={isUpdating}
-                            className="w-full h-14 bg-black hover:bg-[#EE8600] text-white rounded font-black uppercase tracking-widest transition-colors shadow-[6px_6px_0px_0px_rgba(238,134,0,1)] hover:shadow-none"
+                            className="w-full h-14 bg-gold hover:bg-gold/90 text-white rounded font-black uppercase tracking-widest transition-colors"
                         >
                             {isUpdating ? "Grabando Crónicas..." : "Actualizar mis Datos"}
                         </Button>
@@ -406,43 +406,43 @@ export function PerfilClient({ user, characters, sales, initialProfile }: Perfil
 
                 {/* Seguridad */}
                 <div className="space-y-10">
-                    <div className="border-b-2 border-black pb-4 flex items-center gap-3">
-                        <Lock className="h-6 w-6 text-[#EE8600]" />
-                        <h2 className="text-2xl font-heading font-black uppercase tracking-tight">Seguridad</h2>
+                    <div className="border-b border-border-dark pb-4 flex items-center gap-3">
+                        <Lock className="h-6 w-6 text-gold" />
+                        <h2 className="text-2xl font-heading font-black uppercase tracking-tight text-text-primary">Seguridad</h2>
                     </div>
 
                     <form onSubmit={handleChangePassword} className="space-y-6">
-                        <div className="p-6 bg-gray-50 border-2 border-dashed border-gray-200 space-y-4">
-                            <p className="text-xs text-gray-500 font-sans">Cambia tu contraseña para mantener tu cuenta protegida.</p>
-                            
+                        <div className="p-6 bg-bg-raised border border-border-dark space-y-4">
+                            <p className="text-xs text-text-muted font-sans">Cambia tu contraseña para mantener tu cuenta protegida.</p>
+
                             <div className="grid gap-2">
-                                <Label htmlFor="newPass" className="text-[10px] font-black uppercase tracking-widest text-gray-400">Nueva Contraseña</Label>
-                                <Input 
+                                <Label htmlFor="newPass" className="text-[10px] font-black uppercase tracking-widest text-text-muted">Nueva Contraseña</Label>
+                                <Input
                                     id="newPass"
                                     type="password"
                                     value={passwords.newPassword}
                                     onChange={(e) => setPasswords({...passwords, newPassword: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 />
                             </div>
 
                             <div className="grid gap-2">
-                                <Label htmlFor="confirmPass" className="text-[10px] font-black uppercase tracking-widest text-gray-400">Confirmar Nueva Contraseña</Label>
-                                <Input 
+                                <Label htmlFor="confirmPass" className="text-[10px] font-black uppercase tracking-widest text-text-muted">Confirmar Nueva Contraseña</Label>
+                                <Input
                                     id="confirmPass"
                                     type="password"
                                     value={passwords.confirmPassword}
                                     onChange={(e) => setPasswords({...passwords, confirmPassword: e.target.value})}
-                                    className="rounded border-2 border-black h-12 focus-visible:ring-[#EE8600]"
+                                    className="rounded border border-border-dark bg-bg-raised text-text-primary h-12 focus-visible:ring-0 focus-visible:border-gold"
                                 />
                             </div>
                         </div>
 
-                        <Button 
-                            type="submit" 
+                        <Button
+                            type="submit"
                             disabled={isUpdating}
                             variant="outline"
-                            className="w-full h-14 border-2 border-black hover:bg-black hover:text-white rounded font-black uppercase tracking-widest transition-all"
+                            className="w-full h-14 border border-border-dark bg-bg-raised text-text-primary hover:bg-bg-surface rounded font-black uppercase tracking-widest transition-all"
                         >
                             <Edit className="mr-2 h-4 w-4" /> Cambiar mi Llave
                         </Button>
