@@ -1,96 +1,88 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-/* D&D Beyond Theme - Refined Official Version */
+/* La Taberna — Dark Fantasy Atmospheric Theme */
 
-:root {
-  /* Tailwind v4 mapea automáticamente variables con prefijos específicos */
-  
-  /* Backgrounds & Main Colors */
-  --color-background: oklch(1 0 0); /* Blanco puro */
-  --color-foreground: oklch(0.25 0 0); /* #333333 Texto Gris Oscuro */
+@theme {
+  /* Backgrounds */
+  --color-bg-base: #0f1117;
+  --color-bg-surface: #1a1c2e;
+  --color-bg-raised: #222540;
+  --color-bg-light: #f8f7f4;
 
-  /* Cards */
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.25 0 0);
-  
-  --color-popover: oklch(1 0 0);
-  --color-popover-foreground: oklch(0.25 0 0);
-  
-  /* Official D&D Colors */
-  --color-primary: oklch(0.55 0.22 25); /* #E40712 Red */
-  --color-primary-foreground: oklch(1 0 0);
-  
-  --color-accent-gold: oklch(0.68 0.16 65); /* #EE8600 Gold/Orange */
-  
-  /* Neutral Grays */
-  --color-secondary: oklch(0.92 0 0); /* #EBEBEB */
-  --color-secondary-foreground: oklch(0.25 0 0);
-  
-  --color-muted: oklch(0.92 0 0);
-  --color-muted-foreground: oklch(0.45 0 0);
-  
-  --color-accent: oklch(0.95 0 0);
-  --color-accent-foreground: oklch(0.25 0 0);
-  
-  --color-destructive: oklch(0.55 0.22 25);
-  --color-destructive-foreground: oklch(1 0 0);
-  
-  /* Borders & UI */
-  --color-border: oklch(0.82 0.01 65); /* #D0CAC5 Warm Gray/Sand */
-  --color-input: oklch(0.82 0.01 65);
-  --color-ring: oklch(0.55 0.22 25);
-  
-  --radius: 0.375rem;
-  
-  /* Typography */
-  --font-sans: var(--font-lora), Georgia, serif;
-  --font-heading: var(--font-cinzel), 'Times New Roman', serif;
+  /* Borders */
+  --color-border-dark: #2a2d45;
 
-  /* Custom Sections */
-  --color-dark-section: #242527;
-  --color-dark-section-foreground: #FFFFFF;
+  /* Gold accent */
+  --color-gold: #EE8600;
+
+  /* Text */
+  --color-text-primary: #f0ede8;
+  --color-text-muted: #8b8fa8;
 }
 
-/* Dark Mode - Completo */
+:root {
+  /* Mantener compatibilidad con shadcn/ui primitivos */
+  --color-background: #f8f7f4;
+  --color-foreground: #1c1a17;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1c1a17;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1c1a17;
+
+  --color-primary: #EE8600;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f0ede8;
+  --color-secondary-foreground: #1c1a17;
+
+  --color-muted: #f0ede8;
+  --color-muted-foreground: #6b6860;
+
+  --color-accent: #f0ede8;
+  --color-accent-foreground: #1c1a17;
+
+  --color-destructive: oklch(0.55 0.22 25);
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #e5e0d8;
+  --color-input: #e5e0d8;
+  --color-ring: #EE8600;
+
+  --radius: 0.25rem;
+
+  --font-sans: var(--font-lora), Georgia, serif;
+  --font-heading: var(--font-cinzel), 'Times New Roman', serif;
+}
+
 .dark {
-  --color-background: oklch(0.12 0 0);
-  --color-foreground: oklch(0.95 0 0);
-  
-  --color-card: oklch(0.17 0 0);
-  --color-card-foreground: oklch(0.95 0 0);
-  
-  --color-popover: oklch(0.17 0 0);
-  --color-popover-foreground: oklch(0.95 0 0);
-  
-  --color-primary: oklch(0.55 0.22 25);
-  --color-primary-foreground: oklch(1 0 0);
-  
-  --color-accent-gold: oklch(0.72 0.16 65);
-  
-  --color-secondary: oklch(0.2 0 0);
-  --color-secondary-foreground: oklch(0.95 0 0);
-  
-  --color-muted: oklch(0.2 0 0);
-  --color-muted-foreground: oklch(0.65 0 0);
-  
-  --color-accent: oklch(0.2 0 0);
-  --color-accent-foreground: oklch(0.95 0 0);
-  
-  --color-border: oklch(0.25 0 0);
-  --color-input: oklch(0.25 0 0);
-  --color-ring: oklch(0.55 0.22 25);
-  
-  --color-dark-section: #0a0a0b;
-  --color-dark-section-foreground: oklch(0.95 0 0);
+  --color-background: #0f1117;
+  --color-foreground: #f0ede8;
+  --color-card: #1a1c2e;
+  --color-card-foreground: #f0ede8;
+  --color-popover: #1a1c2e;
+  --color-popover-foreground: #f0ede8;
+  --color-primary: #EE8600;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #222540;
+  --color-secondary-foreground: #f0ede8;
+  --color-muted: #222540;
+  --color-muted-foreground: #8b8fa8;
+  --color-accent: #222540;
+  --color-accent-foreground: #f0ede8;
+  --color-border: #2a2d45;
+  --color-input: #2a2d45;
+  --color-ring: #EE8600;
 }
 
 @layer base {
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     text-transform: uppercase;
@@ -100,66 +92,5 @@
     color: inherit;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
-  }
-}
-
-/* Custom Utilities */
-.parchment-bg {
-  background-color: var(--color-background);
-}
-
-.dark-bg {
-  background-color: var(--color-dark-section);
-  color: var(--color-dark-section-foreground);
-}
-
-.section-divider {
-  height: 0.25rem;
-  width: 100%;
-  background-color: var(--color-accent-gold);
-  border: none;
-}
-
-.gold-border {
-  border-bottom: 3px solid var(--color-accent-gold);
-}
-
-.high-contrast-card {
-  border: 2px solid var(--color-border);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  background-color: white;
-}
-
-.high-contrast-card:hover {
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* Premium Micro-interactions */
-.hover-lift {
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-}
-
-.hover-glow:hover {
-  box-shadow: 0 0 20px rgba(238, 134, 0, 0.4);
-}
-
-.pulse-gold {
-  animation: pulse-gold 2s infinite;
-}
-
-@keyframes pulse-gold {
-  0% {
-    box-shadow: 0 0 0 0 rgba(238, 134, 0, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(238, 134, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(238, 134, 0, 0);
   }
 }
