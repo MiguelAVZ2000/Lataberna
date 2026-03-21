@@ -25,7 +25,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
   }
 
   return (
-    <Card className="group overflow-hidden border-[#E1E1E1] bg-white transition-all duration-300 hover:border-[#EE8600]/50 hover:shadow-lg hover:shadow-[#EE8600]/5">
+    <Card className="group overflow-hidden border-[#e5e0d8] bg-white transition-all duration-300 hover:border-gold/50 hover:shadow-[0_4px_20px_rgba(238,134,0,0.12)] hover:-translate-y-0.5">
       {/* Image Container */}
       <div className="relative aspect-square overflow-hidden bg-[#F9F9F9]">
         <Image
@@ -67,10 +67,10 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
 
       {/* Content */}
       <CardContent className="p-4">
-        <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#242528]/50">
+        <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#242528]/50 border border-[#e5e0d8] px-2 py-0.5 inline-block">
           {product.Categoria || "General"}
         </div>
-        <h3 className="font-heading text-lg font-bold text-[#242528] line-clamp-1 group-hover:text-[#EE8600] transition-colors">
+        <h3 className="font-heading text-lg font-bold text-[#242528] line-clamp-1 group-hover:text-gold transition-colors">
           {product.Nombre}
         </h3>
         <p className="mt-1 text-sm text-[#242528]/70 line-clamp-2 font-sans">
@@ -81,7 +81,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
       {/* Footer */}
       <CardFooter className="p-4 pt-0">
         <div className="flex items-baseline gap-2">
-          <span className="font-heading text-xl font-bold text-[#EE8600]">
+          <span className="font-heading text-xl font-bold text-gold">
             {formatPrice(product.Precio)}
           </span>
         </div>
