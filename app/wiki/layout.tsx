@@ -39,11 +39,13 @@ export default function WikiLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-bg-base">
       <SiteHeader />
-      <div className="container mx-auto flex-1 items-start md:grid md:grid-cols-[240px_1fr] md:gap-8 lg:grid-cols-[280px_1fr] lg:gap-12 px-6 py-6">
-        <WikiSidebar />
-        <main className="relative py-6 lg:py-8 min-h-[80vh]">
+      <div className="flex-1 flex md:grid md:grid-cols-[240px_1fr] lg:grid-cols-[280px_1fr]">
+        <div className="bg-bg-surface border-r border-border-dark hidden md:block">
+          <WikiSidebar />
+        </div>
+        <main className="relative py-6 lg:py-8 min-h-[80vh] bg-bg-light text-[#1c1a17] px-6 lg:px-12">
           <div className="relative z-10">
             {children}
           </div>

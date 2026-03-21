@@ -36,11 +36,11 @@ export function WikiSidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="fixed top-24 z-30 hidden h-[calc(100vh-6rem)] w-full shrink-0 overflow-y-auto border-r border-neutral-200 md:sticky md:block scrollbar-hide">
-      <div className="py-6 pr-6 lg:py-8 space-y-8">
+    <aside className="sticky top-24 z-30 h-[calc(100vh-6rem)] w-full shrink-0 overflow-y-auto scrollbar-hide bg-bg-surface">
+      <div className="py-6 pr-6 pl-4 lg:py-8 space-y-8">
         {wikiNavigation.map((section, idx) => (
           <div key={idx} className="animate-in fade-in slide-in-from-left-4 duration-500" style={{ animationDelay: `${idx * 100}ms` }}>
-            <h4 className="mb-3 px-2 font-heading font-black text-[11px] uppercase tracking-widest text-foreground border-b border-border pb-2">
+            <h4 className="mb-3 px-2 font-heading font-black text-[10px] uppercase tracking-widest text-gold border-b border-border-dark pb-2">
               {section.title}
             </h4>
             <nav className="flex flex-col gap-1">
@@ -52,26 +52,22 @@ export function WikiSidebar() {
                     href={item.href}
                     className={cn(
                       "group relative flex items-center gap-3 rounded-sm px-3 py-2 text-sm font-black uppercase tracking-widest transition-all duration-300",
-                      isActive 
-                        ? "text-black bg-black/5 pl-6" 
-                        : "text-zinc-600 hover:text-black hover:pl-4 hover:bg-black/5"
+                      isActive
+                        ? "text-text-primary bg-bg-raised border-l-2 border-gold pl-4"
+                        : "text-text-muted hover:text-text-primary hover:bg-bg-raised"
                     )}
                   >
                     {/* Active/Hover Indicator Line */}
-                    <span 
-                        className={cn(
-                            "absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-black transition-all duration-300 rounded-r-sm",
-                            isActive ? "h-full" : "group-hover:h-1/2"
-                        )} 
-                    />
-                    
-                    <item.icon className={cn("h-4 w-4 shrink-0 transition-colors", isActive ? "text-black" : "text-zinc-600 group-hover:text-black")} />
-                    {item.name}
-                    
-                    {/* Active Glow Effect */}
-                    {isActive && (
-                        <div className="absolute inset-0 bg-black/5 rounded-sm animate-pulse z-[-1]" />
+                    {!isActive && (
+                      <span
+                          className={cn(
+                              "absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-0 bg-gold transition-all duration-300 rounded-r-sm group-hover:h-1/2"
+                          )}
+                      />
                     )}
+
+                    <item.icon className={cn("h-4 w-4 shrink-0 transition-colors", isActive ? "text-gold" : "text-text-muted group-hover:text-text-primary")} />
+                    {item.name}
                   </Link>
                 )
               })}
