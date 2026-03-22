@@ -44,12 +44,12 @@ const categories = [
 
 export default function GuiasPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-bg-base">
       <SiteHeader />
       <main className="flex-1">
 
         {/* Hero — estilo D&D Beyond */}
-        <section className="bg-[#242528] py-16 lg:py-24 border-b-4 border-[#EE8600]">
+        <section className="bg-bg-base py-16 lg:py-24 border-b-4 border-[#EE8600]">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#EE8600]/30 bg-[#EE8600]/10 text-[#EE8600] text-[10px] font-black uppercase tracking-[0.2em]">
@@ -83,7 +83,7 @@ export default function GuiasPage() {
         </section>
 
         {/* Guides Grid */}
-        <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-24 bg-bg-light">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex items-center gap-3 border-b-2 border-[#242528]/10 pb-6 mb-12">
               <div className="bg-[#242528] text-white text-[10px] font-black px-2 py-1">PHB</div>

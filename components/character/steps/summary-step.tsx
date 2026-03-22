@@ -86,14 +86,14 @@ export function SummaryStep() {
   return (
     <div className="space-y-10 pb-10">
       <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 border border-[var(--color-accent-gold)]/30 bg-[var(--color-accent-gold)]/5 text-[var(--color-accent-gold)] text-[10px] font-black uppercase tracking-[0.2em]">
+        <div className="inline-flex items-center gap-2 px-3 py-1 border border-gold/30 bg-gold/5 text-gold text-[10px] font-black uppercase tracking-[0.2em]">
           Epílogo
         </div>
-        <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[var(--color-dark-section)] uppercase tracking-tight leading-tight">
+        <h2 className="font-heading text-4xl lg:text-5xl font-bold text-text-primary uppercase tracking-tight leading-tight">
           La Hoja de tu Héroe
         </h2>
-        <div className="h-[3px] w-24 bg-[var(--color-accent-gold)]" />
-        <p className="text-lg text-[var(--color-dark-section)]/50 font-sans italic max-w-2xl">
+        <div className="h-[3px] w-24 bg-gold" />
+        <p className="text-lg text-text-muted font-sans italic max-w-2xl">
           «Tu leyenda está escrita. Revisa tu ficha, descarga tu hoja oficial y 
           prepárate para descender a las profundidades de la aventura.»
         </p>

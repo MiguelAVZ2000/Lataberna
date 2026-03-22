@@ -1,0 +1,227 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "LATABERNA" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e11]: LATABERNA
+        - navigation [ref=e12]:
+          - link "Tienda" [ref=e13] [cursor=pointer]:
+            - /url: /tienda
+            - text: Tienda
+          - link "Guías" [ref=e14] [cursor=pointer]:
+            - /url: /guias
+            - text: Guías
+          - link "Personajes" [ref=e15] [cursor=pointer]:
+            - /url: /personaje
+            - text: Personajes
+          - link "Wiki" [ref=e16] [cursor=pointer]:
+            - /url: /wiki
+            - text: Wiki
+        - generic [ref=e17]:
+          - button [ref=e19]:
+            - img [ref=e20]
+          - button [ref=e23]:
+            - img [ref=e24]
+          - generic [ref=e29]:
+            - link "Ingresar" [ref=e30] [cursor=pointer]:
+              - /url: /login
+            - link "Registrarse" [ref=e31] [cursor=pointer]:
+              - /url: /register
+    - generic [ref=e32]:
+      - complementary [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - heading "Empezando" [level=4] [ref=e37]
+            - navigation [ref=e38]:
+              - link "Introducción" [ref=e39] [cursor=pointer]:
+                - /url: /wiki
+                - img [ref=e40]
+                - text: Introducción
+              - link "Reglas Básicas" [ref=e42] [cursor=pointer]:
+                - /url: /wiki/conceptos/reglas-basicas
+                - img [ref=e43]
+                - text: Reglas Básicas
+          - generic [ref=e46]:
+            - heading "Personajes" [level=4] [ref=e47]
+            - navigation [ref=e48]:
+              - link "Razas" [ref=e49] [cursor=pointer]:
+                - /url: /wiki/razas
+                - img [ref=e50]
+                - text: Razas
+              - link "Clases" [ref=e55] [cursor=pointer]:
+                - /url: /wiki/clases
+                - img [ref=e56]
+                - text: Clases
+              - link "Trasfondos" [ref=e61] [cursor=pointer]:
+                - /url: /wiki/trasfondos
+                - img [ref=e62]
+                - text: Trasfondos
+          - generic [ref=e65]:
+            - heading "Mecánicas" [level=4] [ref=e66]
+            - navigation [ref=e67]:
+              - link "Combate" [ref=e68] [cursor=pointer]:
+                - /url: /wiki/conceptos/combate
+                - img [ref=e69]
+                - text: Combate
+              - link "Magia" [ref=e71] [cursor=pointer]:
+                - /url: /wiki/conceptos/magia
+                - img [ref=e72]
+                - text: Magia
+              - link "Hechizos" [ref=e74] [cursor=pointer]:
+                - /url: /wiki/conceptos/hechizos
+                - img [ref=e75]
+                - text: Hechizos
+              - link "Rasgos y Aptitudes" [ref=e78] [cursor=pointer]:
+                - /url: /wiki/conceptos/rasgos
+                - img [ref=e79]
+                - text: Rasgos y Aptitudes
+      - main [ref=e81]:
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - heading "Reglas y Mecánicas" [level=1] [ref=e85]
+            - paragraph [ref=e86]: Domina los sistemas que dan vida a tus aventuras en La Taberna. Del combate a la magia, todo lo que necesitas saber.
+          - generic [ref=e87]:
+            - 'link "Reglas Básicas Los fundamentos: D20, ventaja, CA y puntos de golpe. Leer Más" [ref=e88] [cursor=pointer]':
+              - /url: /wiki/conceptos/reglas-basicas
+              - generic [ref=e89]:
+                - generic [ref=e90]:
+                  - img [ref=e92]
+                  - generic [ref=e95]: Reglas Básicas
+                - generic [ref=e96]:
+                  - paragraph [ref=e97]: "Los fundamentos: D20, ventaja, CA y puntos de golpe."
+                  - generic [ref=e98]:
+                    - text: Leer Más
+                    - img [ref=e99]
+            - link "Combate Turnos, acciones, iniciativa y tácticas de batalla. Leer Más" [ref=e101] [cursor=pointer]:
+              - /url: /wiki/conceptos/combate
+              - generic [ref=e102]:
+                - generic [ref=e103]:
+                  - img [ref=e105]
+                  - generic [ref=e110]: Combate
+                - generic [ref=e111]:
+                  - paragraph [ref=e112]: Turnos, acciones, iniciativa y tácticas de batalla.
+                  - generic [ref=e113]:
+                    - text: Leer Más
+                    - img [ref=e114]
+            - link "Magia Cómo funciona la Trama, componentes y concentración. Leer Más" [ref=e116] [cursor=pointer]:
+              - /url: /wiki/conceptos/magia
+              - generic [ref=e117]:
+                - generic [ref=e118]:
+                  - img [ref=e120]
+                  - generic [ref=e122]: Magia
+                - generic [ref=e123]:
+                  - paragraph [ref=e124]: Cómo funciona la Trama, componentes y concentración.
+                  - generic [ref=e125]:
+                    - text: Leer Más
+                    - img [ref=e126]
+            - link "Hechizos Grimorio con ejemplos de conjuros icónicos. Leer Más" [ref=e128] [cursor=pointer]:
+              - /url: /wiki/conceptos/hechizos
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - img [ref=e132]
+                  - generic [ref=e134]: Hechizos
+                - generic [ref=e135]:
+                  - paragraph [ref=e136]: Grimorio con ejemplos de conjuros icónicos.
+                  - generic [ref=e137]:
+                    - text: Leer Más
+                    - img [ref=e138]
+            - link "Rasgos y Aptitudes Habilidades especiales de raza, clase y trasfondo. Leer Más" [ref=e140] [cursor=pointer]:
+              - /url: /wiki/conceptos/rasgos
+              - generic [ref=e141]:
+                - generic [ref=e142]:
+                  - img [ref=e144]
+                  - generic [ref=e146]: Rasgos y Aptitudes
+                - generic [ref=e147]:
+                  - paragraph [ref=e148]: Habilidades especiales de raza, clase y trasfondo.
+                  - generic [ref=e149]:
+                    - text: Leer Más
+                    - img [ref=e150]
+    - contentinfo [ref=e152]:
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - link "LATABERNA" [ref=e156] [cursor=pointer]:
+              - /url: /
+              - img [ref=e158]
+              - generic [ref=e162]: LATABERNA
+            - paragraph [ref=e163]: La Taberna es el centro de recursos de D&D para la comunidad hispana. Equipa a tus aventureros, consulta el saber arcano y forja tu propia leyenda.
+            - generic [ref=e164]:
+              - link [ref=e165] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e166]
+              - link [ref=e168] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e169]
+              - link [ref=e171] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e172]
+              - link [ref=e175] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e176]
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - heading "Mercado" [level=3] [ref=e181]
+              - list [ref=e182]:
+                - listitem [ref=e183]:
+                  - link "Dados" [ref=e184] [cursor=pointer]:
+                    - /url: /tienda?categoria=dados
+                - listitem [ref=e185]:
+                  - link "Libros" [ref=e186] [cursor=pointer]:
+                    - /url: /tienda?categoria=libros
+                - listitem [ref=e187]:
+                  - link "Miniaturas" [ref=e188] [cursor=pointer]:
+                    - /url: /tienda?categoria=miniaturas
+                - listitem [ref=e189]:
+                  - link "Accesorios" [ref=e190] [cursor=pointer]:
+                    - /url: /tienda?categoria=accesorios
+            - generic [ref=e191]:
+              - heading "Saber Arcano" [level=3] [ref=e192]
+              - list [ref=e193]:
+                - listitem [ref=e194]:
+                  - link "Razas" [ref=e195] [cursor=pointer]:
+                    - /url: /wiki/razas
+                - listitem [ref=e196]:
+                  - link "Clases" [ref=e197] [cursor=pointer]:
+                    - /url: /wiki/clases
+                - listitem [ref=e198]:
+                  - link "Hechizos" [ref=e199] [cursor=pointer]:
+                    - /url: /wiki/conceptos/hechizos
+                - listitem [ref=e200]:
+                  - link "Reglas" [ref=e201] [cursor=pointer]:
+                    - /url: /wiki/conceptos/reglas-basicas
+            - generic [ref=e202]:
+              - heading "La Comunidad" [level=3] [ref=e203]
+              - list [ref=e204]:
+                - listitem [ref=e205]:
+                  - link "Discord" [ref=e206] [cursor=pointer]:
+                    - /url: "#"
+                    - text: Discord
+                    - img [ref=e207]
+                - listitem [ref=e210]:
+                  - link "Eventos" [ref=e211] [cursor=pointer]:
+                    - /url: "#"
+                    - text: Eventos
+                    - img [ref=e212]
+                - listitem [ref=e215]:
+                  - link "Blog" [ref=e216] [cursor=pointer]:
+                    - /url: "#"
+                    - text: Blog
+                    - img [ref=e217]
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - paragraph [ref=e222]: © 2026 LATABERNA.
+            - generic [ref=e223]:
+              - generic [ref=e224] [cursor=pointer]: Privacidad
+              - generic [ref=e225] [cursor=pointer]: Términos
+              - generic [ref=e226] [cursor=pointer]: Soporte
+          - paragraph [ref=e227]: Dungeons & Dragons y D&D son marcas comerciales de Wizards of the Coast LLC en EE.UU. y otros países.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e233] [cursor=pointer]:
+    - img [ref=e234]
+  - alert [ref=e237]
+```
