@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { useAuth } from '@/components/auth/auth-context'
 import type { DBCharacter } from '@/lib/types'
+import { sanitizeString } from '@/lib/security'
 
 interface SaveCharacterInput {
   nombre: string
@@ -43,16 +44,24 @@ export function useCharacters() {
   const saveCharacter = async (characterData: SaveCharacterInput) => {
     if (!user) return { error: 'No hay usuario autenticado' }
 
+    // Sanitize user-provided string fields before persisting
+    const sanitizedBiografia = Object.fromEntries(
+      Object.entries(characterData.biografia).map(([k, v]) => [
+        k,
+        typeof v === 'string' ? sanitizeString(v) : v,
+      ])
+    )
+
     const { data, error } = await supabase
       .from('personajes')
       .upsert({
         usuario_id: user.id,
-        nombre: characterData.nombre,
+        nombre: sanitizeString(characterData.nombre),
         raza_id: characterData.raza_id,
         clase_id: characterData.clase_id,
         nivel: characterData.nivel || 1,
         estadisticas: characterData.estadisticas,
-        biografia: characterData.biografia,
+        biografia: sanitizedBiografia,
         actualizado_en: new Date().toISOString()
       })
       .select()

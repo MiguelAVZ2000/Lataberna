@@ -118,7 +118,7 @@ function WizardContent() {
         <div className="inline-flex items-center justify-center h-20 w-20 bg-bg-raised text-gold mb-6 border-b-4 border-gold shadow-xl shadow-gold/10">
           <ScrollText className="h-10 w-10" />
         </div>
-        <h1 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-text-primary uppercase leading-none">
+        <h1 id="wizard-title" className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-text-primary uppercase leading-none">
           CREADOR DE HÉROES
         </h1>
         <p className="mt-4 text-xl text-text-muted font-sans italic">
@@ -153,14 +153,20 @@ function WizardContent() {
 
       {/* Login Prompt */}
       {showLoginPrompt && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="login-prompt-title"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+          onKeyDown={(e) => e.key === 'Escape' && setShowLoginPrompt(false)}
+        >
           <div className="relative bg-white border-2 border-[#242528] shadow-[6px_6px_0px_0px_rgba(238,134,0,1)] max-w-md w-full mx-4 p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-12 w-12 bg-[#242528] flex items-center justify-center shrink-0">
                 <LogIn className="h-6 w-6 text-[#EE8600]" />
               </div>
               <div>
-                <h3 className="font-heading font-bold text-xl text-[#242528] uppercase tracking-tight">¿Guardar tu héroe?</h3>
+                <h3 id="login-prompt-title" className="font-heading font-bold text-xl text-[#242528] uppercase tracking-tight">¿Guardar tu héroe?</h3>
                 <p className="text-xs text-gray-500 font-sans mt-0.5">Necesitas una cuenta para guardar personajes</p>
               </div>
             </div>
@@ -181,7 +187,7 @@ function WizardContent() {
                 <FileText className="h-3 w-3" /> Descargar PDF sin cuenta
               </button>
             </div>
-            <button onClick={() => setShowLoginPrompt(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg leading-none">×</button>
+            <button onClick={() => setShowLoginPrompt(false)} aria-label="Cerrar diálogo" className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-lg leading-none">×</button>
           </div>
         </div>
       )}

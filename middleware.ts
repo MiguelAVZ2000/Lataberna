@@ -13,6 +13,12 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - public files (images, etc)
+     *
+     * Protected routes enforced in updateSession:
+     * - /mis-personajes/*
+     * - /personaje/*
+     * - /perfil/*
+     * - /tienda/checkout/*
      */
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],

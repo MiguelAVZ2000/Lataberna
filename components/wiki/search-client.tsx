@@ -51,7 +51,7 @@ function SearchResultsContent({ results, query }: { results: SearchResultItem[],
       </div>
 
       {/* Results Grid */}
-      <div className="grid gap-4">
+      <div className="grid gap-4" aria-live="polite" aria-atomic="true">
         {results.length > 0 ? (
           results.map((result, i) => (
             <Link 

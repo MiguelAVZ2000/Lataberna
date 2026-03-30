@@ -1,6 +1,20 @@
 /**
  * Utilidades de encriptación para datos sensibles.
  * Implementa AES-256-GCM para encriptación simétrica segura.
+ *
+ * SERVER-ONLY: Usa el módulo `crypto` de Node.js (no disponible en el browser).
+ * No importar desde componentes "use client".
+ *
+ * TODO: Para encriptar datos en localStorage (ej. lataberna-cart en cart-context.tsx),
+ *       usar Web Crypto API (window.crypto.subtle) que sí funciona en el browser.
+ *       Implementar un helper separado en lib/client-encryption.ts usando AES-GCM
+ *       con SubtleCrypto y exportar encrypt/decrypt async basados en Web Crypto.
+ *
+ * Uso actual recomendado:
+ *   - Server Actions que guardan datos sensibles en Supabase
+ *   - API routes que procesan información privada del usuario
+ *   - Encriptación de campos sensibles antes de almacenar en DB
+ *       (ej. datos de facturación en ventas, notas privadas de personajes)
  */
 
 import { createCipheriv, createDecipheriv, randomBytes, scryptSync } from 'crypto';

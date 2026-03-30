@@ -48,10 +48,15 @@ export function CartSidebar() {
             />
             
             {/* Cart Content */}
-            <div className="relative w-full sm:w-[400px] h-full bg-bg-base border-l-2 border-border-dark shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
+            <div
+                role="dialog"
+                aria-modal="true"
+                aria-label="Carrito de compras"
+                className="relative w-full sm:w-[400px] h-full bg-bg-base border-l-2 border-border-dark shadow-2xl flex flex-col animate-in slide-in-from-right duration-300"
+            >
                 <div className="flex items-center justify-between px-6 py-5 border-b border-gold bg-bg-base">
                     <h2 className="font-heading font-black text-2xl uppercase tracking-tighter text-text-primary">Tu Carrito</h2>
-                    <Button variant="ghost" size="icon" onClick={() => setIsCartOpen(false)} className="text-text-primary hover:bg-bg-raised transition-colors rounded">
+                    <Button variant="ghost" size="icon" aria-label="Cerrar carrito" onClick={() => setIsCartOpen(false)} className="text-text-primary hover:bg-bg-raised transition-colors rounded">
                         <X className="h-5 w-5" />
                     </Button>
                 </div>

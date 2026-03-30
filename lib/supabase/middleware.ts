@@ -42,7 +42,7 @@ export async function updateSession(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Rutas protegidas que requieren autenticación
-  const protectedRoutes = ['/perfil', '/mis-personajes'];
+  const protectedRoutes = ['/perfil', '/mis-personajes', '/personaje', '/tienda/checkout'];
   const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route));
 
   // Protección de Rutas: Si no hay usuario y trata de entrar a rutas protegidas

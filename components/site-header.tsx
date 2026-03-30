@@ -79,7 +79,9 @@ export function SiteHeader() {
             {showSearch ? (
               <div className="relative animate-in fade-in slide-in-from-right-4 duration-300 mr-2">
                 <form onSubmit={handleSearchSubmit}>
-                  <input autoFocus type="text" placeholder="Buscar en la Wiki..."
+                  <input autoFocus type="search" placeholder="Buscar en la Wiki..."
+                    aria-label="Buscar en la wiki"
+                    role="searchbox"
                     className="h-9 w-40 sm:w-64 bg-bg-surface border border-border-dark rounded-sm pl-3 pr-8 text-xs text-text-primary placeholder:text-text-muted focus:outline-none focus:border-gold"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -102,7 +104,7 @@ export function SiteHeader() {
           </div>
 
           {/* Cart */}
-          <button onClick={() => setIsCartOpen(true)} className="flex items-center justify-center h-10 w-10 bg-bg-surface text-text-primary hover:bg-gold hover:text-white relative border border-border-dark rounded-sm transition-colors duration-200 active:scale-95 group/cart">
+          <button onClick={() => setIsCartOpen(true)} aria-label="Abrir carrito" aria-expanded={false} className="flex items-center justify-center h-10 w-10 bg-bg-surface text-text-primary hover:bg-gold hover:text-white relative border border-border-dark rounded-sm transition-colors duration-200 active:scale-95 group/cart">
             <ShoppingCart className="h-5 w-5 transition-transform duration-200 group-hover/cart:scale-110" />
             {cart.length > 0 && (
               <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#EE8600] border-2 border-bg-base group-hover/cart:border-white" />
@@ -172,8 +174,10 @@ export function SiteHeader() {
                 <form onSubmit={(e) => { e.preventDefault(); if (searchQuery.trim()) { router.push(`/wiki/search?query=${encodeURIComponent(searchQuery)}`); setIsOpen(false); setSearchQuery("") }}} className="relative mb-2">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 pointer-events-none" />
                   <input
-                    type="text"
+                    type="search"
                     placeholder="Buscar en la Wiki..."
+                    aria-label="Buscar en la wiki"
+                    role="searchbox"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full h-10 pl-9 pr-3 bg-white/5 border border-white/10 text-white text-xs placeholder:text-gray-500 focus:outline-none focus:border-[#EE8600] rounded-sm"

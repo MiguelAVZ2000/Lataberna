@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getStaticSearchResults } from "@/lib/search-utils"
 import { createClient } from "@/lib/supabase/server"
+import { sanitizeString, limitStringLength } from "@/lib/security"
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
-  const query = searchParams.get("query") || ""
+  const rawQuery = searchParams.get("query") || ""
 
-  if (!query || query.length < 2) {
+  if (!rawQuery || rawQuery.length < 2) {
     return NextResponse.json([])
   }
+
+  // Sanitize and length-limit the user-supplied query before using it
+  const query = limitStringLength(sanitizeString(rawQuery), 100)
 
   // 1. Static Results
   const staticResults = getStaticSearchResults(query)

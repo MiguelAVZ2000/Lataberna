@@ -12,8 +12,10 @@ import { Label } from "@/components/ui/label"
 import { toast } from "sonner"
 import { supabase } from "@/lib/supabase"
 import { cn } from "@/lib/utils"
+import { logSecurityEvent, logFailedLogin, SecurityEvent } from "@/lib/audit-log"
 
 import { Eye, EyeOff, ShieldAlert } from "lucide-react"
+import { markDeviceTrusted } from "../../lib/trusted-devices"
 
 const authSchema = z.object({
   email: z.string().email({
@@ -50,6 +52,21 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
   const returnUrl = searchParams.get("returnUrl")
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [showPassword, setShowPassword] = React.useState<boolean>(false)
+  const [deviceRecognized, setDeviceRecognized] = React.useState<boolean>(false)
+
+  React.useEffect(() => {
+    if (mode !== 'login') return
+    function hasAnyTrustEntry(): boolean {
+      try {
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i)
+          if (key === 'lataberna-trusted-device') return true
+        }
+        return false
+      } catch { return false }
+    }
+    setDeviceRecognized(hasAnyTrustEntry())
+  }, [mode])
 
   const form = useForm<FormData>({
     resolver: zodResolver(authSchema),
@@ -74,22 +91,32 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
 
     try {
       if (mode === "login") {
-        const { error } = await supabase.auth.signInWithPassword({
+        const { data: signInData, error } = await supabase.auth.signInWithPassword({
           email: data.email,
           password: data.password,
         })
         if (error) {
             // Error genérico para evitar enumeración de cuentas
             if (error.message.includes("Invalid login credentials")) {
+                logFailedLogin(data.email, 'client', 'Invalid credentials')
                 throw new Error("Credenciales inválidas. Revisa tu correo o contraseña.")
             }
+            logFailedLogin(data.email, 'client', error.message)
             throw error
         }
+        logSecurityEvent(SecurityEvent.LOGIN_SUCCESS, {
+          userId: signInData.user?.id,
+          action: 'login',
+          metadata: { method: 'password' },
+        })
+        try {
+          if (signInData.user?.id) markDeviceTrusted(signInData.user.id)
+        } catch { /* localStorage unavailable */ }
         toast.success("¡Bienvenido aventurero!", {
           description: "Puertas de la Taberna abiertas.",
         })
       } else {
-        const { error } = await supabase.auth.signUp({
+        const { data: signUpData, error } = await supabase.auth.signUp({
           email: data.email,
           password: data.password,
           options: {
@@ -99,12 +126,21 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
             }
           }
         })
-        if (error) throw error
+        if (error) {
+          logSecurityEvent(SecurityEvent.REGISTER_FAILED, {
+            metadata: { email: data.email.substring(0, 3) + '***', reason: error.message },
+          })
+          throw error
+        }
+        logSecurityEvent(SecurityEvent.REGISTER_SUCCESS, {
+          userId: signUpData.user?.id,
+          action: 'register',
+        })
         toast.success("¡Contrato firmado!", {
           description: "Verifica tu correo para activar tu cuenta.",
         })
       }
-      
+
       router.push(returnUrl || "/")
       router.refresh()
     } catch (error: any) {
@@ -119,7 +155,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
 
   return (
     <div className="grid gap-8">
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(onSubmit)} aria-label={mode === "login" ? "Formulario de inicio de sesión" : "Formulario de registro"}>
         <div className="grid gap-6">
           {/* Honeypot Field - Invisible para humanos */}
           <div className="hidden" aria-hidden="true">
@@ -138,11 +174,13 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
               autoComplete="email"
               autoCorrect="off"
               disabled={isLoading}
+              aria-invalid={!!form.formState.errors.email}
+              aria-describedby={form.formState.errors.email ? "email-error" : undefined}
               className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
               {...form.register("email")}
             />
             {form.formState.errors.email && (
-              <p className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
+              <p id="email-error" role="alert" className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
                 {form.formState.errors.email.message}
               </p>
             )}
@@ -158,11 +196,13 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
                     placeholder="Aragorn64"
                     type="text"
                     disabled={isLoading}
+                    aria-invalid={!!form.formState.errors.username}
+                    aria-describedby={form.formState.errors.username ? "username-error" : undefined}
                     className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
                     {...form.register("username")}
                 />
                 {form.formState.errors.username && (
-                <p className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
+                <p id="username-error" role="alert" className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
                     {form.formState.errors.username.message}
                 </p>
                 )}
@@ -181,11 +221,14 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
                 autoCapitalize="none"
                 autoComplete={mode === "login" ? "current-password" : "new-password"}
                 disabled={isLoading}
+                aria-invalid={!!form.formState.errors.password}
+                aria-describedby={form.formState.errors.password ? "password-error" : undefined}
                 className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12 pr-10"
                 {...form.register("password")}
                 />
                 <button
                     type="button"
+                    aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#EE8600]"
                 >
@@ -193,7 +236,7 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
                 </button>
             </div>
             {form.formState.errors.password && (
-              <p className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
+              <p id="password-error" role="alert" className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
                 {form.formState.errors.password.message}
               </p>
             )}
@@ -211,17 +254,24 @@ export function UserAuthForm({ mode }: UserAuthFormProps) {
                     autoCapitalize="none"
                     autoComplete="new-password"
                     disabled={isLoading}
+                    aria-invalid={!!form.formState.errors.confirmPassword}
+                    aria-describedby={form.formState.errors.confirmPassword ? "confirm-password-error" : undefined}
                     className="rounded border-[#E1E1E1] focus-visible:ring-[#EE8600] h-12"
                     {...form.register("confirmPassword")}
                 />
                 {form.formState.errors.confirmPassword && (
-                <p className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
+                <p id="confirm-password-error" role="alert" className="text-xs text-red-500 font-bold mt-1 uppercase tracking-tight">
                     {form.formState.errors.confirmPassword.message}
                 </p>
                 )}
             </div>
           )}
 
+          {mode === 'login' && deviceRecognized && (
+            <p className="text-xs text-[#EE8600] font-bold uppercase tracking-widest text-center -mt-2">
+              Dispositivo reconocido
+            </p>
+          )}
           <Button disabled={isLoading} className="h-14 bg-[#242528] hover:bg-black text-white rounded font-bold uppercase tracking-widest shadow-lg transition-colors">
             {isLoading && (
               <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />

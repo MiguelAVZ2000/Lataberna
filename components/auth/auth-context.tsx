@@ -3,6 +3,8 @@
 import { createContext, useContext, useEffect, useState, useCallback } from "react"
 import { supabase } from "@/lib/supabase"
 import { User } from "@supabase/supabase-js"
+import { logSecurityEvent, SecurityEvent } from "@/lib/audit-log"
+import { removeTrustedDevice } from "../../lib/trusted-devices"
 
 interface AuthContextType {
   user: User | null
@@ -69,7 +71,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   const signOut = useCallback(async () => {
+    const currentUser = (await supabase.auth.getUser()).data.user
+    logSecurityEvent(SecurityEvent.LOGOUT, {
+      userId: currentUser?.id,
+      action: 'logout',
+    })
     await supabase.auth.signOut()
+    try { removeTrustedDevice() } catch { /* localStorage unavailable */ }
     window.location.href = "/"
   }, [])
 
